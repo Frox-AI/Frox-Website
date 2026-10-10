@@ -4,6 +4,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import ThemeToggle from "@/components/ThemeToggle";
 import SearchPalette from "@/components/SearchPalette";
+import { Mark } from "@/components/Brand";
 import Icon from "@/components/Icon";
 
 /* Big editorial links on the left of a panel + a dense resource list on the right,
@@ -120,9 +121,9 @@ export default function Nav() {
     <header className={`fixed top-0 inset-x-0 z-50 transition-colors duration-300 ${scrolled ? "bg-bg/85 backdrop-blur-xl border-b border-ink/[0.07]" : "border-b border-transparent"}`}>
       <div className="container-x h-[60px] flex items-center justify-between gap-6">
         <div className="flex items-center gap-1">
-          <Link href="/" className="flex items-center gap-2 pr-4 shrink-0" aria-label="Frox Studio home">
-            <span className="w-[26px] h-[26px] rounded-[7px] grad-bg grid place-items-center text-white text-[11px] font-bold">F</span>
-            <span className="font-semibold text-[16px] tracking-tight">Frox</span>
+          <Link href="/" className="flex items-center pr-4 shrink-0" aria-label="Frox Studio — home">
+            <Mark size={26} />
+            <span className="font-semibold text-[16px] tracking-tight pl-2.5">Frox</span>
           </Link>
 
           <nav className="hidden lg:flex items-center">

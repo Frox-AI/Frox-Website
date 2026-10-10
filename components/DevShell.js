@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect } from "react";
+import { Mark } from "@/components/Brand";
 
 const NAV = [
   { href: "/developers", label: "Overview" },
@@ -33,7 +34,7 @@ export default function DevShell({ children }) {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 h-full flex items-center justify-between">
           <div className="flex items-center gap-5">
             <Link href="/developers" className="flex items-center gap-2 font-mono text-[13px] font-semibold tracking-tight text-white">
-              <span className="w-4 h-4 rounded-[4px] bg-[#10a37f]" />
+              <Mark size={16} rounded={false} className="!rounded-[22%]" />
               frox<span className="text-[#10a37f]">/</span>dev
             </Link>
             <nav className="hidden sm:flex items-center gap-1">

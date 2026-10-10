@@ -1,33 +1,8 @@
 "use client";
 
 import Link from "next/link";
+import { Mark } from "@/components/Brand";
 import { useEffect, useRef, useState } from "react";
-
-/* Claude's asterisk mark: eight rays, one animated ray so it reads as alive. */
-function Asterism({ size = 34, className = "" }) {
-  return (
-    <span
-      className={`relative inline-grid place-items-center shrink-0 ${className}`}
-      style={{ width: size, height: size }}
-      aria-hidden="true"
-    >
-      {Array.from({ length: 8 }).map((_, i) => (
-        <span
-          key={i}
-          className="absolute left-1/2 top-1/2 rounded-full bg-current origin-bottom"
-          style={{
-            width: Math.max(2, size * 0.075),
-            height: size * 0.44,
-            transform: `translate(-50%, -100%) rotate(${(i * 360) / 8}deg)`,
-            transformOrigin: "50% 100%",
-            opacity: 0.9,
-            animation: i === 0 ? "ray-pulse 3.6s ease-in-out infinite" : undefined,
-          }}
-        />
-      ))}
-    </span>
-  );
-}
 
 /* Rotating wordmark used in the brand panel. */
 const ROTATING = ["reason", "code", "images", "audio", "3D", "agents"];
@@ -95,9 +70,7 @@ export default function AuthLayout({ children, title, subtitle, footer }) {
 
         <div className="relative z-10">
           <Link href="/" className="inline-flex items-center gap-2.5 text-text hover:opacity-80 transition-opacity w-fit">
-            <span className="w-9 h-9 rounded-xl grad-bg grid place-items-center text-white">
-              <Asterism size={18} />
-            </span>
+            <Mark size={36} rounded={false} className="!rounded-[26%]" />
             <span className="font-semibold text-[17px] tracking-tight">Frox</span>
           </Link>
         </div>
@@ -146,9 +119,7 @@ export default function AuthLayout({ children, title, subtitle, footer }) {
         <div className="relative w-full max-w-[400px]">
           <div className="lg:hidden mb-8 flex items-center justify-center gap-2.5">
             <Link href="/" className="inline-flex items-center gap-2.5">
-              <span className="w-8 h-8 rounded-lg grad-bg grid place-items-center text-white">
-                <Asterism size={15} />
-              </span>
+              <Mark size={32} />
               <span className="font-semibold text-[16px] tracking-tight">Frox</span>
             </Link>
           </div>

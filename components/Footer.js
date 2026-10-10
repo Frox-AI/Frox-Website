@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Mark } from "@/components/Brand";
 
 const GROUPS = [
   {
@@ -60,8 +61,8 @@ export default function Footer() {
       <div className="container-x py-16 md:py-20">
         <div className="grid gap-10 md:grid-cols-[1.4fr_repeat(4,1fr)]">
           <div>
-            <Link href="/" className="inline-flex items-center gap-2" aria-label="Frox Studio home">
-              <span className="w-[26px] h-[26px] rounded-[7px] grad-bg grid place-items-center text-white text-[11px] font-bold">F</span>
+            <Link href="/" className="inline-flex items-center gap-2" aria-label="Frox Studio — home">
+              <Mark size={26} />
               <span className="font-semibold text-[16px] tracking-tight">Frox</span>
             </Link>
             <p className="mt-4 text-[13.5px] text-textFaint max-w-[26ch] leading-relaxed">

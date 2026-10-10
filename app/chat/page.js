@@ -7,6 +7,7 @@ import ThemeToggle from "@/components/ThemeToggle";
 import Onboarding from "@/components/Onboarding";
 import ChatSettings from "@/components/ChatSettings";
 import Icon from "@/components/Icon";
+import { Mark } from "@/components/Brand";
 
 const MODELS = [
   { id: "frox-flex", name: "Frox Flex", desc: "Frontier reasoning · 256K context", badge: "F" },
@@ -53,9 +54,7 @@ const GROUP_ORDER = ["Today", "Yesterday", "Previous 7 days", "Older"];
 
 function Avatar({ kind }) {
   if (kind === "assistant")
-    return (
-      <span className="w-7 h-7 shrink-0 rounded-lg grad-bg grid place-items-center text-[11px] font-bold text-white">F</span>
-    );
+    return <Mark size={28} rounded={false} className="!rounded-[26%]" />;
   return (
     <span className="w-7 h-7 shrink-0 rounded-full grad-bg grid place-items-center text-[10px] font-bold text-white">
       GU
@@ -231,7 +230,7 @@ function Sidebar({ threads, currentId, onSelect, onNew, onDelete, mobile, onClos
       {mobile && <div className="absolute inset-0 bg-ink/50" onClick={onClose} />}
       <div className="relative flex-1 flex flex-col min-h-0">
         <div className="flex items-center gap-1 px-3 pt-3 pb-1">
-          <span className="w-6 h-6 rounded-lg grad-bg grid place-items-center text-white text-[10px] font-bold shrink-0">F</span>
+          <Mark size={24} />
           <span className="text-[15px] font-semibold tracking-tight text-text">Frox</span>
           <button onClick={onCollapse} className="ml-auto w-8 h-8 grid place-items-center rounded-lg text-textFaint hover:text-text hover:bg-ink/[0.06] transition-colors" aria-label="Collapse sidebar" title="Collapse sidebar">
             <Icon name="grid" size={15} />

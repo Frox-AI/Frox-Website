@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import Icon from "@/components/Icon";
+import { Mark } from "@/components/Brand";
 import AnimatedBackground from "@/components/AnimatedBackground";
 import Reveal from "@/components/Reveal";
 
@@ -168,7 +169,7 @@ export default function AdminPage() {
       {/* ============ SIDEBAR ============ */}
       <aside className="hidden lg:flex w-[236px] shrink-0 flex-col border-r border-ink/[0.07] bg-bgElev sticky top-0 h-dvh">
         <div className="p-4 flex items-center gap-2.5 border-b border-ink/[0.07]">
-          <span className="w-7 h-7 rounded-lg grad-bg grid place-items-center text-white text-[11px] font-bold">F</span>
+          <Mark size={28} />
           <span className="text-[14px] font-semibold tracking-tight">Frox Admin</span>
         </div>
         <nav className="flex-1 p-2.5 space-y-0.5 overflow-y-auto">

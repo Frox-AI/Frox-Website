@@ -1,0 +1,1641 @@
+FROX AI — Complete Website Sitemap
+
+
+
+
+
+
+
+
+
+
+FROX AI Platform
+Product architecture · Sitemap · 200+ potential routes
+A unified home for your chat, image, audio, coding, and 3D AI models.
+
+
+
+I'd organize FROX into 15 major sections. The list below includes standalone pages, dynamic detail pages, and some pages that only appear for signed-in users, developers, or administrators.
+1. Public website
+Marketing, discovery, and getting new users into FROX.
+
+Homepage
+/
+
+
+
+About FROX AI
+/about
+
+
+
+Our Mission
+/about/mission
+
+
+
+Team
+/about/team
+
+
+
+Research & Innovation
+/about/research
+
+
+
+Our Technology
+/about/technology
+
+
+
+Responsible AI
+/about/responsible-ai
+
+
+
+All Features
+/features
+
+
+
+Explore AI Models
+/models
+
+
+
+FROX Chat
+/models/chat
+
+
+
+FROX Image
+/models/image
+
+
+
+FROX Voice
+/models/voice
+
+
+
+FROX Sound Effects
+/models/sfx
+
+
+
+FROX Coding
+/models/coding
+
+
+
+FROX 3D
+/models/3d
+
+
+
+Pricing Plans
+/pricing
+
+
+
+Download FROX
+/download
+
+
+
+Desktop App
+/download/desktop
+
+
+
+Mobile App
+/download/mobile
+
+
+
+System Requirements
+/download/requirements
+
+
+
+Blog
+/blog
+
+
+
+Blog Article
+/blog/[slug]
+
+
+
+News & Announcements
+/news
+
+
+
+Product Changelog
+/changelog
+
+
+
+Public Roadmap
+/roadmap
+
+
+
+Careers
+/careers
+
+
+
+Job Details
+/careers/[jobId]
+
+
+
+Contact Us
+/contact
+
+
+
+Partners
+/partners
+
+
+
+Press & Media
+/press
+
+
+
+Brand Assets
+/brand
+
+
+
+2. Authentication and account access
+These pages handle account creation, login, identity verification, and account recovery.
+Login
+/auth/login
+
+
+Create Account
+/auth/signup
+
+
+Verify Email
+/auth/verify-email
+
+
+Forgot Password
+/auth/forgot-password
+
+
+Reset Password
+/auth/reset-password
+
+
+Two-Factor Authentication
+/auth/two-factor
+
+
+Recovery Codes
+/auth/recovery-codes
+
+
+Identity Verification (if needed)
+/auth/verify-identity
+
+
+Terms & Privacy Consent
+/auth/consent
+
+
+OAuth Callback
+/auth/callback
+
+
+Accept Invitation
+/auth/invitations/[token]
+
+
+Account Locked
+/auth/locked
+
+
+Session Expired
+/auth/session-expired
+
+
+Logout / Sign Out
+/auth/logout
+
+
+Confirm Account Deletion
+/auth/delete-confirmation
+
+
+
+3. Main AI chat experience
+This is the heart of FROX. Make it fast, clean, and easy to use.
+New Chat
+/chat
+
+
+Conversation
+/chat/[conversationId]
+
+
+Search Conversations
+/chat/search
+
+
+Archived Chats
+/chat/archive
+
+
+Shared Conversation
+/chat/shared/[shareId]
+
+
+Chat Folders
+/chat/folders
+
+
+Conversation History / Versions
+/chat/[conversationId]/history
+
+
+Writing & Code Canvas
+/chat/[conversationId]/canvas
+
+
+Conversation Files
+/chat/[conversationId]/files
+
+
+Export Conversation
+/chat/[conversationId]/export
+
+
+Saved Messages
+/chat/bookmarks
+
+
+Customize Chat
+/chat/customize
+
+
+Temporary Chat
+/chat/temporary
+
+
+Compare Model Responses
+/chat/compare
+
+
+Voice Conversation
+/chat/voice
+
+
+Response Feedback
+/chat/feedback
+
+
+
+Important chat features that aren't necessarily separate pages: regenerate, edit prompt, stop generation, copy response, retry with another model, attach files, cite sources, thumbs up/down, and interrupt voice playback.
+4. Image generation studio
+Give your existing image model its own complete workspace.
+Image Studio
+/image
+
+
+Generate Image
+/image/create
+
+
+Edit Image
+/image/edit
+
+
+Image Variations
+/image/variations
+
+
+Upscale Image
+/image/upscale
+
+
+Remove Background
+/image/remove-background
+
+
+Inpainting / Replace Area
+/image/inpaint
+
+
+Expand Image
+/image/outpaint
+
+
+Generation History
+/image/history
+
+
+My Image Library
+/image/library
+
+
+Image Details
+/image/[imageId]
+
+
+Style Presets
+/image/styles
+
+
+Prompt Library
+/image/prompts
+
+
+Batch Generation
+/image/batch
+
+
+Compare Generations
+/image/compare
+
+
+Image Generation Settings
+/image/settings
+
+
+
+5. Voice, TTS, and sound effects
+Separate speech generation from sound-effects generation, even if they share infrastructure.
+Audio Home
+/audio
+
+
+Text-to-Speech Studio
+/audio/tts
+
+
+Speech Generation Result
+/audio/tts/[jobId]
+
+
+Voice Library
+/audio/voices
+
+
+Voice Details
+/audio/voices/[voiceId]
+
+
+Create / Design Voice
+/audio/voice-design
+
+
+Pronunciation Dictionary
+/audio/pronunciation
+
+
+Batch Text-to-Speech
+/audio/tts/batch
+
+
+Sound Effects Studio
+/audio/sfx
+
+
+Sound Effect Result
+/audio/sfx/[jobId]
+
+
+Sound Effects Library
+/audio/sfx/library
+
+
+Sound Collections
+/audio/sfx/collections
+
+
+Music Generation (future)
+/audio/music
+
+
+Speech-to-Text
+/audio/transcription
+
+
+Transcription Result
+/audio/transcription/[jobId]
+
+
+Audio Cleanup (future)
+/audio/clean
+
+
+Audio History
+/audio/history
+
+
+Audio Job Queue
+/audio/queue
+
+
+
+6. 3D creation studio
+This is especially important for your text → image → image-to-3D pipeline.
+3D Studio Home
+/3d
+
+
+Create 3D Model
+/3d/create
+
+
+Image-to-3D
+/3d/from-image
+
+
+Multi-View Reconstruction
+/3d/multi-view
+
+
+My 3D Projects
+/3d/projects
+
+
+3D Project Workspace
+/3d/projects/[projectId]
+
+
+My 3D Assets
+/3d/models
+
+
+3D Model Viewer
+/3d/models/[modelId]
+
+
+Texture Generation
+/3d/texture
+
+
+Material Library
+/3d/materials
+
+
+Remesh / Repair Model
+/3d/remesh
+
+
+Retopology
+/3d/retopology
+
+
+Rigging (future)
+/3d/rigging
+
+
+Animation (future)
+/3d/animation
+
+
+Format Converter
+/3d/convert
+
+
+Export 3D Asset
+/3d/export
+
+
+3D Generation History
+/3d/history
+
+
+3D Generation Settings
+/3d/settings
+
+
+
+Supported export choices could include GLB, glTF, OBJ, and FBX where your conversion pipeline supports them. Don't advertise features until the backend actually supports them.
+7. Coding workspace
+Coding Home
+/code
+
+
+AI Coding Assistant
+/code/chat
+
+
+My Code Projects
+/code/projects
+
+
+New Project
+/code/projects/new
+
+
+Project Workspace
+/code/projects/[projectId]
+
+
+Code Playground
+/code/playground
+
+
+Explain Code
+/code/explain
+
+
+Debug Code
+/code/debug
+
+
+Code Review
+/code/review
+
+
+Refactor Code
+/code/refactor
+
+
+Test Generator
+/code/tests
+
+
+Documentation Generator
+/code/docs
+
+
+Saved Code Snippets
+/code/snippets
+
+
+Language Support
+/code/languages
+
+
+Repository Connections
+/code/repositories
+
+
+Code Generation History
+/code/history
+
+
+Coding Preferences
+/code/settings
+
+
+
+For code execution, use isolated sandboxes with strict resource limits. Never execute arbitrary user-generated code directly on the main application server.
+8. Discover, share, and community
+Explore FROX
+/explore
+
+
+Community Prompt Library
+/explore/prompts
+
+
+Public Image Gallery
+/explore/images
+
+
+Public 3D Gallery
+/explore/3d
+
+
+Public Audio Gallery
+/explore/audio
+
+
+Community Collections
+/explore/collections
+
+
+Creator Directory
+/explore/creators
+
+
+Creator Profile
+/creators/[username]
+
+
+Community Home
+/community
+
+
+Discussions
+/community/discussions
+
+
+Discussion Thread
+/community/discussions/[threadId]
+
+
+Questions & Answers
+/community/questions
+
+
+Events
+/community/events
+
+
+Creative Challenges
+/community/challenges
+
+
+Community Guidelines
+/community/guidelines
+
+
+Report Content
+/community/report
+
+
+
+Public galleries and creator profiles are optional. Build them only if you want user-generated content to be publicly discoverable.
+9. User dashboard and personal library
+Personal Dashboard
+/dashboard
+
+
+Recent Activity
+/dashboard/activity
+
+
+Favorites
+/dashboard/favorites
+
+
+Recently Used
+/dashboard/recents
+
+
+All Files
+/dashboard/files
+
+
+Uploads
+/dashboard/uploads
+
+
+My Collections
+/dashboard/collections
+
+
+Trash / Deleted Items
+/dashboard/trash
+
+
+All Generation Jobs
+/dashboard/jobs
+
+
+Job Details
+/dashboard/jobs/[jobId]
+
+
+Notifications
+/dashboard/notifications
+
+
+Background Tasks
+/dashboard/tasks
+
+
+Storage Usage
+/dashboard/storage
+
+
+Exports & Downloads
+/dashboard/exports
+
+
+
+10. User profile and settings
+Settings Overview
+/settings
+
+
+Profile Information
+/settings/profile
+
+
+Account Settings
+/settings/account
+
+
+Security
+/settings/security
+
+
+Active Sessions
+/settings/sessions
+
+
+Connected Applications
+/settings/connected-apps
+
+
+General Preferences
+/settings/preferences
+
+
+Theme & Appearance
+/settings/appearance
+
+
+Language & Region
+/settings/language
+
+
+Accessibility
+/settings/accessibility
+
+
+Notification Preferences
+/settings/notifications
+
+
+Privacy Settings
+/settings/privacy
+
+
+Data Controls
+/settings/data
+
+
+Export My Data
+/settings/export
+
+
+Delete Account
+/settings/delete-account
+
+
+AI Personalization
+/settings/personalization
+
+
+Memory Management
+/settings/memory
+
+
+Custom Instructions
+/settings/custom-instructions
+
+
+Voice Preferences
+/settings/voice
+
+
+Usage Statistics
+/settings/usage
+
+
+
+11. Plans, billing, and usage
+Billing Overview
+/billing
+
+
+Available Plans
+/billing/plans
+
+
+Checkout
+/billing/checkout
+
+
+Payment Success
+/billing/success
+
+
+Payment Cancelled
+/billing/cancelled
+
+
+Payment Methods
+/billing/methods
+
+
+Payment History
+/billing/history
+
+
+Invoices
+/billing/invoices
+
+
+Manage Subscription
+/billing/subscription
+
+
+Upgrade Plan
+/billing/upgrade
+
+
+Change Plan
+/billing/downgrade
+
+
+Cancel Subscription
+/billing/cancel
+
+
+Credits & Balance
+/billing/credits
+
+
+Detailed Usage
+/billing/usage
+
+
+Plan Limits
+/billing/limits
+
+
+Refund Requests
+/billing/refunds
+
+
+Redeem Coupon
+/billing/coupons
+
+
+Tax Information
+/billing/tax
+
+
+
+You can omit checkout and subscription management if FROX launches as a free, locally hosted application.
+12. Developers and API platform
+If you want other developers to use FROX models, this section becomes a major product in its own right.
+Developer Home
+/developers
+
+
+Quickstart
+/developers/quickstart
+
+
+Documentation Home
+/developers/docs
+
+
+Authentication
+/developers/docs/authentication
+
+
+Chat API
+/developers/docs/chat
+
+
+Image API
+/developers/docs/images
+
+
+Audio API
+/developers/docs/audio
+
+
+3D API
+/developers/docs/3d
+
+
+Coding API
+/developers/docs/coding
+
+
+Streaming Responses
+/developers/docs/streaming
+
+
+Error Codes
+/developers/docs/errors
+
+
+Rate Limits
+/developers/docs/rate-limits
+
+
+Webhooks
+/developers/docs/webhooks
+
+
+SDKs
+/developers/docs/sdks
+
+
+API Keys
+/developers/api-keys
+
+
+Create API Key
+/developers/api-keys/new
+
+
+API Usage
+/developers/usage
+
+
+Request Logs
+/developers/logs
+
+
+API Playground
+/developers/playground
+
+
+Developer Projects
+/developers/projects
+
+
+Project Details
+/developers/projects/[projectId]
+
+
+Webhook Management
+/developers/webhooks
+
+
+API Status
+/developers/status
+
+
+Deprecations & Migration
+/developers/deprecations
+
+
+Developer Terms
+/developers/terms
+
+
+
+13. Model management and AI operations
+This is the section most specific to your project, since you already have multiple fine-tuned models and a router/verifier architecture.
+AI Studio Home
+/studio
+
+
+All Models
+/studio/models
+
+
+Model Details
+/studio/models/[modelId]
+
+
+Model Versions
+/studio/models/[modelId]/versions
+
+
+Evaluate Model
+/studio/models/[modelId]/evaluate
+
+
+Deployments
+/studio/models/[modelId]/deployments
+
+
+Model Logs
+/studio/models/[modelId]/logs
+
+
+Model Configuration
+/studio/models/[modelId]/settings
+
+
+Dataset Library
+/studio/datasets
+
+
+Import Dataset
+/studio/datasets/new
+
+
+Dataset Details
+/studio/datasets/[datasetId]
+
+
+Dataset Preview
+/studio/datasets/[datasetId]/preview
+
+
+Data Quality Report
+/studio/datasets/[datasetId]/quality
+
+
+Train / Validation / Test Splits
+/studio/datasets/[datasetId]/splits
+
+
+Training Jobs
+/studio/training
+
+
+Create Fine-Tuning Job
+/studio/training/new
+
+
+Training Job Details
+/studio/training/[jobId]
+
+
+Training Logs
+/studio/training/[jobId]/logs
+
+
+Training Metrics
+/studio/training/[jobId]/metrics
+
+
+Evaluation Runs
+/studio/evaluations
+
+
+New Evaluation
+/studio/evaluations/new
+
+
+Benchmark Dashboard
+/studio/benchmarks
+
+
+Model Router Configuration
+/studio/router
+
+
+Routing Rules
+/studio/router/rules
+
+
+Verifier Configuration
+/studio/verifier
+
+
+System Prompt Management
+/studio/prompts
+
+
+AI Pipelines
+/studio/pipelines
+
+
+Create Pipeline
+/studio/pipelines/new
+
+
+Pipeline Editor
+/studio/pipelines/[pipelineId]
+
+
+Inference Playground
+/studio/inference
+
+
+Deployment Management
+/studio/deployments
+
+
+Model Monitoring
+/studio/monitoring
+
+
+Experiment Tracking
+/studio/experiments
+
+
+Experiment Details
+/studio/experiments/[experimentId]
+
+
+
+For FROX, I'd prioritize these five pages inside the studio:
+- Model Router: choose chat, coding, image, voice, SFX, or 3D based on intent.
+- Verifier: check outputs and decide whether to accept, retry, or correct.
+- Pipeline Editor: visualize and configure the chain between specialized models.
+- Dataset Quality: detect duplicates, bad answers, missing fields, and evaluation leakage.
+- Evaluation Dashboard: compare model versions before and after fine-tuning.
+You don't need to expose this studio publicly. Make it a protected workspace for you and authorized collaborators.
+14. Administration and platform operations
+These are internal pages, not part of the ordinary user navigation.
+Admin Dashboard
+/admin
+
+
+User Management
+/admin/users
+
+
+User Details
+/admin/users/[userId]
+
+
+Roles & Permissions
+/admin/roles
+
+
+Organization Management
+/admin/organizations
+
+
+Model Registry
+/admin/models
+
+
+Dataset Registry
+/admin/datasets
+
+
+Background Job Monitor
+/admin/jobs
+
+
+Inference Queue
+/admin/queue
+
+
+Server Health
+/admin/servers
+
+
+GPU Utilization
+/admin/gpu
+
+
+Storage Management
+/admin/storage
+
+
+Platform Usage
+/admin/usage
+
+
+Billing Operations
+/admin/billing
+
+
+Payment Operations
+/admin/payments
+
+
+Refund Management
+/admin/refunds
+
+
+Abuse Monitoring
+/admin/abuse
+
+
+User Reports
+/admin/reports
+
+
+Content Moderation
+/admin/moderation
+
+
+Moderation Appeals
+/admin/appeals
+
+
+Audit Logs
+/admin/audit-logs
+
+
+Security Dashboard
+/admin/security
+
+
+Incident Management
+/admin/incidents
+
+
+Feature Flags
+/admin/feature-flags
+
+
+Platform Configuration
+/admin/configuration
+
+
+Announcements
+/admin/announcements
+
+
+Support Queue
+/admin/support
+
+
+Maintenance Mode
+/admin/maintenance
+
+
+Backup Status
+/admin/backups
+
+
+External Integrations
+/admin/integrations
+
+
+
+Admin routes must enforce authorization on the server for every request. Hiding a link in the frontend is not access control.
+15. Help, legal, and system pages
+Help Center
+/help
+
+
+Getting Started
+/help/getting-started
+
+
+Chat Help
+/help/chat
+
+
+Image Generation Help
+/help/image
+
+
+Audio Help
+/help/audio
+
+
+3D Help
+/help/3d
+
+
+Coding Help
+/help/coding
+
+
+Billing Help
+/help/billing
+
+
+Account Help
+/help/account
+
+
+Troubleshooting
+/help/troubleshooting
+
+
+Frequently Asked Questions
+/help/faq
+
+
+Contact Support
+/support
+
+
+Create Support Ticket
+/support/new
+
+
+Support Ticket Details
+/support/[ticketId]
+
+
+Support Status
+/support/status
+
+
+Terms of Service
+/legal/terms
+
+
+Privacy Policy
+/legal/privacy
+
+
+Cookie Policy
+/legal/cookies
+
+
+Open-Source Licenses
+/legal/licenses
+
+
+Acceptable Use Policy
+/legal/acceptable-use
+
+
+Copyright Policy
+/legal/copyright
+
+
+Data Processing Information
+/legal/data-processing
+
+
+AI Limitations & Disclaimer
+/legal/ai-disclaimer
+
+
+Refund Policy
+/legal/refunds
+
+
+Community Rules
+/legal/community
+
+
+System Status
+/status
+
+
+Incident History
+/status/history
+
+
+Maintenance Page
+/maintenance
+
+
+Offline Page
+/offline
+
+
+Not Found
+/404
+
+
+Internal Server Error
+/500
+
+
+Access Denied
+/access-denied
+
+
+
+
+Bonus: extra pages for a larger FROX ecosystem
+These are useful when you start supporting teams, custom models, and more advanced workflows.
+Organization onboarding
+/organizations/new
+
+
+Organization dashboard
+/organizations/[orgId]
+
+
+Team members
+/organizations/[orgId]/members
+
+
+Team permissions
+/organizations/[orgId]/permissions
+
+
+Shared workspaces
+/workspaces
+
+
+Workspace details
+/workspaces/[workspaceId]
+
+
+Workspace files
+/workspaces/[workspaceId]/files
+
+
+Workspace activity
+/workspaces/[workspaceId]/activity
+
+
+Custom assistant builder
+/assistants/new
+
+
+My assistants
+/assistants
+
+
+Assistant details
+/assistants/[assistantId]
+
+
+Assistant knowledge base
+/assistants/[assistantId]/knowledge
+
+
+Assistant tools
+/assistants/[assistantId]/tools
+
+
+Assistant evaluation
+/assistants/[assistantId]/evaluate
+
+
+Agent workflows
+/agents
+
+
+Workflow builder
+/agents/workflows/new
+
+
+Workflow run details
+/agents/runs/[runId]
+
+
+Knowledge bases
+/knowledge
+
+
+Knowledge base details
+/knowledge/[knowledgeId]
+
+
+Document ingestion
+/knowledge/[knowledgeId]/ingestion
+
+
+Search configuration
+/knowledge/[knowledgeId]/search
+
+
+Fine-tuning recipes
+/studio/recipes
+
+
+Model comparison
+/studio/compare
+
+
+Model rollback
+/studio/rollback
+
+
+Canary deployments
+/studio/canary
+
+
+Inference cost analysis
+/studio/costs
+
+
+Latency analysis
+/studio/latency
+
+
+Feedback analysis
+/studio/feedback
+
+
+Safety evaluation
+/studio/safety
+
+
+Red-team evaluations
+/studio/red-team
+
+
+Model cards
+/studio/model-cards
+
+
+Dataset cards
+/studio/dataset-cards
+
+
+Webhook delivery logs
+/developers/webhooks/logs
+
+
+SDK examples
+/developers/examples
+
+
+Integration marketplace
+/integrations
+
+
+Integration details
+/integrations/[integrationId]
+
+
+Import from another AI platform
+/settings/import
+
+
+Export preferences
+/settings/export
+
+
+Accessibility statement
+/legal/accessibility
+
+
+Security disclosures
+/security
+
+
+Vulnerability reporting
+/security/report
+
+
+System email preferences
+/settings/email
+
+
+Beta features
+/settings/beta
+
+
+Waitlist
+/waitlist
+
+
+Early access
+/early-access
+
+
+Referral program
+/referrals
+
+
+Referral details
+/referrals/[code]
+
+
+Credits redemption
+/redeem
+
+
+Public profile settings
+/settings/public-profile
+
+
+
+How I'd actually organize the navigation
+Don't put 200 links into the sidebar. Organize the site into a small number of clear workspaces.
+
+Create
+Chat, Image, Voice, Sound Effects, 3D, Coding
+
+
+
+
+Library
+History, projects, files, favorites, collections
+
+
+
+
+AI Studio
+Models, datasets, fine-tuning, router, verifier, evaluations
+
+
+
+
+Developers
+API keys, documentation, playground, usage, logs
+
+
+
+
+Account
+Profile, settings, security, billing, support
+
+
+
+What to build first
+Here is the order I'd recommend so you don't spend months building pages before the AI actually works through them.
+Phase 1
+Launch
+
+Core platform
+Homepage, login/signup, chat, image, voice, coding, 3D, history, settings, profile, basic dashboard, error pages, privacy and terms.
+
+
+Phase 2
+Improve
+
+Better user experience
+Search, folders, libraries, batch generation, exports, audio history, 3D viewer, usage tracking, notifications and help center.
+
+
+Phase 3
+AI Studio
+
+Your model infrastructure
+Model registry, datasets, training jobs, router, verifier, pipeline editor, evaluations, deployment and monitoring.
+
+
+Phase 4
+Expansion
+
+Full ecosystem
+Public API, developer platform, billing, teams, community, custom assistants, workflow automation and marketplace.

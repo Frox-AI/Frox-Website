@@ -89,7 +89,7 @@ function Art({ kind }) {
               <span className="ml-auto h-1.5 w-16 rounded-full bg-ink/10" />
             </div>
           ))}
-          <div className="mt-5 rounded-xl border border-ink/[0.08] bg-ink/30 p-3 font-mono text-[12.5px] text-emerald-300/90">
+          <div className="mt-5 rounded-xl console p-3 font-mono text-[12.5px] text-emerald-300">
             <span className="inline-flex items-center gap-1.5"><Icon name="check" size={13} /> Answer verified · 0.9s</span>
           </div>
         </div>
@@ -99,7 +99,7 @@ function Art({ kind }) {
     return (
       <div className={`${base} from-cyan-500/15 to-transparent p-5 grid grid-cols-2 gap-3`}>
         {["Text", "Image", "Audio", "3D"].map((m, i) => (
-          <div key={m} className="rounded-xl border border-ink/[0.08] bg-ink/30 p-4 flex flex-col justify-between">
+          <div key={m} className="rounded-xl border border-ink/[0.08] bg-bgElev p-4 flex flex-col justify-between">
             <span className="text-xs text-textFaint">{m}</span>
             <span className="text-lg font-semibold">{["256K", "1024", "48kHz", "GLB"][i]}</span>
           </div>
@@ -108,7 +108,7 @@ function Art({ kind }) {
     );
   return (
     <div className={`${base} from-fuchsia-500/15 to-transparent p-5`}>
-      <div className="rounded-xl border border-ink/[0.08] bg-ink/40 p-4 font-mono text-[12.5px] leading-relaxed">
+      <div className="rounded-xl console p-4 font-mono text-[12.5px] leading-relaxed">
         <div className="text-textFaint">POST /v1/chat/completions</div>
         <div className="mt-2 text-violet-300">&quot;model&quot;: <span className="text-emerald-300">&quot;frox-flex&quot;</span></div>
         <div className="text-violet-300">&quot;stream&quot;: <span className="text-cyan-300">true</span></div>

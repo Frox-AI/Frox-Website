@@ -1,8 +1,10 @@
+import Link from "next/link";
+import Icon from "@/components/Icon";
+
 const DESKTOP_PLATFORMS = [
   {
     name: "macOS",
     arch: "Apple Silicon",
-    icon: "",
     file: "frox-desktop-1.5.0-arm64.dmg",
     size: "84 MB",
     version: "v1.5.0",
@@ -10,7 +12,6 @@ const DESKTOP_PLATFORMS = [
   {
     name: "macOS",
     arch: "Intel",
-    icon: "",
     file: "frox-desktop-1.5.0-x64.dmg",
     size: "89 MB",
     version: "v1.5.0",
@@ -18,7 +19,6 @@ const DESKTOP_PLATFORMS = [
   {
     name: "Windows",
     arch: "x64",
-    icon: "",
     file: "Frox-Setup-1.5.0-x64.exe",
     size: "92 MB",
     version: "v1.5.0",
@@ -26,7 +26,6 @@ const DESKTOP_PLATFORMS = [
   {
     name: "Windows",
     arch: "ARM",
-    icon: "",
     file: "Frox-Setup-1.5.0-arm64.exe",
     size: "88 MB",
     version: "v1.5.0",
@@ -34,7 +33,6 @@ const DESKTOP_PLATFORMS = [
   {
     name: "Linux",
     arch: "AppImage",
-    icon: "",
     file: "frox-desktop-1.5.0.AppImage",
     size: "95 MB",
     version: "v1.5.0",
@@ -42,7 +40,6 @@ const DESKTOP_PLATFORMS = [
   {
     name: "Linux",
     arch: "deb",
-    icon: "",
     file: "frox-desktop_1.5.0_amd64.deb",
     size: "91 MB",
     version: "v1.5.0",
@@ -53,7 +50,6 @@ const MOBILE_PLATFORMS = [
   {
     name: "iOS",
     arch: "iPhone & iPad",
-    icon: "",
     file: "App Store",
     size: "48 MB",
     version: "v1.5.0",
@@ -61,7 +57,6 @@ const MOBILE_PLATFORMS = [
   {
     name: "Android",
     arch: "Phone & Tablet",
-    icon: "",
     file: "Google Play",
     size: "44 MB",
     version: "v1.5.0",
@@ -106,7 +101,9 @@ export default function DownloadPage() {
             <div key={p.file} className="card p-6 flex flex-col">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                  <span className="text-3xl">{p.icon}</span>
+                  <span className="w-10 h-10 rounded-lg bg-ink/[0.05] border border-ink/10 grid place-items-center text-textDim">
+                    <Icon name="monitor" size={22} />
+                  </span>
                   <div>
                     <h3 className="font-semibold">{p.name}</h3>
                     <p className="text-xs text-textFaint">{p.arch}</p>
@@ -123,8 +120,8 @@ export default function DownloadPage() {
                 <span className="font-mono text-xs truncate">{p.file}</span>
               </div>
 
-              <a href="#" className="btn-primary mt-5 w-full text-center">
-                ↓ Download
+              <a href="https://github.com/Frox-AI" target="_blank" rel="noreferrer" className="btn-primary mt-5 w-full text-center inline-flex items-center justify-center gap-2">
+                <Icon name="download" size={15} /> Download
               </a>
             </div>
           ))}
@@ -142,7 +139,9 @@ export default function DownloadPage() {
         <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
           {MOBILE_PLATFORMS.map((p) => (
             <div key={p.name} className="card p-6 flex flex-col items-center text-center">
-              <span className="text-4xl">{p.icon}</span>
+              <span className="w-12 h-12 rounded-xl bg-ink/[0.05] border border-ink/10 grid place-items-center text-textDim">
+                <Icon name="smartphone" size={26} />
+              </span>
               <h3 className="mt-3 text-lg font-semibold">{p.name}</h3>
               <p className="text-xs text-textFaint">{p.arch}</p>
 
@@ -154,8 +153,8 @@ export default function DownloadPage() {
                 </span>
               </div>
 
-              <a href="#" className="btn-primary mt-5 w-full text-center">
-                ↓ Get on {p.file}
+              <a href="https://github.com/Frox-AI" target="_blank" rel="noreferrer" className="btn-primary mt-5 w-full text-center inline-flex items-center justify-center gap-2">
+                <Icon name="download" size={15} /> Get on {p.file}
               </a>
             </div>
           ))}
@@ -190,9 +189,9 @@ export default function DownloadPage() {
 
         <p className="mt-6 text-center text-sm text-textFaint">
           Running into issues? Check the{" "}
-          <a href="#" className="text-accent2 hover:underline">
+          <Link href="/docs" className="text-accent2 hover:underline">
             installation guide →
-          </a>
+          </Link>
         </p>
       </section>
     </main>

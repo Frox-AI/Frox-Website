@@ -26,6 +26,9 @@ const PATHS = {
   refresh: ["M21 12a9 9 0 1 1-2.64-6.36", "M21 3v6h-6"],
   sparkles: ["M12 3l1.9 5.8a2 2 0 0 0 1.3 1.3L21 12l-5.8 1.9a2 2 0 0 0-1.3 1.3L12 21l-1.9-5.8a2 2 0 0 0-1.3-1.3L3 12l5.8-1.9a2 2 0 0 0 1.3-1.3Z"],
   cornerDownRight: ["m15 10 5 5-5 5", "M4 4v7a4 4 0 0 0 4 4h12"],
+  download: ["M12 3v12", "m7 10 5 5 5-5", "M5 21h14"],
+  monitor: ["M3 4h18v12H3z", "M8 20h8", "M12 16v4"],
+  smartphone: ["M7 2h10a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z", "M11 18h2"],
 };
 
 const ICONS = Object.fromEntries(

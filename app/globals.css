@@ -300,6 +300,13 @@ button { font-family: inherit; cursor: pointer; }
 .code-body .c { color: #5c6370; font-style: italic; }
 .code-body .n { color: #f78c6c; }
 
+/* Mock terminal / console surfaces stay dark in both themes */
+.console {
+  background: var(--code-bg);
+  color: var(--code-fg);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
 /* ---------- Animations ---------- */
 @keyframes pulse-dot { 0%,100% { opacity: 1; } 50% { opacity: 0.35; } }
 .pulse-dot { animation: pulse-dot 2s infinite; }

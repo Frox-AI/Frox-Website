@@ -199,6 +199,41 @@ export default function PricingPage() {
         </p>
       </div>
 
+      <RevealGroup>
+        <h2 className="text-center text-2xl md:text-3xl font-bold">Compare plans</h2>
+        <div className="mt-8 overflow-x-auto rounded-2xl border border-borderSoft">
+          <table className="w-full text-sm min-w-[560px]">
+            <thead>
+              <tr className="bg-bgElev text-textFaint text-left">
+                <th className="px-5 py-3.5 font-medium">Feature</th>
+                <th className="px-5 py-3.5 font-medium">Free</th>
+                <th className="px-5 py-3.5 font-medium text-accent">Pro</th>
+                <th className="px-5 py-3.5 font-medium">Teams</th>
+              </tr>
+            </thead>
+            <tbody className="text-textDim">
+              {[
+                ["Messages per day", "100", "Unlimited", "Unlimited"],
+                ["Rate limit", "5 req/min", "60 req/min", "300 req/min"],
+                ["Image generations", "10 / day", "500 / month", "2,000 / month"],
+                ["Priority routing", "—", "✓", "✓"],
+                ["Team workspaces", "—", "—", "✓"],
+                ["SSO & audit logs", "—", "—", "✓"],
+                ["Uptime SLA", "—", "99.9%", "99.95%"],
+                ["Support", "Community", "Email < 24h", "Dedicated"],
+              ].map((row) => (
+                <tr key={row[0]} className="border-t border-borderSoft">
+                  <td className="px-5 py-3 font-medium text-text">{row[0]}</td>
+                  {row.slice(1).map((cell, i) => (
+                    <td key={i} className={`px-5 py-3 ${cell === "✓" ? "text-accent2 font-semibold" : ""}`}>{cell}</td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </RevealGroup>
+
       <section className="container-x pb-24">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-center">

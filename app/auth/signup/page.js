@@ -38,6 +38,7 @@ export default function SignupPage() {
       }
 
       sessionStorage.setItem("frox_verify_email", email.toLowerCase().trim());
+      sessionStorage.setItem("frox_just_signed_up", "1");
       router.push("/auth/verify-email");
     } catch {
       setError("Network error. Please try again.");
@@ -47,7 +48,8 @@ export default function SignupPage() {
   };
 
   return (
-    <AuthLayout title="Request Access" subtitle="Create an enterprise account to secure your platform.">
+    <AuthLayout title="Create your account"
+      subtitle="$10 in free credit. No card required.">
       <form onSubmit={handleSubmit} className="space-y-5">
         {error && (
           <div className="px-4 py-3 rounded-lg bg-red-500/10 border border-red-500/25 text-red-400 text-sm">
@@ -112,7 +114,7 @@ export default function SignupPage() {
         <button
           type="submit"
           disabled={loading || !fullName || !email || !password || !agree}
-          className="btn-primary w-full h-11 text-base flex items-center justify-center gap-2 disabled:opacity-50"
+          className="w-full h-11 rounded-full grad-bg grad-flow text-white text-[14.5px] font-medium inline-flex items-center justify-center gap-2 shadow-[0_10px_30px_-14px_var(--accent)] transition-transform hover:scale-[1.015] active:scale-[0.99] disabled:opacity-50 disabled:hover:scale-100"
         >
           {loading ? (
             <span className="w-5 h-5 border-2 border-ink/30 border-t-white rounded-full animate-spin" />
@@ -121,10 +123,10 @@ export default function SignupPage() {
           )}
         </button>
 
-        <p className="text-center text-sm text-textDim mt-6">
-          Already have access?{" "}
-          <Link href="/auth/login" className="text-accent hover:text-accent/80 font-medium">
-            Authenticate
+        <p className="text-center text-[14px] text-textDim mt-6">
+          Already have an account?{" "}
+          <Link href="/auth/login" className="text-accent font-medium hover:underline underline-offset-4">
+            Sign in
           </Link>
         </p>
       </form>

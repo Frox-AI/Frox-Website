@@ -1,6 +1,7 @@
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
 import RevealGroup from "@/components/RevealGroup";
+import NewsletterForm from "./NewsletterForm";
 import { POSTS } from "@/lib/content";
 
 const CATEGORIES = ["All", "Product", "Research", "Tutorials", "Company", "Release"];
@@ -65,7 +66,8 @@ export default function BlogPage() {
         <div className="card p-10 text-center mt-16">
           <h2 className="text-2xl font-bold tracking-tight">Get new posts by email</h2>
           <p className="text-textDim mt-2 max-w-md mx-auto text-pretty">Release notes and research write-ups, roughly twice a month. Unsubscribe in one click.</p>
-          <Link href="/news" className="btn-primary mt-6">See announcements</Link>
+          <NewsletterForm />
+          <p className="text-[11.5px] text-textFaint mt-3">No spam. One email per release, plus the occasional deep dive.</p>
         </div>
       </div>
     </div>

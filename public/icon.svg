@@ -1,14 +1,21 @@
 <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <title>Frox</title>
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#12121a"/>
-      <stop offset="1" stop-color="#241a44"/>
-    </linearGradient>
-    <linearGradient id="fg" x1="18" y1="14" x2="48" y2="52" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#a99bff"/>
-      <stop offset="1" stop-color="#00d4ff"/>
+      <stop stop-color="#5b46e8"/>
+      <stop offset="1" stop-color="#0e7490"/>
     </linearGradient>
   </defs>
   <rect width="64" height="64" rx="15" fill="url(#bg)"/>
-  <path d="M22 46V20.5C22 18.567 23.567 17 25.5 17H43V24.5H29.5V29.5H40V36.5H29.5V46H22Z" fill="url(#fg)"/>
+  <!-- asterism: eight rays from centre -->
+  <g fill="#fff" transform="translate(32 32)">
+    <rect x="-2" y="-22" width="4" height="17" rx="2"/>
+    <rect x="-2" y="-22" width="4" height="17" rx="2" transform="rotate(45)"/>
+    <rect x="-2" y="-22" width="4" height="17" rx="2" transform="rotate(90)"/>
+    <rect x="-2" y="-22" width="4" height="17" rx="2" transform="rotate(135)"/>
+    <rect x="-2" y="-22" width="4" height="17" rx="2" transform="rotate(180)"/>
+    <rect x="-2" y="-22" width="4" height="17" rx="2" transform="rotate(225)"/>
+    <rect x="-2" y="-22" width="4" height="17" rx="2" transform="rotate(270)"/>
+    <rect x="-2" y="-22" width="4" height="17" rx="2" transform="rotate(315)"/>
+  </g>
 </svg>

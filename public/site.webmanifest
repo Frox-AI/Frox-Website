@@ -1,0 +1,17 @@
+{
+  "name": "Frox Studio",
+  "short_name": "Frox",
+  "description": "Open-weight AI models for chat, code, image, audio, and 3D. One API, open weights.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f0eee6",
+  "theme_color": "#5b46e8",
+  "orientation": "portrait",
+  "categories": ["productivity", "developer", "utilities"],
+  "icons": [
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

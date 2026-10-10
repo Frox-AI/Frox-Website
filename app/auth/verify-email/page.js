@@ -60,7 +60,9 @@ export default function VerifyEmailPage() {
       }
 
       sessionStorage.removeItem("frox_verify_email");
-      router.push("/dashboard");
+      const justSignedUp = sessionStorage.getItem("frox_just_signed_up") === "1";
+      sessionStorage.removeItem("frox_just_signed_up");
+      router.push(justSignedUp ? "/chat?onboard=1" : "/dashboard");
     } catch {
       setError("Network error. Please try again.");
     } finally {
@@ -92,7 +94,8 @@ export default function VerifyEmailPage() {
   };
 
   return (
-    <AuthLayout title="Verify Identity" subtitle="We've dispatched a secure code to your email.">
+    <AuthLayout title="Check your inbox"
+      subtitle="We sent you a 6-digit code to confirm your email.">
       <div className="flex flex-col items-center justify-center space-y-6 mb-8 text-center">
         <div className="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center mb-2">
           <svg className="w-8 h-8 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
@@ -116,7 +119,7 @@ export default function VerifyEmailPage() {
 
         <button
           type="submit"
-          className="btn-primary w-full h-11 text-base flex items-center justify-center gap-2 disabled:opacity-50"
+          className="w-full h-11 rounded-full grad-bg grad-flow text-white text-[14.5px] font-medium inline-flex items-center justify-center gap-2 shadow-[0_10px_30px_-14px_var(--accent)] transition-transform hover:scale-[1.015] active:scale-[0.99] disabled:opacity-50 disabled:hover:scale-100"
           disabled={loading || otp.length !== 6}
         >
           {loading ? (

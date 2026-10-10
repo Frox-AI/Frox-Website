@@ -106,6 +106,49 @@ export default function ModelsPage() {
           </div>
         </RevealGroup>
 
+        {/* Benchmark table */}
+        <div className="mt-16">
+          <RevealGroup>
+            <h2 className="text-2xl md:text-3xl font-bold mb-2">Model comparison</h2>
+            <p className="text-textDim text-[15px] mb-6 max-w-2xl text-pretty">
+              Head-to-head specs across the lineup. Benchmarks are run on our own eval suite and published with every release.
+            </p>
+            <div className="overflow-x-auto rounded-2xl border border-borderSoft">
+              <table className="w-full text-sm min-w-[640px]">
+                <thead>
+                  <tr className="bg-bgElev text-textFaint text-left">
+                    <th className="px-5 py-3.5 font-medium">Model</th>
+                    <th className="px-5 py-3.5 font-medium">Context</th>
+                    <th className="px-5 py-3.5 font-medium">GPQA</th>
+                    <th className="px-5 py-3.5 font-medium">HumanEval</th>
+                    <th className="px-5 py-3.5 font-medium">Output</th>
+                    <th className="px-5 py-3.5 font-medium">License</th>
+                  </tr>
+                </thead>
+                <tbody className="text-textDim">
+                  {[
+                    ["Frox Flex", "256K", "71.2", "78.4", "Text", "Apache 2.0"],
+                    ["Frox Code", "128K", "58.9", "84.1", "Code", "Apache 2.0"],
+                    ["Frox Image", "—", "—", "—", "1024px", "Open weights"],
+                    ["Frox Voice", "—", "—", "—", "48kHz", "Open weights"],
+                    ["Frox 3D", "—", "—", "—", "GLB", "Open weights"],
+                  ].map((row) => (
+                    <tr key={row[0]} className="border-t border-borderSoft">
+                      <td className="px-5 py-3 font-semibold text-text">{row[0]}</td>
+                      <td className="px-5 py-3 font-mono text-[13px]">{row[1]}</td>
+                      <td className="px-5 py-3">{row[2]}</td>
+                      <td className="px-5 py-3">{row[3]}</td>
+                      <td className="px-5 py-3">{row[4]}</td>
+                      <td className="px-5 py-3"><span className="chip !py-0.5 !text-[11px]">{row[5]}</span></td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <p className="text-[12px] text-textFaint mt-3">Scores from our October 2026 eval suite. Full methodology in the docs.</p>
+          </RevealGroup>
+        </div>
+
         <div className="mt-16 glass border border-ink/10 rounded-3xl p-8 sm:p-10">
           <RevealGroup className="grid md:grid-cols-3 gap-8">
             {[

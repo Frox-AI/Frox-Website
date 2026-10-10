@@ -3,33 +3,84 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import ThemeToggle from "@/components/ThemeToggle";
+import SearchPalette from "@/components/SearchPalette";
+import Icon from "@/components/Icon";
 
+/* Big editorial links on the left of a panel + a dense resource list on the right,
+   mirroring the OpenAI / Anthropic mega-menu pattern. */
 const MENUS = {
-  Product: [
-    { href: "/chat", label: "Frox Chat", desc: "Converse with frontier models", icon: "M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.86 9.86 0 01-4.26-.95L3 20l1.4-3.72A7.96 7.96 0 013 12c0-4.42 4.03-8 9-8s9 3.58 9 8z" },
-    { href: "/image", label: "Frox Image", desc: "Text-to-image generation", icon: "M4 16l4.6-4.6a2 2 0 012.8 0L16 16m-2-2l1.6-1.6a2 2 0 012.8 0L20 14M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" },
-    { href: "/audio", label: "Frox Voice", desc: "Speech, SFX & music", icon: "M19 11a7 7 0 01-14 0M12 18v4m-4 0h8M12 3a4 4 0 00-4 4v5a4 4 0 008 0V7a4 4 0 00-4-4z" },
-    { href: "/code", label: "Frox Code", desc: "Write & ship faster", icon: "M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" },
-    { href: "/3d", label: "Frox 3D", desc: "Text & image to 3D", icon: "M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2-1M4 7l2 1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5" },
-  ],
-  Developers: [
-    { href: "/docs", label: "Documentation", desc: "Guides and API reference", icon: "M12 6.25A2.25 2.25 0 0013.5 8.5H19a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2v-8a2 2 0 012-2h5.5A2.25 2.25 0 0012 6.25zM12 3v3.25" },
-    { href: "/download", label: "SDKs", desc: "Python, JS, Go & more", icon: "M12 10v6m0 0l-3-3m3 3l3-3M4 6a2 2 0 012-2h12a2 2 0 012 2v12a2 2 0 01-2 2H6a2 2 0 01-2-2V6z" },
-    { href: "/pricing", label: "Pricing", desc: "Plans for every team", icon: "M12 8c-1.66 0-3 .9-3 2s1.34 2 3 2 3 .9 3 2-1.34 2-3 2m0-8c1.11 0 2.08.4 2.6 1M12 8V7m0 9v1m0-1c-1.11 0-2.08-.4-2.6-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" },
-    { href: "/changelog", label: "Changelog", desc: "What's new", icon: "M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" },
-  ],
-  Company: [
-    { href: "/about", label: "About", desc: "Our mission & team", icon: "M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" },
-    { href: "/blog", label: "Blog", desc: "Research and updates", icon: "M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" },
-    { href: "/careers", label: "Careers", desc: "Join the team", icon: "M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" },
-    { href: "/contact", label: "Contact", desc: "Talk to us", icon: "M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" },
-  ],
+  Product: {
+    featured: [
+      { href: "/chat", label: "Frox Chat" },
+      { href: "/forge", label: "Frox Forge" },
+      { href: "/image", label: "Frox Image" },
+      { href: "/audio", label: "Frox Voice" },
+      { href: "/code", label: "Frox Code" },
+      { href: "/3d", label: "Frox 3D" },
+    ],
+    columns: [
+      {
+        title: "Explore",
+        links: [
+          { href: "/models", label: "Models" },
+          { href: "/templates", label: "Prompt library" },
+          { href: "/changelog", label: "Changelog" },
+          { href: "/blog", label: "Blog" },
+        ],
+      },
+    ],
+  },
+  Developers: {
+    featured: [
+      { href: "/developers", label: "Overview" },
+      { href: "/docs", label: "Documentation" },
+      { href: "/pricing", label: "Pricing" },
+      { href: "/status", label: "Status" },
+    ],
+    columns: [
+      {
+        title: "Resources",
+        links: [
+          { href: "/docs", label: "API reference" },
+          { href: "/download", label: "SDKs" },
+          { href: "/docs#quickstart", label: "Quickstart" },
+          { href: "/changelog", label: "Changelog" },
+          { href: "/security", label: "Security" },
+        ],
+      },
+    ],
+  },
+  Company: {
+    featured: [
+      { href: "/about", label: "About" },
+      { href: "/blog", label: "News" },
+      { href: "/careers", label: "Careers" },
+      { href: "/contact", label: "Contact" },
+    ],
+    columns: [
+      {
+        title: "More",
+        links: [
+          { href: "/faq", label: "FAQ" },
+          { href: "/press", label: "Press" },
+          { href: "/legal/privacy", label: "Privacy" },
+          { href: "/legal/terms", label: "Terms" },
+        ],
+      },
+    ],
+  },
 };
+
+const TOP_LINKS = [
+  { href: "/models", label: "Models" },
+  { href: "/developers", label: "Developers" },
+  { href: "/pricing", label: "Pricing" },
+];
 
 function Caret({ open }) {
   return (
-    <svg className={`w-3.5 h-3.5 transition-transform ${open ? "rotate-180" : ""}`} viewBox="0 0 20 20" fill="currentColor">
-      <path fillRule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clipRule="evenodd" />
+    <svg className={`w-3 h-3 transition-transform duration-200 ${open ? "rotate-180" : ""}`} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth={1.8}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="m5 7.5 5 5 5-5" />
     </svg>
   );
 }
@@ -39,6 +90,7 @@ export default function Nav() {
   const [openMenu, setOpenMenu] = useState(null);
   const [mobile, setMobile] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
   const closeTimer = useRef(null);
 
   useEffect(() => {
@@ -50,65 +102,103 @@ export default function Nav() {
 
   useEffect(() => { setMobile(false); setOpenMenu(null); }, [pathname]);
 
+  useEffect(() => {
+    const onKey = (e) => {
+      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "k" && pathname !== "/chat") {
+        e.preventDefault();
+        setSearchOpen((o) => !o);
+      }
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [pathname]);
+
   const open = (name) => { clearTimeout(closeTimer.current); setOpenMenu(name); };
-  const close = () => { closeTimer.current = setTimeout(() => setOpenMenu(null), 120); };
+  const close = () => { closeTimer.current = setTimeout(() => setOpenMenu(null), 140); };
 
   return (
-    <header className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${scrolled ? "glass border-b border-ink/[0.07]" : "border-b border-transparent"}`}>
-      <div className="container-x h-16 flex items-center justify-between">
-        <div className="flex items-center gap-1.5">
-          <Link href="/" className="flex items-center gap-2.5 font-semibold text-[17px] tracking-tight pr-3">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/logo.webp" alt="Frox Studio" className="w-8 h-8 rounded-lg ring-1 ring-ink/10" />
-            Frox <span className="text-textDim font-normal">Studio</span>
+    <header className={`fixed top-0 inset-x-0 z-50 transition-colors duration-300 ${scrolled ? "bg-bg/85 backdrop-blur-xl border-b border-ink/[0.07]" : "border-b border-transparent"}`}>
+      <div className="container-x h-[60px] flex items-center justify-between gap-6">
+        <div className="flex items-center gap-1">
+          <Link href="/" className="flex items-center gap-2 pr-4 shrink-0" aria-label="Frox Studio home">
+            <span className="w-[26px] h-[26px] rounded-[7px] grad-bg grid place-items-center text-white text-[11px] font-bold">F</span>
+            <span className="font-semibold text-[16px] tracking-tight">Frox</span>
           </Link>
 
           <nav className="hidden lg:flex items-center">
-            {Object.entries(MENUS).map(([name, items]) => (
+            {Object.entries(MENUS).map(([name, menu]) => (
               <div key={name} className="relative" onMouseEnter={() => open(name)} onMouseLeave={close}>
                 <button
-                  className={`flex items-center gap-1.5 px-3.5 py-2 rounded-lg text-[14.5px] font-medium transition-colors ${openMenu === name ? "text-text bg-ink/[0.06]" : "text-textDim hover:text-text"}`}
+                  className={`flex items-center gap-1 px-3 py-1.5 rounded-md text-[14px] transition-colors ${openMenu === name ? "text-text" : "text-textDim hover:text-text"}`}
+                  aria-expanded={openMenu === name}
                 >
                   {name}
                   <Caret open={openMenu === name} />
                 </button>
                 {openMenu === name && (
-                  <div className="absolute left-0 top-full pt-2 w-[340px]">
-                    <div className="glass border border-ink/10 rounded-2xl p-2 shadow-card animate-fade-up">
-                      {items.map((it, idx) => (
-                        <Link
-                          key={it.href}
-                          href={it.href}
-                          className="flex items-start gap-3 p-3 rounded-xl hover:bg-ink/[0.06] transition-colors"
-                          style={{ animation: `dropIn .32s cubic-bezier(.16,1,.3,1) ${idx * 28}ms both` }}
-                        >
-                          <span className="w-9 h-9 rounded-lg bg-ink/[0.05] border border-ink/[0.08] grid place-items-center shrink-0 transition-colors duration-300 group-hover:border-accent/40">
-                            <svg className="w-4.5 h-4.5 text-accent" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.7}>
-                              <path strokeLinecap="round" strokeLinejoin="round" d={it.icon} />
-                            </svg>
-                          </span>
-                          <span>
-                            <span className="block text-[14.5px] font-medium">{it.label}</span>
-                            <span className="block text-[12.5px] text-textFaint leading-snug">{it.desc}</span>
-                          </span>
-                        </Link>
+                  <div className="absolute left-0 top-full pt-3 w-[560px]">
+                    <div className="mega p-6 grid grid-cols-[1.1fr_1fr] gap-8 animate-fade-up" style={{ animationDuration: ".2s" }}>
+                      <div className="space-y-1">
+                        {menu.featured.map((f) => (
+                          <Link
+                            key={f.href}
+                            href={f.href}
+                            className="block text-[19px] font-medium tracking-tight text-textDim hover:text-text transition-colors leading-snug py-0.5"
+                          >
+                            {f.label}
+                          </Link>
+                        ))}
+                      </div>
+                      {menu.columns.map((col) => (
+                        <div key={col.title}>
+                          <p className="kicker mb-3">{col.title}</p>
+                          <ul className="space-y-2.5">
+                            {col.links.map((l) => (
+                              <li key={l.href}>
+                                <Link href={l.href} className="text-[13.5px] text-textDim hover:text-text transition-colors inline-flex items-center gap-1">
+                                  {l.label}
+                                  <Icon name="chevronRight" size={12} className="opacity-50" />
+                                </Link>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
                       ))}
                     </div>
                   </div>
                 )}
               </div>
             ))}
-            <Link href="/pricing" className={`px-3.5 py-2 rounded-lg text-[14.5px] font-medium transition-colors ${pathname === "/pricing" ? "text-text bg-ink/[0.06]" : "text-textDim hover:text-text"}`}>
-              Pricing
-            </Link>
+            {TOP_LINKS.map((l) => (
+              <Link
+                key={l.href}
+                href={l.href}
+                className={`px-3 py-1.5 rounded-md text-[14px] transition-colors ${pathname === l.href ? "text-text" : "text-textDim hover:text-text"}`}
+              >
+                {l.label}
+              </Link>
+            ))}
           </nav>
         </div>
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 shrink-0">
+          <button
+            onClick={() => setSearchOpen(true)}
+            className="hidden md:grid place-items-center w-8 h-8 rounded-full text-textDim hover:text-text hover:bg-ink/[0.06] transition-colors"
+            aria-label="Search"
+          >
+            <Icon name="search" size={16} />
+          </button>
           <ThemeToggle />
-          <Link href="/auth/login" className="hidden sm:inline-flex btn-ghost">Log in</Link>
-          <Link href="/chat" className="btn-primary !px-5 !py-2.5 text-sm">Start building</Link>
-          <button className="lg:hidden w-9 h-9 grid place-items-center rounded-lg hover:bg-ink/[0.06]" onClick={() => setMobile(!mobile)} aria-label="Menu">
+          <Link href="/auth/login" className="hidden sm:inline-flex items-center gap-1 h-8 px-3.5 rounded-full border border-ink/[0.12] text-[13.5px] font-medium hover:bg-ink/[0.05] transition-colors">
+            Log in
+            <Icon name="chevronRight" size={12} className="opacity-60 -rotate-90" />
+          </Link>
+          <Link href="/chat" className="inline-flex items-center gap-1.5 h-8 px-4 rounded-full bg-ink text-bg text-[13.5px] font-medium hover:opacity-90 transition-opacity">
+            Try Frox
+            <Icon name="chevronRight" size={12} className="opacity-70" />
+          </Link>
+          <button className="lg:hidden w-8 h-8 grid place-items-center rounded-md hover:bg-ink/[0.06]" onClick={() => setMobile(!mobile)} aria-label="Menu">
             <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
               {mobile ? <path strokeLinecap="round" d="M6 18L18 6M6 6l12 12" /> : <path strokeLinecap="round" d="M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5" />}
             </svg>
@@ -116,25 +206,31 @@ export default function Nav() {
         </div>
       </div>
 
+      <SearchPalette open={searchOpen} onClose={() => setSearchOpen(false)} />
+
       {mobile && (
-        <div className="lg:hidden glass border-t border-ink/[0.07] max-h-[80vh] overflow-y-auto">
-          <div className="container-x py-4 space-y-4">
-            {Object.entries(MENUS).map(([name, items]) => (
+        <div className="lg:hidden bg-bg border-t border-ink/[0.07] max-h-[80vh] overflow-y-auto">
+          <div className="container-x py-6 space-y-6">
+            {Object.entries(MENUS).map(([name, menu]) => (
               <div key={name}>
-                <p className="text-[11px] uppercase tracking-widest text-textFaint px-2 mb-1">{name}</p>
-                {items.map((it) => (
-                  <Link key={it.href} href={it.href} className="flex items-center gap-3 p-3 rounded-lg hover:bg-ink/[0.06]">
-                    <svg className="w-5 h-5 text-accent shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.7}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d={it.icon} />
-                    </svg>
-                    <span className="text-[15px]">{it.label}</span>
-                  </Link>
-                ))}
+                <p className="kicker mb-2">{name}</p>
+                <div className="space-y-1">
+                  {menu.featured.map((f) => (
+                    <Link key={f.href} href={f.href} className="block py-1.5 text-[17px] font-medium tracking-tight">{f.label}</Link>
+                  ))}
+                </div>
               </div>
             ))}
+            <div className="rule-x-soft pt-4">
+              <div className="space-y-1">
+                {TOP_LINKS.map((l) => (
+                  <Link key={l.href} href={l.href} className="block py-1.5 text-[15px] text-textDim">{l.label}</Link>
+                ))}
+              </div>
+            </div>
             <div className="flex gap-3 pt-2">
-              <Link href="/auth/login" className="btn-secondary flex-1">Log in</Link>
-              <Link href="/chat" className="btn-primary flex-1">Start building</Link>
+              <Link href="/auth/login" className="flex-1 inline-flex items-center justify-center h-10 rounded-full border border-ink/[0.12] text-[14px] font-medium">Log in</Link>
+              <Link href="/chat" className="flex-1 inline-flex items-center justify-center h-10 rounded-full bg-ink text-bg text-[14px] font-medium">Try Frox</Link>
             </div>
           </div>
         </div>

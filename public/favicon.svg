@@ -1,0 +1,14 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <title>Frox</title>
+  <rect width="64" height="64" rx="15" fill="#5b46e8"/>
+  <g fill="#fff" transform="translate(32 32)">
+    <rect x="-2" y="-22" width="4" height="17" rx="2"/>
+    <rect x="-2" y="-22" width="4" height="17" rx="2" transform="rotate(45)"/>
+    <rect x="-2" y="-22" width="4" height="17" rx="2" transform="rotate(90)"/>
+    <rect x="-2" y="-22" width="4" height="17" rx="2" transform="rotate(135)"/>
+    <rect x="-2" y="-22" width="4" height="17" rx="2" transform="rotate(180)"/>
+    <rect x="-2" y="-22" width="4" height="17" rx="2" transform="rotate(225)"/>
+    <rect x="-2" y="-22" width="4" height="17" rx="2" transform="rotate(270)"/>
+    <rect x="-2" y="-22" width="4" height="17" rx="2" transform="rotate(315)"/>
+  </g>
+</svg>

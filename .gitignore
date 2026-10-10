@@ -35,3 +35,6 @@ next-env.d.ts
 
 # archives / large binaries
 *.zip
+
+# design reference screenshots (local only, not shipped)
+photos/

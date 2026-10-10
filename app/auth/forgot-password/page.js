@@ -38,7 +38,8 @@ export default function ForgotPasswordPage() {
   };
 
   return (
-    <AuthLayout title="Recover Access" subtitle="Reset your command center credentials.">
+    <AuthLayout title="Reset your password"
+      subtitle="We'll email you a secure link to get back in.">
       {!submitted ? (
         <form onSubmit={handleSubmit} className="space-y-6">
           {error && (
@@ -64,12 +65,12 @@ export default function ForgotPasswordPage() {
           <button
             type="submit"
             disabled={loading || !email}
-            className="btn-primary w-full h-11 text-base flex items-center justify-center gap-2 disabled:opacity-50"
+            className="w-full h-11 rounded-full grad-bg grad-flow text-white text-[14.5px] font-medium inline-flex items-center justify-center gap-2 shadow-[0_10px_30px_-14px_var(--accent)] transition-transform hover:scale-[1.015] active:scale-[0.99] disabled:opacity-50 disabled:hover:scale-100"
           >
             {loading ? (
               <span className="w-5 h-5 border-2 border-ink/30 border-t-white rounded-full animate-spin" />
             ) : (
-              "Send Reset Link"
+              "Send reset link"
             )}
           </button>
 

@@ -151,20 +151,82 @@ export default function DashboardPage() {
           </div>
         </div>
 
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-10">
+          <div className="lg:col-span-2 card p-6">
+            <h2 className="text-lg font-semibold mb-5" style={{ color: "var(--text)" }}>
+              Weekly Usage
+            </h2>
+            <div className="flex items-end gap-3 h-40">
+              {WEEKLY_USAGE.map((item) => (
+                <div key={item.day} className="flex-1 flex flex-col items-center gap-2">
+                  <div
+                    className="w-full rounded-t-lg grad-bg transition-all duration-500"
+                    style={{ height: `${item.value}%`, minHeight: "4px" }}
+                  />
+                  <span className="text-xs" style={{ color: "var(--text-faint)" }}>
+                    {item.day}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="card p-6">
+            <h2 className="text-lg font-semibold mb-4" style={{ color: "var(--text)" }}>
+              Credit Balance
+            </h2>
+            <p className="text-3xl font-bold grad-text">$87.50</p>
+            <p className="text-xs mt-1" style={{ color: "var(--text-faint)" }}>of $100 monthly credit</p>
+            <div className="mt-4 h-2 rounded-full" style={{ background: "var(--bg-elev)" }}>
+              <div className="h-full w-[87%] grad-bg rounded-full" />
+            </div>
+            <div className="mt-5 space-y-2.5">
+              {[
+                { label: "Chat", pct: "52%" },
+                { label: "Image", pct: "31%" },
+                { label: "Audio", pct: "17%" },
+              ].map((row) => (
+                <div key={row.label} className="flex items-center justify-between text-sm">
+                  <span style={{ color: "var(--text-dim)" }}>{row.label}</span>
+                  <span className="font-mono text-xs" style={{ color: "var(--text-faint)" }}>{row.pct}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
         <div className="card p-6">
-          <h2 className="text-lg font-semibold mb-5" style={{ color: "var(--text)" }}>
-            Weekly Usage
-          </h2>
-          <div className="flex items-end gap-3 h-40">
-            {WEEKLY_USAGE.map((item) => (
-              <div key={item.day} className="flex-1 flex flex-col items-center gap-2">
-                <div
-                  className="w-full rounded-t-lg grad-bg"
-                  style={{ height: `${item.value}%`, minHeight: "4px" }}
-                />
-                <span className="text-xs" style={{ color: "var(--text-faint)" }}>
-                  {item.day}
-                </span>
+          <div className="flex items-center justify-between mb-5">
+            <h2 className="text-lg font-semibold" style={{ color: "var(--text)" }}>
+              Recent API Calls
+            </h2>
+            <span className="text-xs px-2.5 py-1 rounded-full" style={{ background: "rgba(124, 92, 255, 0.12)", color: "var(--accent)" }}>
+              Live
+            </span>
+          </div>
+          <div className="space-y-3">
+            {[
+              { model: "frox-flex", endpoint: "/v1/chat/completions", tokens: "1,204", time: "2 min ago", status: "200" },
+              { model: "frox-image", endpoint: "/v1/generations", tokens: "—", time: "18 min ago", status: "200" },
+              { model: "frox-code", endpoint: "/v1/chat/completions", tokens: "3,891", time: "1 hr ago", status: "200" },
+              { model: "frox-flex", endpoint: "/v1/chat/completions", tokens: "512", time: "3 hrs ago", status: "200" },
+              { model: "frox-voice", endpoint: "/v1/audio/speech", tokens: "—", time: "Yesterday", status: "200" },
+            ].map((call, i) => (
+              <div key={i} className="flex items-center justify-between gap-4 p-3.5 rounded-xl" style={{ background: "var(--bg-elev)", border: "1px solid var(--border-soft)" }}>
+                <div className="flex items-center gap-3 min-w-0">
+                  <span className="w-2 h-2 rounded-full bg-emerald-400 shrink-0" />
+                  <div className="min-w-0">
+                    <p className="text-[13.5px] font-medium truncate" style={{ color: "var(--text)" }}>
+                      {call.model}
+                      <span className="font-normal" style={{ color: "var(--text-faint)" }}> · {call.endpoint}</span>
+                    </p>
+                    <p className="text-[11.5px]" style={{ color: "var(--text-faint)" }}>{call.time}</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-4 shrink-0">
+                  <span className="text-xs font-mono" style={{ color: "var(--text-faint)" }}>{call.tokens} tok</span>
+                  <span className="text-xs font-mono px-2 py-0.5 rounded bg-emerald-400/10 text-emerald-400">{call.status}</span>
+                </div>
               </div>
             ))}
           </div>

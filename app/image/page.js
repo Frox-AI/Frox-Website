@@ -53,7 +53,7 @@ export default function ImagePage() {
               Prompt
             </label>
             <textarea
-              className="w-full h-32 bg-bg border border-border rounded-xl p-4 text-text placeholder-[#63636f] focus:outline-none focus:border-accent transition-colors resize-none"
+              className="w-full h-32 bg-bg border border-border rounded-xl p-4 text-text placeholder-textFaint focus:outline-none focus:border-accent transition-colors resize-none"
               placeholder="Describe the image you want to generate..."
             />
           </div>

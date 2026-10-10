@@ -40,6 +40,22 @@ npm run start   # serve production build
 | `/legal/terms` | Terms of Service |
 | `/legal/privacy` | Privacy Policy |
 
+## Theming
+
+The site is light by default and honors `prefers-color-scheme`. A toggle in the
+nav and chat header persists the choice in `localStorage` (`frox_theme`). Theme
+tokens live in `app/globals.css` (`:root` for light, `html[data-theme="dark"]`
+for dark) and are exposed to Tailwind via `rgb(var(--x-rgb) / <alpha-value>)` in
+`tailwind.config.js`. Use the semantic classes (`bg-bg`, `text-text`,
+`border-border`, `text-textDim`, …) rather than raw colors so both themes work.
+Code and mock surfaces stay dark in both themes via `--code-bg` / the `.console`
+class.
+
+## SEO
+
+`app/sitemap.js` and `app/robots.js` generate `/sitemap.xml` and `/robots.txt`.
+Per-page `metadata` is set in each route.
+
 ## Authentication
 
 Full auth flow under `/auth`:

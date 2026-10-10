@@ -14,7 +14,7 @@ export default function PressPage() {
       <PageHero
         eyebrow="Press & media"
         title="Resources for journalists"
-        sub="Everything you need to write about Frox accurately. Need something not listed? Email the press desk and we will send it over."
+        sub="Assets and facts for covering Frox accurately. Need something that isn't listed? Email the press desk and we will send it over."
       >
         <a href="mailto:press@froxstudio.ai" className="btn-primary">Email the press desk</a>
       </PageHero>

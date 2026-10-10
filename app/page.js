@@ -30,47 +30,47 @@ const MODELS = [
 const CAPABILITIES = [
   {
     eyebrow: "Reasoning",
-    title: "Thinking, not just predicting",
-    body: "Frox models break down hard problems step by step — math, logic, planning, and code — before they answer. Transparent, correctable, and fast.",
+    title: "Reasoning you can follow",
+    body: "Frox models work through hard problems — math, logic, planning, code — step by step, so you can see where an answer came from and correct it when it's wrong.",
     points: ["Chain-of-thought reasoning", "Tool use & function calling", "256K-token context"],
     art: "reasoning",
   },
   {
     eyebrow: "Multimodal",
     title: "Every modality, one API",
-    body: "Generate text, images, speech, sound effects, and 3D assets from a single, consistent interface. Switch models with one parameter.",
+    body: "Generate text, images, speech, sound effects, and 3D assets through a single interface. Switch models with one parameter.",
     points: ["Text · Image · Audio · 3D", "Streaming everywhere", "OpenAI-compatible"],
     art: "modal",
   },
   {
     eyebrow: "For developers",
-    title: "Ship in an afternoon",
-    body: "Idiomatic SDKs, drop-in OpenAI compatibility, and a generous free tier. Point your existing code at Frox and switch providers in one line.",
+    title: "Swap the base URL, not your code",
+    body: "Idiomatic SDKs, drop-in OpenAI compatibility, and a free tier to start on. Point your existing client at Frox and change one line.",
     points: ["Python, JS, Go SDKs", "REST + streaming", "$10 free credit"],
     art: "code",
   },
 ];
 
 const STATS = [
-  { n: "3", l: "Open models" },
-  { n: "99.99%", l: "Uptime" },
-  { n: "<80ms", l: "Median latency" },
-  { n: "120+", l: "Countries" },
+  { n: "3", l: "Open-weight models" },
+  { n: "256K", l: "Max context" },
+  { n: "$10", l: "Free starter credit" },
+  { n: "4", l: "Official SDKs" },
 ];
 
 const QUOTES = [
   {
-    quote: "Frox Flex replaced two vendors for us overnight. The reasoning quality is genuinely frontier-class — and it's open.",
+    quote: "We were paying two vendors for reasoning and code. Flex and Code cover both, and the weights are downloadable, so we can pin a version and stop guessing.",
     name: "Priya Nair",
     role: "CTO, Northwind Labs",
   },
   {
-    quote: "We moved our entire pipeline to the Frox API in a single afternoon. Drop-in OpenAI compatibility saved us weeks.",
+    quote: "The OpenAI-compatible endpoint meant changing a base URL and a model name. The migration took an afternoon, most of it testing.",
     name: "Marcus Lee",
     role: "Lead Engineer, Cascade",
   },
   {
-    quote: "The image and 3D studios are absurdly good. Our design team ships concepts in minutes, not days.",
+    quote: "Concept work used to eat a full day. Now designers sketch in Frox Image, export, and refine in Figma the same day.",
     name: "Sofia Romero",
     role: "Head of Design, Lumen",
   },
@@ -147,8 +147,7 @@ export default function HomePage() {
 
           <Reveal delay={120}>
             <p className="mt-6 max-w-2xl mx-auto text-[17px] md:text-lg text-textDim text-pretty">
-              Frox Studio builds open-weight models for chat, code, image, audio, and 3D — with one simple API,
-              a beautiful chat experience, and the freedom to run them anywhere.
+              Frox Studio builds open-weight models for chat, code, image, audio, and 3D — call them through one API, or run the weights yourself.
             </p>
           </Reveal>
 
@@ -198,7 +197,7 @@ export default function HomePage() {
           {/* Logos */}
           <Reveal delay={300}>
             <div className="mt-16">
-              <p className="text-[12px] uppercase tracking-[0.2em] text-textFaint mb-5">Trusted by teams building the future</p>
+              <p className="text-[12px] uppercase tracking-[0.2em] text-textFaint mb-5">Used in production by</p>
               <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-4 opacity-60">
                 {["Northwind", "Cascade", "Lumen", "Vela", "Stratos", "Nimbus"].map((n) => (
                   <span key={n} className="text-lg font-semibold tracking-tight text-textDim">{n}</span>
@@ -287,9 +286,9 @@ export default function HomePage() {
           <Reveal>
             <div>
               <p className="eyebrow tag">Developer platform</p>
-              <h2 className="text-[clamp(1.9rem,4vw,3rem)] font-extrabold tracking-[-0.03em] mt-2 text-balance">From zero to AI in 60 seconds</h2>
+              <h2 className="text-[clamp(1.9rem,4vw,3rem)] font-extrabold tracking-[-0.03em] mt-2 text-balance">Change a base URL, not your codebase</h2>
               <p className="text-textDim mt-4 text-[16px] text-pretty max-w-lg">
-                OpenAI-compatible endpoints, streaming by default, and SDKs for every major language. Or self-host the open weights — your rules.
+                OpenAI-compatible endpoints, streaming by default, and official SDKs for Python, JavaScript, Go, and Rust. Or self-host the open weights.
               </p>
               <div className="mt-7 flex flex-wrap gap-3">
                 <Link href="/docs" className="btn-primary">Get API keys</Link>
@@ -305,8 +304,8 @@ export default function HomePage() {
       <section className="container-x py-20">
         <Reveal>
           <div className="text-center mb-12">
-            <p className="eyebrow tag">Loved by builders</p>
-            <h2 className="text-[clamp(1.9rem,4vw,3rem)] font-extrabold tracking-[-0.03em] mt-2">Research-grade, production-ready</h2>
+            <p className="eyebrow tag">Customers</p>
+            <h2 className="text-[clamp(1.9rem,4vw,3rem)] font-extrabold tracking-[-0.03em] mt-2">How teams use Frox</h2>
           </div>
         </Reveal>
         <div className="grid md:grid-cols-3 gap-5">
@@ -339,8 +338,8 @@ export default function HomePage() {
             <div className="absolute inset-0 bg-gradient-to-br from-violet-600/20 via-transparent to-cyan-500/15" />
             <div className="absolute -bottom-24 left-1/2 -translate-x-1/2 w-[600px] h-[300px] hero-glow" />
             <div className="relative">
-              <h2 className="text-[clamp(2rem,4.5vw,3.25rem)] font-extrabold tracking-[-0.03em] text-balance">Ready to build something extraordinary?</h2>
-              <p className="text-textDim mt-4 max-w-xl mx-auto text-pretty">Start with $10 in free credit. No credit card required. Cancel anytime.</p>
+              <h2 className="text-[clamp(2rem,4.5vw,3.25rem)] font-extrabold tracking-[-0.03em] text-balance">Start building with Frox</h2>
+              <p className="text-textDim mt-4 max-w-xl mx-auto text-pretty">$10 in free credit, no credit card required. Add your own key when you need more.</p>
               <div className="mt-8 flex flex-wrap justify-center gap-3">
                 <Link href="/chat" className="btn-primary !px-7 !py-3.5">Try Frox Chat</Link>
                 <Link href="/pricing" className="btn-secondary !px-7 !py-3.5">View pricing</Link>

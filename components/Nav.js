@@ -7,7 +7,7 @@ import ThemeToggle from "@/components/ThemeToggle";
 const MENUS = {
   Product: [
     { href: "/chat", label: "Frox Chat", desc: "Converse with frontier models", icon: "M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.86 9.86 0 01-4.26-.95L3 20l1.4-3.72A7.96 7.96 0 013 12c0-4.42 4.03-8 9-8s9 3.58 9 8z" },
-    { href: "/image", label: "Frox Image", desc: "Generate stunning visuals", icon: "M4 16l4.6-4.6a2 2 0 012.8 0L16 16m-2-2l1.6-1.6a2 2 0 012.8 0L20 14M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" },
+    { href: "/image", label: "Frox Image", desc: "Text-to-image generation", icon: "M4 16l4.6-4.6a2 2 0 012.8 0L16 16m-2-2l1.6-1.6a2 2 0 012.8 0L20 14M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" },
     { href: "/audio", label: "Frox Voice", desc: "Speech, SFX & music", icon: "M19 11a7 7 0 01-14 0M12 18v4m-4 0h8M12 3a4 4 0 00-4 4v5a4 4 0 008 0V7a4 4 0 00-4-4z" },
     { href: "/code", label: "Frox Code", desc: "Write & ship faster", icon: "M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" },
     { href: "/3d", label: "Frox 3D", desc: "Text & image to 3D", icon: "M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2-1M4 7l2 1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5" },

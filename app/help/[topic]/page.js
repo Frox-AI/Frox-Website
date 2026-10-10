@@ -77,7 +77,7 @@ export const TOPICS = {
     title: "Account and security",
     intro: "Passwords, sessions, and keeping your account safe.",
     sections: [
-      ["Email verification", "Verify your email to unlock generation limits and password recovery. You can resend the link from the sign-in screen."],
+      ["Email verification", "Verify your email to raise generation limits and enable password recovery. You can resend the link from the sign-in screen."],
       ["Two-factor authentication", "Enable 2FA with an authenticator app. Save your recovery codes somewhere offline."],
       ["Active sessions", "Review devices signed in to your account and sign out any you don't recognize."],
       ["Deleting your account", "Account deletion is permanent and removes your history. Export anything you want to keep first."],

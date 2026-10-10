@@ -93,7 +93,7 @@ export default function AudioPage() {
           <div className="text-center max-w-2xl mx-auto">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-medium mb-6" style={{ background: "var(--bg-elev)", border: "1px solid var(--border)", color: "var(--text-dim)" }}>
               <span className="w-2 h-2 rounded-full pulse-dot" style={{ background: "var(--accent)" }} />
-              AI-Powered Audio
+              Frox Voice
             </div>
             <h1 className="text-5xl font-bold mb-4">
               <span className="grad-text">Audio Studio</span>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import Icon from "@/components/Icon";
 
 const PLANS = [
@@ -97,8 +98,8 @@ export default function PricingPage() {
             Pricing <span className="grad-text">Plans</span>
           </h1>
           <p className="mt-5 text-lg text-textDim max-w-2xl mx-auto">
-            Start free and scale as you grow. Every plan includes access to our
-            open models, transparent pricing, and no hidden fees — ever.
+            Start free. Paid plans add more messages, faster models, and API
+            access. No hidden fees.
           </p>
 
           <div className="mt-8 inline-flex items-center gap-1 rounded-full border border-border bg-bgElev p-1.5">
@@ -178,14 +179,14 @@ export default function PricingPage() {
                   ))}
                 </ul>
 
-                <a
-                  href="#"
+                <Link
+                  href={plan.name === "Enterprise" ? "/contact" : "/auth/signup"}
                   className={`mt-6 w-full text-center ${
                     plan.popular ? "btn-primary" : "btn-secondary"
                   }`}
                 >
                   {plan.cta}
-                </a>
+                </Link>
               </div>
             );
           })}
@@ -193,9 +194,9 @@ export default function PricingPage() {
 
         <p className="mt-10 text-center text-sm text-textFaint">
           All prices in USD. Need a custom plan?{" "}
-          <a href="#" className="text-accent2 hover:underline">
+          <Link href="/contact" className="text-accent2 hover:underline">
             Talk to sales →
-          </a>
+          </Link>
         </p>
       </section>
 

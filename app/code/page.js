@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import Icon, { LangBadge } from "@/components/Icon";
 
 const FILES = [
@@ -141,9 +142,9 @@ const LANGUAGES = [
 ];
 
 const STATS = [
-  { value: "50K+", label: "Developers" },
-  { value: "40+", label: "Languages Supported" },
-  { value: "95%", label: "Bug Detection Rate" },
+  { value: "40+", label: "Languages supported" },
+  { value: "128K", label: "Context window" },
+  { value: "Apache 2.0", label: "Open-weight license" },
 ];
 
 export default function CodePage() {
@@ -174,13 +175,13 @@ export default function CodePage() {
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-border bg-bgCard text-sm text-textDim mb-6">
             <span className="w-2 h-2 rounded-full bg-accent2 animate-pulse" />
-            Powered by Frox AI
+            Code workspace
           </div>
           <h1 className="text-5xl md:text-6xl font-bold mb-6">
-            <span className="grad-text">AI Coding Assistant</span>
+            <span className="grad-text">Frox Code</span>
           </h1>
           <p className="text-lg text-textDim max-w-2xl mx-auto">
-            Write, debug, review, and refactor code with Frox Code
+            Explain, debug, review, and refactor code without leaving the file
           </p>
         </div>
 
@@ -223,7 +224,7 @@ export default function CodePage() {
                 ))}
               </div>
               <div className="mt-6 px-2">
-                <p className="text-xs text-textFaint mb-2">Frox AI</p>
+                <p className="text-xs text-textFaint mb-2">Frox Code</p>
                 <div className="flex items-center gap-2 text-sm text-accent">
                   <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
                   Assistant ready
@@ -298,10 +299,10 @@ export default function CodePage() {
         {/* Feature Tabs */}
         <div className="mb-20">
           <h2 className="text-3xl font-bold text-center mb-4">
-            <span className="grad-text">Everything You Need</span>
+            <span className="grad-text">What It Does</span>
           </h2>
           <p className="text-textDim text-center mb-10 max-w-xl mx-auto">
-            From understanding legacy code to writing production-ready tests — Frox Code has you covered.
+            Pick a task, and Frox Code works on the file you have open. Every action is a prompt you can edit and re-run.
           </p>
           <div className="flex flex-wrap justify-center gap-3 mb-8">
             {TABS.map((tab) => (
@@ -375,18 +376,18 @@ export default function CodePage() {
         {/* CTA */}
         <div className="text-center mt-20">
           <h2 className="text-3xl font-bold mb-4">
-            Ready to <span className="grad-text">code smarter</span>?
+            Try <span className="grad-text">Frox Code</span>
           </h2>
           <p className="text-textDim mb-8 max-w-lg mx-auto">
-            Join thousands of developers shipping better code faster with Frox Code.
+            Open the workspace and paste in a file. The first $10 of usage is on us.
           </p>
           <div className="flex items-center justify-center gap-4">
-            <button className="btn-primary px-6 py-3 rounded-lg font-medium">
-              Start Coding Free
-            </button>
-            <button className="btn-secondary px-6 py-3 rounded-lg font-medium">
-              View Documentation
-            </button>
+            <Link href="/chat" className="btn-primary px-6 py-3 rounded-lg font-medium">
+              Open workspace
+            </Link>
+            <Link href="/docs" className="btn-secondary px-6 py-3 rounded-lg font-medium">
+              Read the docs
+            </Link>
           </div>
         </div>
       </div>

@@ -22,7 +22,7 @@ export default function DocsPage() {
             <span className="grad-text">Documentation</span>
           </h1>
           <p className="text-textDim text-lg max-w-2xl">
-            Everything you need to integrate Frox into your applications.
+            Guides and reference for integrating Frox into your applications.
           </p>
         </div>
 
@@ -87,7 +87,7 @@ const frox = new Frox({
 
 async function main() {
   const response = await frox.chat.create({
-    model: 'frox-2.0',
+    model: 'frox-flex',
     messages: [
       { role: 'user', content: 'Hello, Frox!' }
     ],
@@ -109,7 +109,7 @@ main();`}</code>
                 <div className="card rounded-xl p-5">
                   <pre className="text-sm text-textDim overflow-x-auto">
                     <code>{`const stream = await frox.chat.create({
-  model: 'frox-2.0',
+  model: 'frox-flex',
   messages: [
     { role: 'user', content: 'Tell me a story' }
   ],
@@ -156,7 +156,7 @@ const frox = new Frox({
               <div className="card rounded-xl p-5">
                 <pre className="text-sm text-textDim overflow-x-auto">
                   <code>{`const response = await frox.chat.create({
-  model: 'frox-2.0',
+  model: 'frox-flex',
   messages: [
     { role: 'system', content: 'You are a helpful assistant.' },
     { role: 'user', content: 'What is the weather like?' }
@@ -172,8 +172,8 @@ const frox = new Frox({
             <section id="image-api" className="mb-16 scroll-mt-32">
               <h2 className="text-3xl font-bold mb-4">Image API</h2>
               <p className="text-textDim mb-6 leading-relaxed">
-                Generate stunning images from text descriptions with our
-                state-of-the-art diffusion models.
+                Generate images from text descriptions with our
+                diffusion models.
               </p>
               <div className="card rounded-xl p-5">
                 <pre className="text-sm text-textDim overflow-x-auto">
@@ -202,13 +202,13 @@ console.log(image.data[0].url);`}</code>
 const speech = await frox.audio.speech.create({
   text: 'Hello, welcome to Frox!',
   voice: 'nova',
-  model: 'tts-1',
+  model: 'frox-voice',
 });
 
 // Speech to Text
 const transcription = await frox.audio.transcriptions.create({
   file: audioFile,
-  model: 'whisper-1',
+  model: 'frox-voice',
 });`}</code>
                 </pre>
               </div>

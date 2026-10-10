@@ -22,7 +22,7 @@ export default function TermsPage() {
           <section>
             <h2 className="text-2xl font-bold mb-4">Use of Service</h2>
             <p className="text-textDim leading-relaxed">
-              Frox provides AI-powered tools for text, image, audio, and 3D
+              Frox provides AI models and tools for text, image, audio, and 3D
               generation. You agree to use the service only for lawful purposes
               and in accordance with these Terms. You are responsible for all
               activity that occurs under your account.

@@ -30,7 +30,7 @@ export const metadata = {
     template: "%s · Frox Studio",
   },
   description:
-    "Frox Studio builds open-weight AI models for chat, code, image, audio, and 3D. A simple API, a beautiful chat experience, and production-ready SDKs.",
+    "Frox Studio builds open-weight AI models for chat, code, image, audio, and 3D. One API, chat, and production-ready SDKs.",
   keywords: ["Frox Studio", "AI", "LLM", "open weights", "chat", "API", "image generation", "3D AI"],
   icons: {
     icon: [

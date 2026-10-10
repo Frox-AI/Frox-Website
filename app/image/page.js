@@ -26,10 +26,10 @@ const recentGenerations = [
 ];
 
 const features = [
-  { id: "text-to-image", title: "Text-to-Image", description: "Transform text prompts into stunning visuals with a single click" },
+  { id: "text-to-image", title: "Text-to-Image", description: "Turn a text prompt into an image in one step" },
   { id: "image-to-image", title: "Image-to-Image", description: "Upload reference images to guide the generation process" },
   { id: "inpainting", title: "Inpainting", description: "Edit specific regions of an image while preserving the rest" },
-  { id: "upscaling", title: "Upscaling", description: "Enhance image resolution up to 4x with AI-powered detail" },
+  { id: "upscaling", title: "Upscaling", description: "Increase image resolution up to 4x while keeping detail" },
   { id: "style-transfer", title: "Style Transfer", description: "Apply artistic styles like Van Gogh or Picasso to any image" },
   { id: "batch-generation", title: "Batch Generation", description: "Generate multiple variations simultaneously for faster workflows" },
 ];
@@ -42,7 +42,7 @@ export default function ImagePage() {
         <div className="text-center mb-16">
           <h1 className="text-5xl font-bold grad-text mb-4">Image Studio</h1>
           <p className="text-lg text-textDim">
-            Generate stunning images from text descriptions with Frox Image model
+            Generate images from text descriptions with the Frox Image model
           </p>
         </div>
 

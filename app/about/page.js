@@ -1,109 +1,97 @@
 export default function AboutPage() {
   const stats = [
     { label: "Founded", value: "2023" },
-    { label: "Team Size", value: "45+" },
-    { label: "Countries", value: "12" },
-    { label: "Models", value: "8" },
+    { label: "Team", value: "6" },
+    { label: "Open weights", value: "3" },
+    { label: "Products", value: "5" },
   ];
 
   const team = [
     {
       name: "Sarah Chen",
       role: "CEO & Co-Founder",
-      bio: "Former AI research lead at a major tech company. Sarah leads Frox's vision and strategy.",
+      bio: "Leads product direction and most of what we publish. Previously ran applied research teams.",
       initials: "SC",
     },
     {
       name: "Marcus Rivera",
       role: "CTO & Co-Founder",
-      bio: "Distributed systems expert with 15 years of experience building scalable infrastructure.",
+      bio: "Owns the serving and training stack. Fifteen years building distributed infrastructure.",
       initials: "MR",
     },
     {
-      name: "Aisha Patel",
-      role: "VP of Engineering",
-      bio: "Passionate about developer experience and building tools that empower creators.",
+      name: "Anika Patel",
+      role: "ML Engineer",
+      bio: "Trains and evaluates the chat and code models. Keeps the model cards honest.",
       initials: "AP",
     },
     {
-      name: "James Okafor",
-      role: "Head of Research",
-      bio: "PhD in machine learning. James leads our model training and research initiatives.",
-      initials: "JO",
+      name: "Tomas Berg",
+      role: "Platform Engineer",
+      bio: "Runs deployment, autoscaling, and the on-call rotation. Automates anything he touches twice.",
+      initials: "TB",
     },
     {
-      name: "Elena Volkov",
-      role: "Head of Design",
-      bio: "Award-winning designer focused on making AI accessible and beautiful for everyone.",
-      initials: "EV",
+      name: "Leah Osei",
+      role: "Product Designer",
+      bio: "Designs the chat and studio interfaces. Prototypes in code when it settles an argument faster.",
+      initials: "LO",
     },
     {
-      name: "David Kim",
-      role: "Head of Product",
-      bio: "Product leader dedicated to building tools that solve real problems for developers.",
-      initials: "DK",
+      name: "Diego Marchetti",
+      role: "Developer Relations",
+      bio: "Writes the docs and samples, and files every rough edge he finds as a product issue.",
+      initials: "DM",
     },
   ];
 
   const values = [
     {
-      title: "Openness",
+      title: "Open by default",
       description:
-        "We believe in transparency — with our team, our users, and the broader AI community. Open research, open communication, open source.",
+        "We publish weights, training notes, and postmortems. Sharing is the default; we make the case when something stays private.",
     },
     {
-      title: "Safety",
+      title: "Honest about limits",
       description:
-        "AI safety is not an afterthought. It's built into every model we train, every feature we ship, and every decision we make.",
+        "Every model card lists what the model is bad at. We would rather you know before it matters, not after.",
     },
     {
-      title: "Innovation",
+      title: "Fewer things, finished",
       description:
-        "We push the boundaries of what's possible with AI, constantly exploring new frontiers in multimodal generation and understanding.",
+        "We ship a small surface and see it through. Restraint is the point, not a constraint we work around.",
     },
     {
-      title: "Community",
+      title: "Listen, then decide",
       description:
-        "Our users are our partners. We build in public, listen to feedback, and grow together with the developers who use Frox.",
+        "We read feedback, fix what is broken, and say plainly when we will not do something. No roadmap theatre.",
     },
   ];
 
   const timeline = [
     {
       year: "2023",
-      title: "Frox Founded",
+      title: "Frox starts",
       description:
-        "Sarah and Marcus start Frox with a mission to democratize AI-powered creativity.",
-    },
-    {
-      year: "2023",
-      title: "First Model Released",
-      description:
-        "Launch of Frox 1.0, our first text generation model, to early adopters.",
+        "Sarah and Marcus begin building open-weight language models and the serving stack around them.",
     },
     {
       year: "2024",
-      title: "Image Generation",
+      title: "Image generation",
       description:
-        "Introduced our image generation API, enabling creators to produce stunning visuals from text.",
-    },
-    {
-      year: "2024",
-      title: "Series A Funding",
-      description:
-        "Raised $25M Series A to accelerate research and expand the team.",
+        "The image API ships, giving the platform a second modality beyond text.",
     },
     {
       year: "2025",
-      title: "Audio & 3D APIs",
+      title: "Audio and 3D",
       description:
-        "Expanded our platform with text-to-speech, speech-to-text, and 3D model generation.",
+        "Text-to-speech, transcription, and 3D asset generation join the same API.",
     },
     {
       year: "2026",
-      title: "Frox 2.0",
+      title: "Open weights on Hugging Face",
       description:
-        "Our biggest release yet — new models, new tools, and a completely redesigned experience.",
+        "We publish the chat and code weights with training notes and known failure modes.",
     },
   ];
 
@@ -116,8 +104,8 @@ export default function AboutPage() {
             <span className="grad-text">About Frox Studio</span>
           </h1>
           <p className="text-textDim text-lg max-w-2xl mx-auto">
-            We're building the future of AI-powered creativity, one model at a
-            time.
+            A small team building open-weight AI models for text, code, image,
+            audio, and 3D.
           </p>
         </div>
 
@@ -128,11 +116,10 @@ export default function AboutPage() {
               <span className="grad-text">Our Mission</span>
             </h2>
             <p className="text-textDim text-lg leading-relaxed max-w-3xl mx-auto">
-              At Frox Studio, we believe that everyone should have access to
-              powerful AI tools that amplify their creativity. Our mission is to
-              build the most intuitive, reliable, and versatile AI platform —
-              empowering developers, artists, and creators to bring their
-              wildest ideas to life.
+              We build open-weight models and the infrastructure around them,
+              and we think that's a better deal for the people using them. You
+              can call our API, download the weights, or run them on your own
+              hardware — the same models, your choice of where they run.
             </p>
           </div>
         </section>
@@ -227,30 +214,30 @@ export default function AboutPage() {
             <div className="grid md:grid-cols-2 gap-10 items-center">
               <div>
                 <h2 className="text-3xl font-bold mb-4">
-                  <span className="grad-text">Our Office</span>
+                  <span className="grad-text">How We Work</span>
                 </h2>
                 <p className="text-textDim leading-relaxed mb-6">
-                  Frox Studio is headquartered in San Francisco, with team
-                  members distributed across 12 countries. We're a remote-first
-                  company that values flexibility, diversity, and collaboration.
+                  Frox Studio is a remote-first team with no headquarters. We
+                  work across time zones, write things down instead of meeting
+                  about them, and get together in person a few times a year.
                 </p>
                 <div className="space-y-3">
                   <div className="flex items-center gap-3">
                     <div className="w-2 h-2 rounded-full bg-accent" />
                     <span className="text-textDim text-sm">
-                      San Francisco, CA — HQ
+                      Remote-first, no central office
                     </span>
                   </div>
                   <div className="flex items-center gap-3">
                     <div className="w-2 h-2 rounded-full bg-accent2" />
                     <span className="text-textDim text-sm">
-                      Remote-first, global team
+                      Async by default, written decisions
                     </span>
                   </div>
                   <div className="flex items-center gap-3">
                     <div className="w-2 h-2 rounded-full bg-accent" />
                     <span className="text-textDim text-sm">
-                      Hubs in London, Tokyo, and Berlin
+                      Two in-person offsites a year
                     </span>
                   </div>
                 </div>

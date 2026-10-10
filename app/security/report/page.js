@@ -1,5 +1,6 @@
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
+import RevealGroup from "@/components/RevealGroup";
 import Icon from "@/components/Icon";
 
 const STEPS = [
@@ -27,7 +28,7 @@ export default function SecurityReportPage() {
       </PageHero>
 
       <div className="container-x pb-24 max-w-2xl">
-        <ol className="space-y-4">
+        <RevealGroup as="ol" className="space-y-4" step={90}>
           {STEPS.map(([title, text], i) => (
             <li key={title} className="card p-6 flex gap-5">
               <span className="w-9 h-9 rounded-full grad-bg grid place-items-center text-white font-bold text-sm shrink-0">{i + 1}</span>
@@ -37,7 +38,7 @@ export default function SecurityReportPage() {
               </div>
             </li>
           ))}
-        </ol>
+        </RevealGroup>
 
         <div className="mt-10 card p-6">
           <h2 className="font-semibold mb-3">In scope</h2>

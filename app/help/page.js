@@ -1,5 +1,6 @@
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
+import RevealGroup from "@/components/RevealGroup";
 import Icon from "@/components/Icon";
 
 const CATEGORIES = [
@@ -48,7 +49,7 @@ export default function HelpPage() {
       </PageHero>
 
       <div className="container-x pb-24">
-        <div className="grid gap-8 md:grid-cols-3">
+        <RevealGroup className="grid gap-8 md:grid-cols-3" step={90}>
           {CATEGORIES.map((c) => (
             <div key={c.name}>
               <h2 className="text-sm font-semibold uppercase tracking-widest text-textFaint mb-4">{c.name}</h2>
@@ -64,9 +65,9 @@ export default function HelpPage() {
               </ul>
             </div>
           ))}
-        </div>
+        </RevealGroup>
 
-        <div className="mt-16 card p-8 flex flex-col md:flex-row md:items-center justify-between gap-6">
+        <div className="mt-16 card card-hover p-8 flex flex-col md:flex-row md:items-center justify-between gap-6">
           <div>
             <h2 className="font-semibold">Still stuck?</h2>
             <p className="text-sm text-textDim mt-1 text-pretty">Our support team answers within one business day, and usually faster.</p>

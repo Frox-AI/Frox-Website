@@ -1,5 +1,6 @@
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
+import RevealGroup from "@/components/RevealGroup";
 
 const ASSETS = [
   { name: "Logo pack (SVG + PNG)", size: "1.2 MB", note: "Primary mark, wordmark, and app icon in light and dark." },
@@ -25,7 +26,7 @@ export default function PressPage() {
       </PageHero>
 
       <div className="container-x pb-24 max-w-3xl">
-        <div className="card overflow-hidden divide-y divide-ink/[0.06]">
+        <RevealGroup className="card overflow-hidden divide-y divide-ink/[0.06]">
           {ASSETS.map((a) => (
             <div key={a.name} className="flex items-center gap-4 px-6 py-5">
               <div className="flex-1">
@@ -36,7 +37,7 @@ export default function PressPage() {
               <button className="btn-secondary !py-2 !px-4 text-sm" disabled>Download</button>
             </div>
           ))}
-        </div>
+        </RevealGroup>
 
         <div className="mt-12 card p-7">
           <h2 className="font-semibold mb-3">Boilerplate</h2>

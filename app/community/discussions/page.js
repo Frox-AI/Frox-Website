@@ -1,5 +1,6 @@
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
+import RevealGroup from "@/components/RevealGroup";
 import Icon from "@/components/Icon";
 
 export const metadata = {
@@ -59,9 +60,9 @@ export default function DiscussionsPage() {
           <h2 className="text-2xl font-bold tracking-tight">Recent</h2>
           <span className="text-sm text-textFaint">{THREADS.length} threads</span>
         </div>
-        <div className="space-y-3">
+        <RevealGroup className="space-y-3">
           {THREADS.map((t) => (
-            <div key={t.title} className="card p-6">
+            <div key={t.title} className="card card-hover p-6">
               <div className="flex items-center gap-3 mb-2">
                 <span className="chip !py-0.5 !px-2.5 !text-[11px] text-accent2">{t.tag}</span>
                 <span className="text-[12.5px] text-textFaint">{t.by} · {t.ago}</span>
@@ -73,7 +74,7 @@ export default function DiscussionsPage() {
               </div>
             </div>
           ))}
-        </div>
+        </RevealGroup>
       </div>
     </div>
   );

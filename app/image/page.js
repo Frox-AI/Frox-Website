@@ -1,143 +1,147 @@
 "use client";
 
-const styles = [
-  { id: "photorealistic", label: "Photorealistic" },
-  { id: "anime", label: "Anime" },
-  { id: "oil-painting", label: "Oil Painting" },
-  { id: "digital-art", label: "Digital Art" },
-  { id: "3d-render", label: "3D Render" },
-  { id: "pixel-art", label: "Pixel Art" },
+import Link from "next/link";
+import PageHero from "@/components/PageHero";
+import Icon from "@/components/Icon";
+
+const STYLES = [
+  "Photorealistic",
+  "Anime",
+  "Oil painting",
+  "Digital art",
+  "3D render",
+  "Pixel art",
 ];
 
-const aspectRatios = [
-  { id: "1:1", label: "1:1", width: "100%", height: "100%" },
-  { id: "16:9", label: "16:9", width: "100%", height: "56.25%" },
-  { id: "9:16", label: "9:16", width: "56.25%", height: "100%" },
-  { id: "4:3", label: "4:3", width: "100%", height: "75%" },
+const RATIOS = ["1:1", "16:9", "9:16", "4:3"];
+
+const EXAMPLES = [
+  { prompt: "A misty pine forest at first light, soft volumetric fog", style: "Photorealistic" },
+  { prompt: "Rain-slicked neon street, a single figure under an umbrella", style: "Cinematic" },
+  { prompt: "Coral reef lit from above, clean water, high detail", style: "Photorealistic" },
+  { prompt: "Flat isometric desk scene, muted palette, long shadows", style: "Digital art" },
+  { prompt: "Vintage travel poster of a mountain railway", style: "Illustration" },
+  { prompt: "Product shot of a ceramic mug on soft fabric, 50mm", style: "Photorealistic" },
 ];
 
-const recentGenerations = [
-  { id: 1, gradient: "from-purple-600 to-blue-500", prompt: "A mystical forest at twilight" },
-  { id: 2, gradient: "from-pink-500 to-rose-400", prompt: "Cyberpunk city in the rain" },
-  { id: 3, gradient: "from-emerald-500 to-teal-400", prompt: "Underwater coral kingdom" },
-  { id: 4, gradient: "from-orange-500 to-amber-400", prompt: "Desert oasis at sunset" },
-  { id: 5, gradient: "from-indigo-600 to-violet-500", prompt: "Futuristic space station" },
-  { id: 6, gradient: "from-cyan-500 to-blue-400", prompt: "Frozen arctic landscape" },
-];
-
-const features = [
-  { id: "text-to-image", title: "Text-to-Image", description: "Turn a text prompt into an image in one step" },
-  { id: "image-to-image", title: "Image-to-Image", description: "Upload reference images to guide the generation process" },
-  { id: "inpainting", title: "Inpainting", description: "Edit specific regions of an image while preserving the rest" },
-  { id: "upscaling", title: "Upscaling", description: "Increase image resolution up to 4x while keeping detail" },
-  { id: "style-transfer", title: "Style Transfer", description: "Apply artistic styles like Van Gogh or Picasso to any image" },
-  { id: "batch-generation", title: "Batch Generation", description: "Generate multiple variations simultaneously for faster workflows" },
+const FEATURES = [
+  { icon: "image", title: "Text-to-image", desc: "Turn a written prompt into a finished image in a single step." },
+  { icon: "file", title: "Image-to-image", desc: "Guide a generation with a reference image you already like." },
+  { icon: "pen", title: "Inpainting", desc: "Change one region and leave the rest of the frame untouched." },
+  { icon: "search", title: "Upscaling", desc: "Raise resolution up to 4x while keeping fine detail intact." },
+  { icon: "sparkles", title: "Style transfer", desc: "Apply a reference style across an entire set of images." },
+  { icon: "refresh", title: "Batch runs", desc: "Generate variations of one prompt and compare them side by side." },
 ];
 
 export default function ImagePage() {
   return (
-    <div className="min-h-screen bg-bg">
-      <div className="max-w-7xl mx-auto px-6 pt-32 pb-20">
-        {/* Hero */}
-        <div className="text-center mb-16">
-          <h1 className="text-5xl font-bold grad-text mb-4">Image Studio</h1>
-          <p className="text-lg text-textDim">
-            Generate images from text descriptions with the Frox Image model
-          </p>
-        </div>
+    <div className="min-h-screen bg-bg text-text">
+      <PageHero
+        eyebrow="Product"
+        title="Frox Image"
+        sub="Generate and edit images from text or existing references, with style presets, upscaling, and batch runs. Everything you make stays in your library."
+      >
+        <Link href="/auth/signup" className="btn-primary">Get started</Link>
+        <Link href="/docs" className="btn-secondary">Read the API docs</Link>
+      </PageHero>
 
-        {/* Generation Interface */}
-        <div className="card p-8 rounded-2xl mb-16">
+      <div className="container-x pb-24 space-y-20">
+        <section className="card p-8">
           <div className="mb-6">
-            <label className="block text-text text-sm font-medium mb-2">
-              Prompt
-            </label>
+            <label className="block text-sm font-medium mb-2">Prompt</label>
             <textarea
-              className="w-full h-32 bg-bg border border-border rounded-xl p-4 text-text placeholder-textFaint focus:outline-none focus:border-accent transition-colors resize-none"
-              placeholder="Describe the image you want to generate..."
+              readOnly
+              defaultValue="A quiet harbor at sunrise, long exposure, warm light"
+              className="w-full h-28 bg-bg border border-border rounded-xl p-4 text-text placeholder-textFaint focus:outline-none focus:border-accent transition-colors resize-none"
             />
           </div>
 
-          {/* Style Presets */}
           <div className="mb-6">
-            <label className="block text-text text-sm font-medium mb-3">
-              Style
-            </label>
+            <label className="block text-sm font-medium mb-3">Style</label>
             <div className="flex flex-wrap gap-2">
-              {styles.map((style) => (
-                <button
-                  key={style.id}
-                  className="px-4 py-2 rounded-lg border border-border bg-bgCard text-textDim text-sm hover:border-accent hover:text-text transition-all"
+              {STYLES.map((s, i) => (
+                <span
+                  key={s}
+                  className={`px-4 py-2 rounded-lg text-sm transition-colors ${
+                    i === 0
+                      ? "border border-accent bg-accent/10 text-text"
+                      : "border border-border text-textDim"
+                  }`}
                 >
-                  {style.label}
-                </button>
+                  {s}
+                </span>
               ))}
             </div>
           </div>
 
-          {/* Aspect Ratio */}
           <div className="mb-8">
-            <label className="block text-text text-sm font-medium mb-3">
-              Aspect Ratio
-            </label>
+            <label className="block text-sm font-medium mb-3">Aspect ratio</label>
             <div className="flex gap-3">
-              {aspectRatios.map((ratio) => (
-                <button
-                  key={ratio.id}
-                  className="px-4 py-2 rounded-lg border border-border bg-bgCard text-textDim text-sm hover:border-accent hover:text-text transition-all"
+              {RATIOS.map((r, i) => (
+                <span
+                  key={r}
+                  className={`px-4 py-2 rounded-lg text-sm transition-colors ${
+                    i === 0
+                      ? "border border-accent bg-accent/10 text-text"
+                      : "border border-border text-textDim"
+                  }`}
                 >
-                  {ratio.label}
-                </button>
+                  {r}
+                </span>
               ))}
             </div>
           </div>
 
-          {/* Generate Button */}
-          <button className="btn-primary w-full py-3 rounded-xl font-semibold text-white">
-            Generate Image
-          </button>
-
-          {/* Mock Generated Image Area */}
-          <div className="mt-8">
-            <div className="aspect-square w-full max-w-lg mx-auto bg-gradient-to-br from-[#7c5cff] to-[#00d4ff] rounded-2xl flex items-center justify-center border border-border">
-              <p className="text-ink/60 text-sm text-center px-8">
-                Generated images will appear here
-              </p>
-            </div>
+          <div className="aspect-[16/9] w-full rounded-2xl bg-gradient-to-br from-[#7c5cff] to-[#00d4ff] grid place-items-center border border-border">
+            <span className="inline-flex items-center gap-2 text-white/80 text-sm">
+              <Icon name="image" size={18} /> Preview
+            </span>
           </div>
-        </div>
+          <p className="text-xs text-textFaint mt-3">Interface preview. Generation runs in the app.</p>
+        </section>
 
-        {/* Recent Generations Gallery */}
-        <div className="mb-16">
-          <h2 className="text-2xl font-bold text-text mb-6">Recent Generations</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {recentGenerations.map((img) => (
-              <div
-                key={img.id}
-                className={`aspect-square bg-gradient-to-br ${img.gradient} rounded-xl flex items-end p-4 border border-border`}
-              >
-                <p className="text-ink/80 text-sm font-medium drop-shadow">
-                  {img.prompt}
-                </p>
+        <section>
+          <div className="mb-8 max-w-xl">
+            <h2 className="text-2xl font-bold tracking-tight">Example prompts</h2>
+            <p className="text-textDim mt-2 text-pretty">Starting points you can copy into the studio and adjust.</p>
+          </div>
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {EXAMPLES.map((e) => (
+              <div key={e.prompt} className="card p-5">
+                <span className="text-[11px] uppercase tracking-widest text-accent2">{e.style}</span>
+                <p className="mt-2 text-[15px] leading-relaxed text-pretty">{e.prompt}</p>
               </div>
             ))}
           </div>
-        </div>
+        </section>
 
-        {/* Feature Cards */}
-        <div>
-          <h2 className="text-2xl font-bold text-text mb-6">Capabilities</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {features.map((feature) => (
-              <div key={feature.id} className="card p-6 rounded-xl border border-border">
-                <h3 className="text-text font-semibold mb-2">{feature.title}</h3>
-                <p className="text-textDim text-sm leading-relaxed">
-                  {feature.description}
-                </p>
+        <section>
+          <div className="mb-8 max-w-xl">
+            <h2 className="text-2xl font-bold tracking-tight">Capabilities</h2>
+          </div>
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {FEATURES.map((f) => (
+              <div key={f.title} className="card p-6">
+                <span className="w-10 h-10 rounded-xl grad-bg grid place-items-center text-white mb-4">
+                  <Icon name={f.icon} size={18} />
+                </span>
+                <h3 className="font-semibold mb-2">{f.title}</h3>
+                <p className="text-sm text-textDim leading-relaxed text-pretty">{f.desc}</p>
               </div>
             ))}
           </div>
-        </div>
+        </section>
+
+        <section className="glass border border-ink/10 rounded-3xl p-8 sm:p-12 text-center">
+          <h2 className="text-2xl font-bold tracking-tight text-balance">Bring an idea and see it rendered</h2>
+          <p className="mt-3 text-textDim max-w-xl mx-auto text-pretty">
+            Frox Image is part of one account and one API. Start free and keep everything you generate.
+          </p>
+          <div className="mt-6 flex flex-wrap gap-3 justify-center">
+            <Link href="/auth/signup" className="btn-primary">Get started</Link>
+            <Link href="/pricing" className="btn-secondary">See pricing</Link>
+          </div>
+        </section>
       </div>
     </div>
   );

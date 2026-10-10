@@ -1,4 +1,5 @@
 import Link from "next/link";
+import PageHero from "@/components/PageHero";
 import Icon from "@/components/Icon";
 
 const DESKTOP_PLATFORMS = [
@@ -80,23 +81,16 @@ export const metadata = {
 export default function DownloadPage() {
   return (
     <main className="min-h-screen bg-bg text-text">
-      <section className="relative overflow-hidden pt-32 pb-16">
-        <div className="hero-glow absolute inset-x-0 top-0 h-[500px] pointer-events-none" />
-        <div className="relative max-w-7xl mx-auto px-6 text-center">
-          <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
-            Download <span className="grad-text">Frox</span>
-          </h1>
-          <p className="mt-5 text-lg text-textDim max-w-2xl mx-auto">
-            Get Frox on every device. One account, your conversations and
-            settings synced everywhere.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="Download"
+        title="Download Frox"
+        sub="Get Frox on every device. One account, your conversations and settings synced everywhere."
+      >
+        <Link href="/docs" className="btn-secondary">Read the setup guide</Link>
+      </PageHero>
 
-      <section className="max-w-7xl mx-auto px-6 pb-16">
-        <h2 className="text-2xl md:text-3xl font-bold text-center">
-          Desktop <span className="grad-text">App</span>
-        </h2>
+      <div className="container-x pb-24 space-y-16">
+        <section>
         <p className="mt-3 text-textDim text-center">
           Version 1.5.0 — released October 2026
         </p>
@@ -133,9 +127,9 @@ export default function DownloadPage() {
         </div>
       </section>
 
-      <section className="max-w-7xl mx-auto px-6 pb-16">
+      <section>
         <h2 className="text-2xl md:text-3xl font-bold text-center">
-          Mobile <span className="grad-text">App</span>
+          Mobile app
         </h2>
         <p className="mt-3 text-textDim text-center">
           Take Frox anywhere. Available on iOS and Android.
@@ -166,9 +160,9 @@ export default function DownloadPage() {
         </div>
       </section>
 
-      <section className="max-w-4xl mx-auto px-6 pb-24">
+      <section>
         <h2 className="text-2xl md:text-3xl font-bold text-center">
-          System <span className="grad-text">Requirements</span>
+          System Requirements
         </h2>
 
         <div className="card mt-10 overflow-hidden">
@@ -194,11 +188,12 @@ export default function DownloadPage() {
 
         <p className="mt-6 text-center text-sm text-textFaint">
           Running into issues? Check the{" "}
-          <Link href="/docs" className="text-accent2 hover:underline">
+          <Link href="/docs" className="text-accent2 hover:opacity-80 transition-opacity">
             installation guide →
           </Link>
         </p>
       </section>
+      </div>
     </main>
   );
 }

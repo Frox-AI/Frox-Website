@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import PageHero from "@/components/PageHero";
 import Icon from "@/components/Icon";
 
 const PLANS = [
@@ -91,18 +92,17 @@ export default function PricingPage() {
 
   return (
     <main className="min-h-screen bg-bg text-text">
-      <section className="relative overflow-hidden pt-32 pb-16">
-        <div className="hero-glow absolute inset-x-0 top-0 h-[500px] pointer-events-none" />
-        <div className="relative max-w-7xl mx-auto px-6 text-center">
-          <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
-            Pricing <span className="grad-text">Plans</span>
-          </h1>
-          <p className="mt-5 text-lg text-textDim max-w-2xl mx-auto">
-            Start free. Paid plans add more messages, faster models, and API
-            access. No hidden fees.
-          </p>
+      <PageHero
+        eyebrow="Pricing"
+        title="Pricing plans"
+        sub="Start free. Paid plans add more messages, faster models, and API access. No hidden fees."
+      >
+        <Link href="/models" className="btn-secondary">Compare models</Link>
+      </PageHero>
 
-          <div className="mt-8 inline-flex items-center gap-1 rounded-full border border-border bg-bgElev p-1.5">
+      <div className="container-x pb-24 space-y-16">
+        <div className="flex justify-center">
+          <div className="inline-flex items-center gap-1 rounded-full border border-border bg-bgElev p-1.5">
             <button
               onClick={() => setYearly(false)}
               className={`rounded-full px-5 py-2 text-sm font-semibold transition-colors ${
@@ -128,9 +128,7 @@ export default function PricingPage() {
             </button>
           </div>
         </div>
-      </section>
 
-      <section className="max-w-7xl mx-auto px-6 pb-20">
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
           {PLANS.map((plan) => {
             const price = yearly ? plan.yearly : plan.monthly;
@@ -192,18 +190,19 @@ export default function PricingPage() {
           })}
         </div>
 
-        <p className="mt-10 text-center text-sm text-textFaint">
+        <p className="text-center text-sm text-textFaint">
           All prices in USD. Need a custom plan?{" "}
-          <Link href="/contact" className="text-accent2 hover:underline">
+          <Link href="/contact" className="text-accent2 hover:opacity-80 transition-opacity">
             Talk to sales →
           </Link>
         </p>
-      </section>
+      </div>
 
-      <section className="max-w-3xl mx-auto px-6 pb-24">
-        <h2 className="text-3xl md:text-4xl font-bold text-center">
-          Frequently asked <span className="grad-text">questions</span>
-        </h2>
+      <section className="container-x pb-24">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold text-center">
+            Frequently asked <span className="grad-text">questions</span>
+          </h2>
 
         <div className="mt-10 space-y-3">
           {FAQS.map((faq, i) => (
@@ -226,6 +225,7 @@ export default function PricingPage() {
               )}
             </div>
           ))}
+        </div>
         </div>
       </section>
     </main>

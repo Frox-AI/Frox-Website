@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
+import PageHero from "@/components/PageHero";
 
 const voices = [
   { name: "Aria", desc: "Warm and expressive, ideal for narration" },
@@ -88,25 +90,17 @@ export default function AudioPage() {
         }
       `}</style>
 
-      <section className="pt-32 pb-16" style={{ background: "radial-gradient(ellipse at top, rgba(124,92,255,0.12) 0%, transparent 60%)" }}>
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center max-w-2xl mx-auto">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-medium mb-6" style={{ background: "var(--bg-elev)", border: "1px solid var(--border)", color: "var(--text-dim)" }}>
-              <span className="w-2 h-2 rounded-full pulse-dot" style={{ background: "var(--accent)" }} />
-              Frox Voice
-            </div>
-            <h1 className="text-5xl font-bold mb-4">
-              <span className="grad-text">Audio Studio</span>
-            </h1>
-            <p className="text-lg" style={{ color: "var(--text-dim)" }}>
-              Generate lifelike speech, sound effects, and music with AI
-            </p>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="Product"
+        title="Frox Voice"
+        sub="Generate speech, sound effects, and music, then transcribe audio back to text. Pick a built-in voice or tune one from scratch."
+      >
+        <Link href="/auth/signup" className="btn-primary">Get started</Link>
+        <Link href="/docs" className="btn-secondary">Read the API docs</Link>
+      </PageHero>
 
       <section className="pb-20">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="container-x">
           <div className="flex gap-2 p-1 rounded-xl mb-8 w-fit mx-auto" style={{ background: "var(--bg-elev)", border: "1px solid var(--border-soft)" }}>
             {tabs.map((t) => (
               <button
@@ -380,12 +374,10 @@ export default function AudioPage() {
       </section>
 
       <section className="pb-24">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-10">
-            <h2 className="text-3xl font-bold mb-3">
-              <span className="grad-text">Voice Library</span>
-            </h2>
-            <p style={{ color: "var(--text-dim)" }}>Choose from our collection of premium AI voices</p>
+        <div className="container-x">
+          <div className="mb-10 text-center">
+            <h2 className="text-2xl font-bold tracking-tight">Voice Library</h2>
+            <p className="text-textDim mt-2 text-pretty">Choose from a set of built-in voices, or clone one from a sample</p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {voices.map((v, i) => (
@@ -399,7 +391,7 @@ export default function AudioPage() {
                   </div>
                   <div>
                     <div className="font-semibold">{v.name}</div>
-                    <div className="text-xs" style={{ color: "var(--text-faint)" }}>Premium Voice</div>
+                    <div className="text-xs" style={{ color: "var(--text-faint)" }}>Built-in voice</div>
                   </div>
                 </div>
                 <p className="text-sm mb-5" style={{ color: "var(--text-dim)" }}>{v.desc}</p>

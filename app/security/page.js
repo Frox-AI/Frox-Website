@@ -1,12 +1,14 @@
+import Link from "next/link";
+import PageHero from "@/components/PageHero";
 import Icon from "@/components/Icon";
 
 const PILLARS = [
-  { icon: "shield", title: "Encryption everywhere", desc: "All data is encrypted in transit (TLS 1.3) and at rest (AES-256). Keys are rotated automatically." },
-  { icon: "search", title: "Continuous monitoring", desc: "24/7 threat detection, anomaly alerts, and automated incident response across the platform." },
-  { icon: "checkCircle", title: "SOC 2 Type II", desc: "Independently audited controls for security, availability, and confidentiality." },
-  { icon: "globe", title: "GDPR & CCPA ready", desc: "Data residency controls, right-to-erasure tooling, and full audit trails built in." },
-  { icon: "lock", title: "Zero-trust access", desc: "Least-privilege IAM, hardware security keys, and mandatory MFA for all staff." },
-  { icon: "flask", title: "Regular audits & pen tests", desc: "Quarterly third-party penetration tests and an active responsible-disclosure program." },
+  { icon: "lock", title: "Encryption in transit and at rest", desc: "TLS for every request and encrypted storage for prompts and outputs. Keys are rotated on a schedule." },
+  { icon: "shieldCheck", title: "Least-privilege access", desc: "Staff access to production is limited, reviewed, and requires multi-factor authentication." },
+  { icon: "fileText", title: "No training on your data", desc: "Your prompts and outputs are not used to train our models. Retention is documented and deletion is available." },
+  { icon: "globe", title: "Data residency", desc: "Choose where your data is stored. We offer regional hosting for teams that require it." },
+  { icon: "search", title: "Monitoring and logging", desc: "Production systems are monitored around the clock, with alerts and audit logs kept for review." },
+  { icon: "checkCircle", title: "Responsible disclosure", desc: "Report a vulnerability and we'll acknowledge it, investigate, and credit you once it's fixed." },
 ];
 
 export const metadata = {
@@ -16,34 +18,37 @@ export const metadata = {
 
 export default function SecurityPage() {
   return (
-    <div className="pt-32 pb-20">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="max-w-2xl mb-14">
-          <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
-            Security at <span className="grad-text">Frox Studio</span>
-          </h1>
-          <p className="text-textDim text-lg">
-            Security is foundational to everything we build. Here&apos;s how we protect your data and models.
-          </p>
-        </div>
+    <div className="min-h-screen bg-bg text-text">
+      <PageHero
+        eyebrow="Security"
+        title="Security at Frox Studio"
+        sub="What we do to protect your account, your data, and the models we serve. If you find a gap, we want to hear about it."
+      >
+        <Link href="/security/report" className="btn-primary">Report a vulnerability</Link>
+        <Link href="/legal/privacy" className="btn-secondary">Read the privacy policy</Link>
+      </PageHero>
 
-        <div className="grid md:grid-cols-3 gap-6 mb-16">
+      <div className="container-x pb-24 space-y-16">
+        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {PILLARS.map((p) => (
             <div key={p.title} className="card p-6">
-              <div className="w-10 h-10 rounded-lg grad-bg grid place-items-center text-white mb-4">
+              <span className="w-10 h-10 rounded-xl grad-bg grid place-items-center text-white mb-4">
                 <Icon name={p.icon} size={18} />
-              </div>
+              </span>
               <h3 className="font-semibold mb-2">{p.title}</h3>
-              <p className="text-sm text-textDim">{p.desc}</p>
+              <p className="text-sm text-textDim leading-relaxed text-pretty">{p.desc}</p>
             </div>
           ))}
         </div>
 
-        <div className="cta-banner rounded-2xl p-10 text-center">
-          <h2 className="text-2xl font-bold mb-2">Report a vulnerability</h2>
-          <p className="text-textDim mb-6">Found a security issue? We appreciate responsible disclosure.</p>
-          <a href="mailto:security@froxstudio.ai" className="btn-primary inline-flex">security@froxstudio.ai</a>
-        </div>
+        <section className="cta-banner rounded-2xl p-10 text-center">
+          <h2 className="text-2xl font-bold tracking-tight mb-2">Report a vulnerability</h2>
+          <p className="text-textDim mb-6 max-w-lg mx-auto text-pretty">Found a security issue? We appreciate responsible disclosure.</p>
+          <div className="flex flex-wrap gap-3 justify-center">
+            <Link href="/security/report" className="btn-primary">Start a report</Link>
+            <a href="mailto:security@froxstudio.ai" className="btn-secondary">security@froxstudio.ai</a>
+          </div>
+        </section>
       </div>
     </div>
   );

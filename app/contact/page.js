@@ -1,65 +1,83 @@
 "use client";
 import { useState } from "react";
+import Link from "next/link";
+import PageHero from "@/components/PageHero";
+
+const CHANNELS = [
+  { title: "Sales", email: "sales@froxstudio.ai", desc: "Enterprise plans and custom models" },
+  { title: "Support", email: "support@froxstudio.ai", desc: "Help with your account" },
+  { title: "Press", email: "press@froxstudio.ai", desc: "Media and brand inquiries" },
+];
 
 export default function ContactPage() {
   const [sent, setSent] = useState(false);
 
   return (
-    <div className="pt-32 pb-20">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="max-w-2xl mx-auto text-center mb-14">
-          <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
-            Contact <span className="grad-text">Frox Studio</span>
-          </h1>
-          <p className="text-textDim text-lg">
-            Questions about our models, enterprise plans, or partnerships? We&apos;d love to hear from you.
-          </p>
-        </div>
+    <div className="min-h-screen bg-bg text-text">
+      <PageHero
+        eyebrow="Contact"
+        title="Contact Frox Studio"
+        sub="Questions about our models, enterprise plans, or partnerships? We'd love to hear from you."
+      />
 
-        <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto mb-14">
-          {[
-            { title: "Sales", email: "sales@froxstudio.ai", desc: "Enterprise plans & custom models" },
-            { title: "Support", email: "support@froxstudio.ai", desc: "Help with your account" },
-            { title: "Press", email: "press@froxstudio.ai", desc: "Media & brand inquiries" },
-          ].map((c) => (
-            <div key={c.title} className="card p-6 text-center">
+      <div className="container-x pb-24 space-y-16">
+        <div className="grid md:grid-cols-3 gap-5">
+          {CHANNELS.map((c) => (
+            <div key={c.title} className="card p-6">
               <h3 className="font-semibold mb-1">{c.title}</h3>
               <p className="text-sm text-textDim mb-3">{c.desc}</p>
-              <a href={`mailto:${c.email}`} className="text-accent text-sm hover:underline">{c.email}</a>
+              <a href={`mailto:${c.email}`} className="text-accent text-sm hover:opacity-80 transition-opacity">{c.email}</a>
             </div>
           ))}
         </div>
 
-        <div className="max-w-2xl mx-auto card p-8">
+        <div className="max-w-2xl card p-8">
           {sent ? (
             <div className="text-center py-10">
               <h3 className="text-xl font-bold mb-2">Message sent</h3>
-              <p className="text-textDim">Thanks for reaching out. Our team will get back to you within 1–2 business days.</p>
+              <p className="text-textDim">Thanks for reaching out. Our team will get back to you within 1&ndash;2 business days.</p>
             </div>
           ) : (
             <form onSubmit={(e) => { e.preventDefault(); setSent(true); }} className="space-y-5">
-              <div className="grid sm:grid-cols-2 gap-5">
-                <div className="space-y-2">
-                  <label className="text-sm font-medium text-textDim">Name</label>
-                  <input required className="w-full h-11 px-4 rounded-lg bg-bgElev border border-border text-text text-sm outline-none focus:border-accent/60" />
-                </div>
-                <div className="space-y-2">
-                  <label className="text-sm font-medium text-textDim">Email</label>
-                  <input type="email" required className="w-full h-11 px-4 rounded-lg bg-bgElev border border-border text-text text-sm outline-none focus:border-accent/60" />
-                </div>
+              <div>
+                <label className="block text-sm font-medium mb-2">Name</label>
+                <input
+                  type="text"
+                  required
+                  className="w-full bg-bg border border-border rounded-lg px-4 py-3 text-[15px] text-text placeholder-textFaint focus:outline-none focus:border-accent transition-colors"
+                  placeholder="Your name"
+                />
               </div>
-              <div className="space-y-2">
-                <label className="text-sm font-medium text-textDim">Subject</label>
-                <input required className="w-full h-11 px-4 rounded-lg bg-bgElev border border-border text-text text-sm outline-none focus:border-accent/60" />
+              <div>
+                <label className="block text-sm font-medium mb-2">Email</label>
+                <input
+                  type="email"
+                  required
+                  className="w-full bg-bg border border-border rounded-lg px-4 py-3 text-[15px] text-text placeholder-textFaint focus:outline-none focus:border-accent transition-colors"
+                  placeholder="you@company.com"
+                />
               </div>
-              <div className="space-y-2">
-                <label className="text-sm font-medium text-textDim">Message</label>
-                <textarea required rows={5} className="w-full px-4 py-3 rounded-lg bg-bgElev border border-border text-text text-sm outline-none focus:border-accent/60 resize-none" />
+              <div>
+                <label className="block text-sm font-medium mb-2">Message</label>
+                <textarea
+                  rows={5}
+                  required
+                  className="w-full bg-bg border border-border rounded-lg px-4 py-3 text-[15px] text-text placeholder-textFaint focus:outline-none focus:border-accent transition-colors resize-y"
+                  placeholder="How can we help?"
+                />
               </div>
-              <button type="submit" className="btn-primary w-full h-11">Send message</button>
+              <button type="submit" className="btn-primary">Send message</button>
             </form>
           )}
         </div>
+
+        <p className="text-sm text-textFaint max-w-2xl">
+          Looking for an answer right now? The{" "}
+          <Link href="/help" className="text-accent hover:opacity-80 transition-opacity">help center</Link>{" "}
+          and the{" "}
+          <Link href="/docs" className="text-accent hover:opacity-80 transition-opacity">documentation</Link>{" "}
+          cover most common questions.
+        </p>
       </div>
     </div>
   );

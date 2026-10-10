@@ -1,3 +1,6 @@
+import Link from "next/link";
+import PageHero from "@/components/PageHero";
+
 export const metadata = {
   title: "Documentation",
   description: "Guides and API reference for Frox.",
@@ -20,17 +23,15 @@ export default function DocsPage() {
 
   return (
     <div className="min-h-screen bg-bg text-text">
-      <div className="max-w-7xl mx-auto px-6 pt-32 pb-20">
-        {/* Hero */}
-        <div className="mb-12">
-          <h1 className="text-5xl md:text-6xl font-bold mb-4">
-            <span className="grad-text">Documentation</span>
-          </h1>
-          <p className="text-textDim text-lg max-w-2xl">
-            Guides and reference for integrating Frox into your applications.
-          </p>
-        </div>
+      <PageHero
+        eyebrow="Developers"
+        title="Documentation"
+        sub="Guides and reference for integrating Frox into your applications."
+      >
+        <Link href="/docs" className="btn-secondary">Browse the guides</Link>
+      </PageHero>
 
+      <div className="container-x pb-24">
         <div className="flex flex-col lg:flex-row gap-10">
           {/* Sidebar */}
           <aside className="lg:w-64 shrink-0">

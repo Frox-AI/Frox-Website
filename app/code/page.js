@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import PageHero from "@/components/PageHero";
 import Icon, { LangBadge } from "@/components/Icon";
 
 const FILES = [
@@ -170,22 +171,18 @@ export default function CodePage() {
 
   return (
     <div className="min-h-screen bg-bg text-text">
-      <div className="max-w-7xl mx-auto px-6 pt-32 pb-20">
-        {/* Hero */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-border bg-bgCard text-sm text-textDim mb-6">
-            <span className="w-2 h-2 rounded-full bg-accent2 animate-pulse" />
-            Code workspace
-          </div>
-          <h1 className="text-5xl md:text-6xl font-bold mb-6">
-            <span className="grad-text">Frox Code</span>
-          </h1>
-          <p className="text-lg text-textDim max-w-2xl mx-auto">
-            Explain, debug, review, and refactor code without leaving the file
-          </p>
-        </div>
+      <PageHero
+        eyebrow="Product"
+        title="Frox Code"
+        sub="Explain, debug, review, and refactor without leaving the file. Frox Code mirrors a real editor and understands 40+ languages."
+      >
+        <Link href="/chat" className="btn-primary">Open the workspace</Link>
+        <Link href="/docs" className="btn-secondary">Read the API docs</Link>
+      </PageHero>
 
+      <div className="container-x pb-24">
         {/* Code Editor Interface */}
+
         <div className="card rounded-2xl overflow-hidden border border-border mb-20 glow">
           {/* Editor Header */}
           <div className="flex items-center justify-between px-4 py-3 bg-bgCard border-b border-border">
@@ -298,12 +295,12 @@ export default function CodePage() {
 
         {/* Feature Tabs */}
         <div className="mb-20">
-          <h2 className="text-3xl font-bold text-center mb-4">
-            <span className="grad-text">What It Does</span>
-          </h2>
-          <p className="text-textDim text-center mb-10 max-w-xl mx-auto">
-            Pick a task, and Frox Code works on the file you have open. Every action is a prompt you can edit and re-run.
-          </p>
+          <div className="max-w-xl mb-8">
+            <h2 className="text-2xl font-bold tracking-tight">What it does</h2>
+            <p className="text-textDim mt-2 text-pretty">
+              Pick a task, and Frox Code works on the file you have open. Every action is a prompt you can edit and re-run.
+            </p>
+          </div>
           <div className="flex flex-wrap justify-center gap-3 mb-8">
             {TABS.map((tab) => (
               <button
@@ -339,12 +336,12 @@ export default function CodePage() {
 
         {/* Language Support */}
         <div className="mb-20">
-          <h2 className="text-3xl font-bold text-center mb-4">
-            <span className="grad-text">40+ Languages Supported</span>
-          </h2>
-          <p className="text-textDim text-center mb-10 max-w-xl mx-auto">
-            From mainstream to niche — Frox Code understands your stack.
-          </p>
+          <div className="max-w-xl mb-8">
+            <h2 className="text-2xl font-bold tracking-tight">Language support</h2>
+            <p className="text-textDim mt-2 text-pretty">
+              From mainstream to niche — Frox Code understands your stack.
+            </p>
+          </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {LANGUAGES.map((lang) => (
               <div
@@ -366,30 +363,23 @@ export default function CodePage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
             {STATS.map((stat) => (
               <div key={stat.label}>
-                <div className="text-4xl md:text-5xl font-bold grad-text mb-2">{stat.value}</div>
+                <div className="text-3xl md:text-4xl font-bold tracking-tight text-accent mb-2">{stat.value}</div>
                 <div className="text-textDim">{stat.label}</div>
               </div>
             ))}
           </div>
         </div>
 
-        {/* CTA */}
-        <div className="text-center mt-20">
-          <h2 className="text-3xl font-bold mb-4">
-            Try <span className="grad-text">Frox Code</span>
-          </h2>
-          <p className="text-textDim mb-8 max-w-lg mx-auto">
+        <section className="glass border border-ink/10 rounded-3xl p-8 sm:p-12 text-center">
+          <h2 className="text-2xl font-bold tracking-tight text-balance">Try Frox Code</h2>
+          <p className="mt-3 text-textDim max-w-lg mx-auto text-pretty">
             Open the workspace and paste in a file. The first $10 of usage is on us.
           </p>
-          <div className="flex items-center justify-center gap-4">
-            <Link href="/chat" className="btn-primary px-6 py-3 rounded-lg font-medium">
-              Open workspace
-            </Link>
-            <Link href="/docs" className="btn-secondary px-6 py-3 rounded-lg font-medium">
-              Read the docs
-            </Link>
+          <div className="mt-6 flex flex-wrap gap-3 justify-center">
+            <Link href="/chat" className="btn-primary">Open the workspace</Link>
+            <Link href="/docs" className="btn-secondary">Read the docs</Link>
           </div>
-        </div>
+        </section>
       </div>
     </div>
   );

@@ -240,8 +240,7 @@ export default function SettingsPage() {
                       </p>
                     </div>
                     <button
-                      className="text-xs font-medium px-3 py-1.5 rounded-lg"
-                      style={{ background: "rgba(255, 77, 77, 0.1)", color: "#ff4d4d", border: "1px solid rgba(255, 77, 77, 0.2)" }}
+                      className="text-xs font-medium px-3 py-1.5 rounded-lg bg-red-500/10 text-red-500 border border-red-500/20 hover:bg-red-500/15 transition-colors"
                     >
                       Revoke
                     </button>

@@ -1,3 +1,6 @@
+import Link from "next/link";
+import PageHero from "@/components/PageHero";
+
 export const metadata = {
   title: "About",
   description: "Who we are and how we work.",
@@ -102,18 +105,16 @@ export default function AboutPage() {
 
   return (
     <div className="min-h-screen bg-bg text-text">
-      <div className="max-w-7xl mx-auto px-6 pt-32 pb-20">
-        {/* Hero */}
-        <div className="text-center mb-20">
-          <h1 className="text-5xl md:text-6xl font-bold mb-4">
-            <span className="grad-text">About Frox Studio</span>
-          </h1>
-          <p className="text-textDim text-lg max-w-2xl mx-auto">
-            A small team building open-weight AI models for text, code, image,
-            audio, and 3D.
-          </p>
-        </div>
+      <PageHero
+        eyebrow="About"
+        title="About Frox Studio"
+        sub="A small team building open-weight AI models for text, code, image, audio, and 3D."
+      >
+        <Link href="/careers" className="btn-primary">See open roles</Link>
+        <Link href="/blog" className="btn-secondary">Read the blog</Link>
+      </PageHero>
 
+      <div className="container-x pb-24">
         {/* Mission */}
         <section className="mb-20">
           <div className="card rounded-2xl p-10 md:p-14 text-center">

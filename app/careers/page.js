@@ -1,5 +1,6 @@
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
+import RevealGroup from "@/components/RevealGroup";
 import { JOBS } from "@/lib/content";
 
 const VALUES = [
@@ -25,14 +26,14 @@ export default function CareersPage() {
       </PageHero>
 
       <div className="container-x pb-24">
-        <div className="grid sm:grid-cols-3 gap-5 mb-16">
+        <RevealGroup className="grid sm:grid-cols-3 gap-5 mb-16">
           {VALUES.map((v) => (
-            <div key={v.title} className="card p-6">
+            <div key={v.title} className="card card-hover p-6">
               <h3 className="font-semibold mb-2">{v.title}</h3>
               <p className="text-sm text-textDim leading-relaxed text-pretty">{v.desc}</p>
             </div>
           ))}
-        </div>
+        </RevealGroup>
 
         <div className="flex items-end justify-between mb-6">
           <h2 className="text-2xl font-bold tracking-tight">Open positions</h2>

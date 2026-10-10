@@ -1,5 +1,6 @@
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
+import RevealGroup from "@/components/RevealGroup";
 import Icon from "@/components/Icon";
 
 const DESKTOP_PLATFORMS = [
@@ -95,9 +96,9 @@ export default function DownloadPage() {
           Version 1.5.0 — released October 2026
         </p>
 
-        <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <RevealGroup className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {DESKTOP_PLATFORMS.map((p) => (
-            <div key={p.file} className="card p-6 flex flex-col">
+            <div key={p.file} className="card card-hover p-6 flex flex-col">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
                   <span className="w-10 h-10 rounded-lg bg-ink/[0.05] border border-ink/10 grid place-items-center text-textDim">
@@ -124,7 +125,7 @@ export default function DownloadPage() {
               </a>
             </div>
           ))}
-        </div>
+        </RevealGroup>
       </section>
 
       <section>
@@ -135,9 +136,9 @@ export default function DownloadPage() {
           Take Frox anywhere. Available on iOS and Android.
         </p>
 
-        <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
+        <RevealGroup className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
           {MOBILE_PLATFORMS.map((p) => (
-            <div key={p.name} className="card p-6 flex flex-col items-center text-center">
+            <div key={p.name} className="card card-hover p-6 flex flex-col items-center text-center">
               <span className="w-12 h-12 rounded-xl bg-ink/[0.05] border border-ink/10 grid place-items-center text-textDim">
                 <Icon name="smartphone" size={26} />
               </span>
@@ -157,7 +158,7 @@ export default function DownloadPage() {
               </a>
             </div>
           ))}
-        </div>
+        </RevealGroup>
       </section>
 
       <section>

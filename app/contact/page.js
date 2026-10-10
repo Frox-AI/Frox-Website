@@ -2,6 +2,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
+import RevealGroup from "@/components/RevealGroup";
 
 const CHANNELS = [
   { title: "Sales", email: "sales@froxstudio.ai", desc: "Enterprise plans and custom models" },
@@ -21,15 +22,15 @@ export default function ContactPage() {
       />
 
       <div className="container-x pb-24 space-y-16">
-        <div className="grid md:grid-cols-3 gap-5">
+        <RevealGroup className="grid md:grid-cols-3 gap-5">
           {CHANNELS.map((c) => (
-            <div key={c.title} className="card p-6">
+            <div key={c.title} className="card card-hover p-6">
               <h3 className="font-semibold mb-1">{c.title}</h3>
               <p className="text-sm text-textDim mb-3">{c.desc}</p>
               <a href={`mailto:${c.email}`} className="text-accent text-sm hover:opacity-80 transition-opacity">{c.email}</a>
             </div>
           ))}
-        </div>
+        </RevealGroup>
 
         <div className="max-w-2xl card p-8">
           {sent ? (

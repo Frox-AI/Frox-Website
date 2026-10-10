@@ -123,8 +123,8 @@ export default function HomePage() {
     <div className="relative overflow-hidden">
       {/* ===== HERO ===== */}
       <section className="relative pt-36 pb-20">
-        <div className="absolute top-[-10rem] left-1/2 -translate-x-1/2 w-[1100px] h-[700px] hero-glow pointer-events-none" />
-        <div className="absolute inset-x-0 top-0 h-[620px] grid-bg pointer-events-none opacity-70" />
+        <div className="absolute top-[-10rem] left-1/2 -translate-x-1/2 w-[1100px] h-[700px] hero-glow glow-breathe pointer-events-none" />
+        <div className="absolute inset-x-0 top-0 h-[620px] grid-bg grid-drift pointer-events-none opacity-70" />
         <div className="aurora w-[420px] h-[420px] bg-violet-600/30 top-10 left-[8%]" />
         <div className="aurora w-[380px] h-[380px] bg-cyan-500/20 top-40 right-[6%]" style={{ animationDelay: "3s" }} />
 
@@ -141,7 +141,7 @@ export default function HomePage() {
             <h1 className="mt-7 text-[clamp(2.75rem,7vw,5.25rem)] font-extrabold tracking-[-0.04em] leading-[1.02] text-balance">
               Frontier AI models
               <br />
-              for <span className="font-display italic font-normal grad-text pr-2">everyone</span>.
+              for <span className="font-display italic font-normal grad-text grad-sheen pr-2">everyone</span>.
             </h1>
           </Reveal>
 

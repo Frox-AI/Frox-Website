@@ -1,5 +1,6 @@
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
+import RevealGroup from "@/components/RevealGroup";
 import Icon from "@/components/Icon";
 
 const GROUPS = [
@@ -52,10 +53,10 @@ export default function FeaturesPage() {
               <p className="text-[12px] uppercase tracking-widest text-accent2 mb-2">{group.eyebrow}</p>
               <h2 className="text-2xl font-bold tracking-tight">{group.title}</h2>
             </div>
-            <div className={`grid gap-5 ${gi === 0 ? "md:grid-cols-2 lg:grid-cols-3" : "md:grid-cols-2 lg:grid-cols-3"}`}>
+            <RevealGroup className={`grid gap-5 ${gi === 0 ? "md:grid-cols-2 lg:grid-cols-3" : "md:grid-cols-2 lg:grid-cols-3"}`}>
               {group.items.map((it) => (
-                <div key={it.label} className="card p-6 flex flex-col">
-                  <span className="w-10 h-10 rounded-xl grad-bg grid place-items-center text-white mb-4">
+                <div key={it.label} className="card card-hover p-6 flex flex-col">
+                  <span className="w-10 h-10 rounded-xl grad-bg grid place-items-center text-white mb-4 transition-transform duration-300 group-hover:scale-110">
                     <Icon name={it.icon} size={18} />
                   </span>
                   <h3 className="font-semibold mb-2">{it.label}</h3>
@@ -67,7 +68,7 @@ export default function FeaturesPage() {
                   )}
                 </div>
               ))}
-            </div>
+            </RevealGroup>
           </section>
         ))}
 

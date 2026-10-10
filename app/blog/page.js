@@ -1,5 +1,6 @@
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
+import RevealGroup from "@/components/RevealGroup";
 import { POSTS } from "@/lib/content";
 
 const CATEGORIES = ["All", "Product", "Research", "Tutorials", "Company", "Release"];
@@ -21,7 +22,7 @@ export default function BlogPage() {
       />
 
       <div className="container-x pb-24">
-        <Link href={`/blog/${featured.slug}`} className="card block overflow-hidden group mb-14 hover:!border-ink/20">
+        <Link href={`/blog/${featured.slug}`} className="card card-hover block overflow-hidden group mb-14 hover:!border-ink/20">
           <div className="grad-bg h-56 md:h-72 relative overflow-hidden">
             <div className="absolute inset-0 grid-bg opacity-30" />
             <span className="absolute inset-0 grid place-items-center font-display text-7xl text-white/25">Frox</span>
@@ -44,10 +45,10 @@ export default function BlogPage() {
           ))}
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <RevealGroup className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {rest.map((post) => (
-            <Link key={post.slug} href={`/blog/${post.slug}`} className="card overflow-hidden group flex flex-col">
-              <div className="h-36 grad-bg opacity-70 group-hover:opacity-100 transition-opacity" />
+            <Link key={post.slug} href={`/blog/${post.slug}`} className="card card-hover overflow-hidden group flex flex-col">
+              <div className="h-36 grad-bg grad-sheen opacity-70 group-hover:opacity-100 transition-opacity" />
               <div className="p-6 flex flex-col flex-1">
                 <div className="flex items-center gap-3 mb-3">
                   <span className="chip !py-0.5 !px-2.5 !text-[11px] text-accent2">{post.tag}</span>
@@ -59,7 +60,7 @@ export default function BlogPage() {
               </div>
             </Link>
           ))}
-        </div>
+        </RevealGroup>
 
         <div className="card p-10 text-center mt-16">
           <h2 className="text-2xl font-bold tracking-tight">Get new posts by email</h2>

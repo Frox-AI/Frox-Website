@@ -1,5 +1,6 @@
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
+import RevealGroup from "@/components/RevealGroup";
 import Icon from "@/components/Icon";
 
 const INTEGRATIONS = [
@@ -30,15 +31,15 @@ export default function IntegrationsPage() {
       </PageHero>
 
       <div className="container-x pb-24">
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <RevealGroup className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {INTEGRATIONS.map((it) => (
-            <div key={it.name} className="card p-6">
+            <div key={it.name} className="card card-hover p-6">
               <span className="text-[11px] uppercase tracking-widest text-textFaint">{it.cat}</span>
               <h2 className="font-semibold mt-2 mb-1.5">{it.name}</h2>
               <p className="text-[13px] text-textDim leading-relaxed text-pretty">{it.desc}</p>
             </div>
           ))}
-        </div>
+        </RevealGroup>
 
         <div className="mt-16 card p-8 flex flex-col md:flex-row md:items-center justify-between gap-6">
           <div className="flex items-start gap-4">

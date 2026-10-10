@@ -75,9 +75,14 @@ export default function Nav() {
                 {openMenu === name && (
                   <div className="absolute left-0 top-full pt-2 w-[340px]">
                     <div className="glass border border-ink/10 rounded-2xl p-2 shadow-card animate-fade-up">
-                      {items.map((it) => (
-                        <Link key={it.href} href={it.href} className="flex items-start gap-3 p-3 rounded-xl hover:bg-ink/[0.06] transition-colors">
-                          <span className="w-9 h-9 rounded-lg bg-ink/[0.05] border border-ink/[0.08] grid place-items-center shrink-0">
+                      {items.map((it, idx) => (
+                        <Link
+                          key={it.href}
+                          href={it.href}
+                          className="flex items-start gap-3 p-3 rounded-xl hover:bg-ink/[0.06] transition-colors"
+                          style={{ animation: `dropIn .32s cubic-bezier(.16,1,.3,1) ${idx * 28}ms both` }}
+                        >
+                          <span className="w-9 h-9 rounded-lg bg-ink/[0.05] border border-ink/[0.08] grid place-items-center shrink-0 transition-colors duration-300 group-hover:border-accent/40">
                             <svg className="w-4.5 h-4.5 text-accent" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.7}>
                               <path strokeLinecap="round" strokeLinejoin="round" d={it.icon} />
                             </svg>

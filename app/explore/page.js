@@ -1,5 +1,6 @@
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
+import RevealGroup from "@/components/RevealGroup";
 import Icon from "@/components/Icon";
 
 const TABS = [
@@ -33,9 +34,9 @@ export default function ExplorePage() {
       </PageHero>
 
       <div className="container-x pb-24">
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-14">
+        <RevealGroup className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-14">
           {TABS.map((t) => (
-            <div key={t.label} className="card p-6">
+            <div key={t.label} className="card card-hover p-6">
               <span className="w-10 h-10 rounded-xl bg-accent/10 border border-accent/20 grid place-items-center text-accent mb-3">
                 <Icon name={t.icon} size={20} />
               </span>
@@ -43,15 +44,15 @@ export default function ExplorePage() {
               <p className="text-[13px] text-textDim mt-2 leading-relaxed text-pretty">{t.desc}</p>
             </div>
           ))}
-        </div>
+        </RevealGroup>
 
         <div className="flex items-end justify-between mb-6">
           <h2 className="text-2xl font-bold tracking-tight">Featured</h2>
           <span className="text-sm text-textFaint">Updated weekly</span>
         </div>
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <RevealGroup className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {FEATURED.map((f) => (
-            <div key={f.title} className="card overflow-hidden group cursor-pointer">
+            <div key={f.title} className="card card-hover overflow-hidden group cursor-pointer">
               <div className={`h-40 bg-gradient-to-br ${f.grad} grid place-items-center`}>
                 <Icon name="sparkles" size={26} className="text-white/70" />
               </div>
@@ -62,7 +63,7 @@ export default function ExplorePage() {
               </div>
             </div>
           ))}
-        </div>
+        </RevealGroup>
 
         <p className="text-sm text-textFaint mt-10">Public galleries are opt-in. Nothing you generate is shared unless you choose to share it.</p>
       </div>

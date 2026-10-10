@@ -1,5 +1,6 @@
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
+import RevealGroup from "@/components/RevealGroup";
 import Icon from "@/components/Icon";
 
 const MODELS = [
@@ -68,9 +69,9 @@ export default function ModelsPage() {
       </PageHero>
 
       <div className="container-x pb-24">
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <RevealGroup className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {MODELS.map((m) => (
-            <div key={m.id} className="card p-7 flex flex-col">
+            <div key={m.id} className="card card-hover p-7 flex flex-col">
               <div className="flex items-start justify-between gap-3">
                 <span className="w-11 h-11 rounded-xl grad-bg grid place-items-center font-bold text-white">{m.name.split(" ")[1][0].toUpperCase()}</span>
                 <span className={`chip !text-[12px] ${m.badge === "Live" ? "!text-emerald-600 dark:!text-emerald-400" : "!text-accent2"}`}>{m.badge}</span>
@@ -90,7 +91,7 @@ export default function ModelsPage() {
             </div>
           ))}
 
-          <div className="card p-7 flex flex-col justify-between border-dashed !border-ink/15">
+          <div className="card card-hover p-7 flex flex-col justify-between border-dashed !border-ink/15">
             <div>
               <span className="w-11 h-11 rounded-xl bg-ink/[0.05] border border-ink/10 grid place-items-center text-textFaint">
                 <Icon name="sparkles" size={18} />
@@ -103,10 +104,10 @@ export default function ModelsPage() {
             </div>
             <Link href="/waitlist" className="btn-secondary !py-2 !px-4 text-sm mt-6">Join the waitlist</Link>
           </div>
-        </div>
+        </RevealGroup>
 
         <div className="mt-16 glass border border-ink/10 rounded-3xl p-8 sm:p-10">
-          <div className="grid md:grid-cols-3 gap-8">
+          <RevealGroup className="grid md:grid-cols-3 gap-8">
             {[
               { n: "Same API", d: "Swap models with one JSON field. No per-model SDKs to learn." },
               { n: "Host anywhere", d: "Open weights mean your data never has to leave your cloud." },
@@ -117,7 +118,7 @@ export default function ModelsPage() {
                 <p className="text-sm text-textDim leading-relaxed">{b.d}</p>
               </div>
             ))}
-          </div>
+          </RevealGroup>
         </div>
       </div>
     </div>

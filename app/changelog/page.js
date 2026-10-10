@@ -40,6 +40,7 @@ export const metadata = {
 
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
+import RevealGroup from "@/components/RevealGroup";
 
 export default function ChangelogPage() {
   return (
@@ -53,7 +54,7 @@ export default function ChangelogPage() {
       </PageHero>
 
       <div className="container-x pb-24">
-        <div className="max-w-3xl space-y-12">
+        <RevealGroup className="max-w-3xl space-y-12" step={110}>
           {ENTRIES.map((e) => (
             <div key={e.version} className="relative pl-8 border-l border-borderSoft">
               <div className="absolute -left-[7px] top-1.5 w-3.5 h-3.5 rounded-full grad-bg" />
@@ -72,7 +73,7 @@ export default function ChangelogPage() {
               </ul>
             </div>
           ))}
-        </div>
+        </RevealGroup>
       </div>
     </div>
   );

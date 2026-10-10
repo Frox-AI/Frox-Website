@@ -50,7 +50,7 @@ export default function SettingsPage() {
 
   return (
     <div className="min-h-screen" style={{ background: "var(--bg)" }}>
-      <div className="max-w-7xl mx-auto px-6 pt-32 pb-16">
+      <div className="max-w-7xl mx-auto px-6 pt-32 pb-24">
         <div className="mb-10">
           <h1 className="text-4xl font-bold grad-text mb-2">Settings</h1>
           <p className="text-lg" style={{ color: "var(--text-dim)" }}>

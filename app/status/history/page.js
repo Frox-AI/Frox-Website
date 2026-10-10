@@ -1,5 +1,6 @@
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
+import RevealGroup from "@/components/RevealGroup";
 
 const BY_YEAR = [
   {
@@ -46,7 +47,7 @@ export default function StatusHistoryPage() {
         <Link href="/status" className="btn-secondary">Back to status</Link>
       </PageHero>
 
-      <div className="container-x pb-24 max-w-3xl">
+      <RevealGroup className="container-x pb-24 max-w-3xl" step={120}>
         {BY_YEAR.map((y) => (
           <section key={y.year} className="mb-12">
             <h2 className="text-xl font-bold tracking-tight mb-4">{y.year}</h2>
@@ -62,7 +63,7 @@ export default function StatusHistoryPage() {
             </div>
           </section>
         ))}
-      </div>
+      </RevealGroup>
     </div>
   );
 }

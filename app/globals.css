@@ -329,8 +329,93 @@ button { font-family: inherit; cursor: pointer; }
 @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 .marquee { animation: marquee 32s linear infinite; }
 
-.reveal { opacity: 0; transform: translateY(22px); transition: opacity .8s cubic-bezier(.16,1,.3,1), transform .8s cubic-bezier(.16,1,.3,1); }
-.reveal.in { opacity: 1; transform: none; }
+/* ---------- Scroll reveal ----------
+   Safe by construction: content is visible until JS explicitly arms the
+   observer (.is-armed), so a JS/IO failure can never leave the page blank.
+   The `.reveal` class alone (used by <Reveal>) does arm it, so it keeps its
+   original always-mounted behaviour. */
+.is-armed > .reveal {
+  opacity: 0;
+  transform: translateY(var(--reveal-from, 22px));
+  will-change: opacity, transform;
+}
+.is-armed > .reveal.in,
+.reveal.in {
+  opacity: 1;
+  transform: none;
+  will-change: auto;
+}
+.reveal {
+  transition:
+    opacity .8s cubic-bezier(.16, 1, .3, 1),
+    transform .8s cubic-bezier(.16, 1, .3, 1);
+}
+
+/* ---------- Micro-interactions ---------- */
+.lift { transition: transform .3s cubic-bezier(.16,1,.3,1), box-shadow .3s, border-color .3s; }
+.lift:hover { transform: translateY(-4px); }
+.card-hover {
+  transition: transform .35s cubic-bezier(.16,1,.3,1), border-color .35s, box-shadow .35s;
+}
+.card-hover:hover {
+  transform: translateY(-5px);
+  border-color: color-mix(in srgb, var(--accent) 38%, var(--line));
+  box-shadow: 0 24px 60px -32px color-mix(in srgb, var(--accent) 60%, transparent);
+}
+.press:active { transform: translateY(-1px) scale(.985); }
+
+/* Gradient text gets a slow sheen */
+.grad-sheen {
+  background-size: 260% 100%;
+  background-position: 0% 50%;
+  animation: sheen 9s ease-in-out infinite;
+}
+@keyframes sheen {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* Animated grid/glow backdrops */
+.grid-drift {
+  animation: grid-drift 34s linear infinite;
+  will-change: background-position;
+}
+@keyframes grid-drift {
+  from { background-position: 0 0; }
+  to { background-position: 56px 56px; }
+}
+.glow-breathe { animation: glow-breathe 12s ease-in-out infinite; }
+@keyframes glow-breathe {
+  0%, 100% { opacity: .5; }
+  50% { opacity: .85; }
+}
+
+/* Animated underline for inline links */
+.link-slide { position: relative; }
+.link-slide::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: -2px;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .35s cubic-bezier(.16,1,.3,1);
+}
+.link-slide:hover::after { transform: scaleX(1); }
+
+/* Dropdown / popover item entrance (used by Nav, chat menus) */
+@keyframes dropIn {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: none; }
+}
+
+/* Accordion / expandable content */
+@keyframes expandIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: none; }
+}
+.expand-in { animation: expandIn .3s cubic-bezier(.16,1,.3,1) both; }
 
 /* ---------- Layout ---------- */
 .container-x { max-width: 1200px; margin: 0 auto; padding-left: 24px; padding-right: 24px; }
@@ -356,6 +441,19 @@ button { font-family: inherit; cursor: pointer; }
 .prose-frox h1, .prose-frox h2, .prose-frox h3 { font-weight: 700; margin: 1em 0 0.5em; }
 
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after { animation-duration: .001ms !important; transition-duration: .001ms !important; }
-  .reveal { opacity: 1; transform: none; }
+  *, *::before, *::after {
+    animation-duration: .001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .001ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal,
+  .is-armed > .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .card:hover,
+  .lift:hover,
+  .card-hover:hover,
+  .btn-primary:hover { transform: none !important; }
 }

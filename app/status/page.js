@@ -1,5 +1,6 @@
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
+import RevealGroup from "@/components/RevealGroup";
 import Icon from "@/components/Icon";
 
 const SERVICES = [
@@ -42,14 +43,14 @@ export default function StatusPage() {
       </PageHero>
 
       <div className="container-x pb-24">
-        <div className="grid sm:grid-cols-3 gap-5 mb-12">
+        <RevealGroup className="grid sm:grid-cols-3 gap-5 mb-12">
           {STATS.map((s) => (
-            <div key={s.label} className="card p-6">
+            <div key={s.label} className="card card-hover p-6">
               <p className="text-3xl font-bold tracking-tight grad-text">{s.value}</p>
               <p className="text-sm text-textDim mt-1">{s.label}</p>
             </div>
           ))}
-        </div>
+        </RevealGroup>
 
         <div className="card overflow-hidden">
           <div className="flex items-center justify-between px-6 py-4 border-b border-ink/[0.07]">

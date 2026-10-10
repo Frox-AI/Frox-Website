@@ -1,4 +1,5 @@
 import Link from "next/link";
+import RevealGroup from "@/components/RevealGroup";
 import PageHero from "@/components/PageHero";
 
 export const metadata = {
@@ -132,16 +133,16 @@ export default function AboutPage() {
 
         {/* Stats */}
         <section className="mb-20">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <RevealGroup className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {stats.map((stat) => (
-              <div key={stat.label} className="card rounded-xl p-6 text-center">
+              <div key={stat.label} className="card card-hover rounded-xl p-6 text-center">
                 <div className="text-3xl md:text-4xl font-bold grad-text mb-2">
                   {stat.value}
                 </div>
                 <div className="text-textDim text-sm">{stat.label}</div>
               </div>
             ))}
-          </div>
+          </RevealGroup>
         </section>
 
         {/* Team */}
@@ -149,11 +150,11 @@ export default function AboutPage() {
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
             <span className="grad-text">Meet the Team</span>
           </h2>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <RevealGroup className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {team.map((member) => (
               <div
                 key={member.name}
-                className="card rounded-xl p-6 text-center"
+                className="card card-hover rounded-xl p-6 text-center"
               >
                 <div className="w-20 h-20 rounded-full grad-bg flex items-center justify-center text-white font-bold text-xl mx-auto mb-4">
                   {member.initials}
@@ -167,7 +168,7 @@ export default function AboutPage() {
                 </p>
               </div>
             ))}
-          </div>
+          </RevealGroup>
         </section>
 
         {/* Values */}
@@ -175,16 +176,16 @@ export default function AboutPage() {
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
             <span className="grad-text">Our Values</span>
           </h2>
-          <div className="grid sm:grid-cols-2 gap-6">
+          <RevealGroup className="grid sm:grid-cols-2 gap-6">
             {values.map((value) => (
-              <div key={value.title} className="card rounded-xl p-8">
+              <div key={value.title} className="card card-hover rounded-xl p-8">
                 <h3 className="text-xl font-semibold mb-3">{value.title}</h3>
                 <p className="text-textDim leading-relaxed">
                   {value.description}
                 </p>
               </div>
             ))}
-          </div>
+          </RevealGroup>
         </section>
 
         {/* Timeline */}

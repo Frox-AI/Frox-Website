@@ -1,5 +1,6 @@
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
+import RevealGroup from "@/components/RevealGroup";
 import Icon from "@/components/Icon";
 
 const CHANNELS = [
@@ -26,16 +27,16 @@ export default function SupportPage() {
       </PageHero>
 
       <div className="container-x pb-24">
-        <div className="grid gap-5 md:grid-cols-3">
+        <RevealGroup className="grid gap-5 md:grid-cols-3">
           {CHANNELS.map((c) => (
-            <div key={c.title} className="card p-7 flex flex-col">
+            <div key={c.title} className="card card-hover p-7 flex flex-col">
               <span className="w-10 h-10 rounded-xl grad-bg grid place-items-center text-white mb-4"><Icon name={c.icon} size={18} /></span>
               <h2 className="font-semibold mb-2">{c.title}</h2>
               <p className="text-sm text-textDim leading-relaxed text-pretty flex-1">{c.desc}</p>
               <Link href={c.href} className="btn-secondary !py-2 !px-4 text-sm mt-5">{c.cta}</Link>
             </div>
           ))}
-        </div>
+        </RevealGroup>
 
         <div className="mt-16 card p-8 flex flex-col md:flex-row md:items-center justify-between gap-6">
           <div>

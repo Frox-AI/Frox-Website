@@ -1,5 +1,6 @@
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
+import RevealGroup from "@/components/RevealGroup";
 import Icon from "@/components/Icon";
 
 const PILLARS = [
@@ -29,9 +30,9 @@ export default function SecurityPage() {
       </PageHero>
 
       <div className="container-x pb-24 space-y-16">
-        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+        <RevealGroup className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {PILLARS.map((p) => (
-            <div key={p.title} className="card p-6">
+            <div key={p.title} className="card card-hover p-6">
               <span className="w-10 h-10 rounded-xl grad-bg grid place-items-center text-white mb-4">
                 <Icon name={p.icon} size={18} />
               </span>
@@ -39,7 +40,7 @@ export default function SecurityPage() {
               <p className="text-sm text-textDim leading-relaxed text-pretty">{p.desc}</p>
             </div>
           ))}
-        </div>
+        </RevealGroup>
 
         <section className="cta-banner rounded-2xl p-10 text-center">
           <h2 className="text-2xl font-bold tracking-tight mb-2">Report a vulnerability</h2>

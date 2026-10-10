@@ -1,5 +1,6 @@
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
+import RevealGroup from "@/components/RevealGroup";
 import Icon from "@/components/Icon";
 
 const COLUMNS = [
@@ -56,9 +57,9 @@ export default function RoadmapPage() {
       </PageHero>
 
       <div className="container-x pb-24">
-        <div className="grid gap-6 lg:grid-cols-3">
+        <RevealGroup className="grid gap-6 lg:grid-cols-3">
           {COLUMNS.map((col) => (
-            <div key={col.label} className="card p-7">
+            <div key={col.label} className="card card-hover p-7">
               <div className="flex items-center gap-2.5 mb-1">
                 <span className={`w-2 h-2 rounded-full ${col.tone === "emerald" ? "bg-emerald-400" : col.tone === "accent" ? "bg-accent" : "bg-textFaint"}`} />
                 <h2 className="text-lg font-bold tracking-tight">{col.label}</h2>
@@ -79,7 +80,7 @@ export default function RoadmapPage() {
               </ul>
             </div>
           ))}
-        </div>
+        </RevealGroup>
 
         <p className="text-sm text-textFaint mt-10 max-w-2xl">
           Have a request that isn&apos;t listed? Tell us at{" "}

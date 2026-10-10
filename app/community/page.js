@@ -1,5 +1,6 @@
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
+import RevealGroup from "@/components/RevealGroup";
 import Icon from "@/components/Icon";
 
 const SPACES = [
@@ -27,9 +28,9 @@ export default function CommunityPage() {
       </PageHero>
 
       <div className="container-x pb-24">
-        <div className="grid gap-5 sm:grid-cols-2">
+        <RevealGroup className="grid gap-5 sm:grid-cols-2">
           {SPACES.map((s) => (
-            <div key={s.title} className="card p-7">
+            <div key={s.title} className="card card-hover p-7">
               <span className="w-10 h-10 rounded-xl bg-ink/[0.05] border border-ink/10 grid place-items-center text-accent mb-4">
                 <Icon name={s.icon} size={18} />
               </span>
@@ -37,7 +38,7 @@ export default function CommunityPage() {
               <p className="text-sm text-textDim leading-relaxed text-pretty">{s.desc}</p>
             </div>
           ))}
-        </div>
+        </RevealGroup>
 
         <div className="mt-16 glass border border-ink/10 rounded-3xl p-8 sm:p-10 text-center">
           <h2 className="text-xl font-bold tracking-tight">New here? Start a thread.</h2>

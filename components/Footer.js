@@ -15,7 +15,7 @@ const COLUMNS = [
     title: "Developers",
     links: [
       { label: "Documentation", href: "/docs" },
-      { label: "API Reference", href: "/docs" },
+      { label: "API Reference", href: "/docs#authentication" },
       { label: "SDKs", href: "/download" },
       { label: "Changelog", href: "/changelog" },
       { label: "Status", href: "/status" },
@@ -44,8 +44,8 @@ const COLUMNS = [
 
 export default function Footer() {
   return (
-    <footer className="relative border-t border-ink/[0.07] mt-24 overflow-hidden">
-      <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[700px] h-[300px] hero-glow opacity-40 pointer-events-none" />
+    <footer className="relative border-t border-ink/[0.07] overflow-hidden">
+      <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[700px] h-[300px] hero-glow glow-breathe opacity-40 pointer-events-none" />
       <div className="container-x relative py-16">
         <div className="grid grid-cols-2 md:grid-cols-6 gap-10">
           <div className="col-span-2">
@@ -63,7 +63,7 @@ export default function Footer() {
                 { label: "X", href: "https://x.com/FroxStudio", d: "M18.9 1.2h3.68l-8.04 9.2L24 22.8h-7.4l-5.8-7.58-6.63 7.58H.48l8.6-9.83L0 1.2h7.6l5.24 6.93L18.9 1.2zm-1.3 19.4h2L6.5 3.3H4.34l13.26 17.3z" },
                 { label: "Hugging Face", href: "https://huggingface.co/FroxStudio", d: "M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM8.5 9a1.5 1.5 0 100 3 1.5 1.5 0 000-3zm7 0a1.5 1.5 0 100 3 1.5 1.5 0 000-3zM12 17c-2.3 0-4.3-1.5-5-3.5h10c-.7 2-2.7 3.5-5 3.5z" },
               ].map((s) => (
-                <a key={s.label} href={s.href} target="_blank" rel="noreferrer" aria-label={s.label} className="w-9 h-9 grid place-items-center rounded-lg border border-ink/[0.08] bg-ink/[0.03] text-textDim hover:text-text hover:border-ink/20 transition-colors">
+                <a key={s.label} href={s.href} target="_blank" rel="noreferrer" aria-label={s.label} className="w-9 h-9 grid place-items-center rounded-lg border border-ink/[0.08] bg-ink/[0.03] text-textDim hover:text-text hover:border-accent/40 hover:-translate-y-0.5 hover:bg-accent/10 transition-all duration-300">
                   <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d={s.d} /></svg>
                 </a>
               ))}
@@ -76,7 +76,7 @@ export default function Footer() {
               <ul className="space-y-2.5">
                 {col.links.map((l) => (
                   <li key={l.label}>
-                    <Link href={l.href} className="text-[14px] text-textDim hover:text-text transition-colors">{l.label}</Link>
+                    <Link href={l.href} className="text-[14px] text-textDim hover:text-accent transition-colors duration-200 inline-block hover:translate-x-0.5">{l.label}</Link>
                   </li>
                 ))}
               </ul>

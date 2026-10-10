@@ -1,5 +1,6 @@
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
+import RevealGroup from "@/components/RevealGroup";
 import Icon from "@/components/Icon";
 
 const TIERS = [
@@ -26,9 +27,9 @@ export default function PartnersPage() {
       </PageHero>
 
       <div className="container-x pb-24">
-        <div className="grid gap-5 md:grid-cols-2">
+        <RevealGroup className="grid gap-5 md:grid-cols-2">
           {TIERS.map((t) => (
-            <div key={t.name} className="card p-7">
+            <div key={t.name} className="card card-hover p-7">
               <span className="w-10 h-10 rounded-xl bg-ink/[0.05] border border-ink/10 grid place-items-center text-accent mb-4">
                 <Icon name="cornerDownRight" size={18} />
               </span>
@@ -36,7 +37,7 @@ export default function PartnersPage() {
               <p className="text-sm text-textDim leading-relaxed text-pretty">{t.desc}</p>
             </div>
           ))}
-        </div>
+        </RevealGroup>
 
         <div className="mt-16 glass border border-ink/10 rounded-3xl p-8 sm:p-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
           <div className="max-w-xl">

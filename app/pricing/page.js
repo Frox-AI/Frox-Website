@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
+import RevealGroup from "@/components/RevealGroup";
 import Icon from "@/components/Icon";
 
 const PLANS = [
@@ -129,13 +130,13 @@ export default function PricingPage() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
+        <RevealGroup className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
           {PLANS.map((plan) => {
             const price = yearly ? plan.yearly : plan.monthly;
             return (
               <div
                 key={plan.name}
-                className={`card relative p-6 flex flex-col ${
+                className={`card card-hover relative p-6 flex flex-col ${
                   plan.popular ? "border-2 border-accent glow" : ""
                 }`}
               >
@@ -188,7 +189,7 @@ export default function PricingPage() {
               </div>
             );
           })}
-        </div>
+        </RevealGroup>
 
         <p className="text-center text-sm text-textFaint">
           All prices in USD. Need a custom plan?{" "}
@@ -221,7 +222,7 @@ export default function PricingPage() {
                 </span>
               </button>
               {openFaq === i && (
-                <p className="px-5 pb-5 text-sm text-textDim">{faq.a}</p>
+                <p className="px-5 pb-5 text-sm text-textDim expand-in">{faq.a}</p>
               )}
             </div>
           ))}

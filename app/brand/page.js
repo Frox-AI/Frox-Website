@@ -1,4 +1,5 @@
 import Link from "next/link";
+import RevealGroup from "@/components/RevealGroup";
 import PageHero from "@/components/PageHero";
 
 const COLORS = [
@@ -28,7 +29,7 @@ export default function BrandPage() {
       <div className="container-x pb-24 max-w-4xl">
         <section className="mb-14">
           <h2 className="text-xl font-bold tracking-tight mb-5">Logo</h2>
-          <div className="grid sm:grid-cols-3 gap-5">
+          <RevealGroup className="grid sm:grid-cols-3 gap-5">
             {[
               { bg: "bg-white", label: "On light", border: true },
               { bg: "bg-[#07070a]", label: "On dark", border: false },
@@ -40,7 +41,7 @@ export default function BrandPage() {
                 <span className={`mt-4 text-[12.5px] ${s.bg === "bg-[#07070a]" ? "text-white/50" : "text-textFaint"}`}>{s.label}</span>
               </div>
             ))}
-          </div>
+          </RevealGroup>
         </section>
 
         <section className="mb-14">

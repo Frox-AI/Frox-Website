@@ -15,6 +15,17 @@ const GROUPS = [
     ],
   },
   {
+    title: "Platform",
+    links: [
+      { label: "Features", href: "/features" },
+      { label: "Explore", href: "/explore" },
+      { label: "Integrations", href: "/integrations" },
+      { label: "Roadmap", href: "/roadmap" },
+      { label: "Models", href: "/models" },
+      { label: "Prompt library", href: "/templates" },
+    ],
+  },
+  {
     title: "Developers",
     links: [
       { label: "Overview", href: "/developers" },
@@ -26,14 +37,14 @@ const GROUPS = [
     ],
   },
   {
-    title: "Resources",
+    title: "Community",
     links: [
-      { label: "Models", href: "/models" },
-      { label: "Prompt library", href: "/templates" },
+      { label: "Help center", href: "/help" },
+      { label: "Discussions", href: "/community" },
+      { label: "News", href: "/news" },
       { label: "FAQ", href: "/faq" },
       { label: "Blog", href: "/blog" },
-      { label: "Security", href: "/security" },
-      { label: "Support", href: "/support" },
+      { label: "Brand", href: "/brand" },
     ],
   },
   {
@@ -43,8 +54,19 @@ const GROUPS = [
       { label: "Careers", href: "/careers" },
       { label: "Press", href: "/press" },
       { label: "Contact", href: "/contact" },
+      { label: "Security", href: "/security" },
+      { label: "Waitlist", href: "/waitlist" },
+    ],
+  },
+  {
+    title: "Account",
+    links: [
       { label: "Dashboard", href: "/dashboard" },
       { label: "Settings", href: "/settings" },
+      { label: "Admin", href: "/admin" },
+      { label: "Support", href: "/support" },
+      { label: "Status", href: "/status" },
+      { label: "Sign in", href: "/auth/login" },
     ],
   },
 ];
@@ -59,7 +81,7 @@ export default function Footer() {
   return (
     <footer className="mt-auto rule-x">
       <div className="container-x py-16 md:py-20">
-        <div className="grid gap-10 md:grid-cols-[1.4fr_repeat(4,1fr)]">
+        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
           <div>
             <Link href="/" className="inline-flex items-center gap-2" aria-label="Frox Studio — home">
               <Mark size={26} />

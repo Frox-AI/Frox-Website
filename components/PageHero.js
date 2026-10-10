@@ -1,15 +1,18 @@
 import Reveal from "@/components/Reveal";
+import AnimatedBackground from "@/components/AnimatedBackground";
 
 export default function PageHero({ eyebrow, title, sub, children }) {
   return (
     <section className="relative pt-28 pb-16 overflow-hidden">
-      <div className="absolute inset-x-0 top-0 h-[420px] grid-bg grid-drift opacity-70 pointer-events-none" />
-      <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-[760px] h-[360px] hero-glow glow-breathe opacity-50 pointer-events-none" />
+      {/* Shared backdrop: every marketing page opens with the same motion
+          language, so pages feel related without looking identical. */}
+      <AnimatedBackground variant="soft" />
+
       <div className="container-x relative">
         <div className="max-w-3xl">
           {eyebrow && (
             <Reveal>
-              <p className="chip mb-5 w-fit">
+              <p className="chip mb-5 w-fit inline-flex items-center gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-accent2 pulse-dot" />
                 {eyebrow}
               </p>

@@ -1,29 +1,37 @@
 import Link from "next/link";
 
 /**
- * Brand lockup. The mark uses the real /icon.svg asset (self-contained gradient,
- * so it renders identically on light and dark), while the wordmark stays as
- * text so it inherits the current text color in both themes.
+ * Brand lockup built from the real /logo.webp asset.
  *
- * size:  20 | 24 | 28 | 32  — pixel size of the mark
- * tone:  "default" | "inverse" | "bare"
+ * The logo is a dark rounded square, so it reads correctly on both light and
+ * dark surfaces without needing a theme variant. The wordmark stays as text so
+ * it inherits the current text color in either theme.
+ *
+ * size: pixel size of the mark
  */
-export function Mark({ size = 28, className = "", rounded = true }) {
+export function Mark({ size = 28, className = "" }) {
   return (
     // eslint-disable-next-line @next/next/no-img-element
     <img
-      src="/icon.svg"
+      src="/logo.webp"
       alt=""
       aria-hidden="true"
       width={size}
       height={size}
-      className={`shrink-0 ${rounded ? "rounded-[22%]" : ""} ${className}`}
+      className={`shrink-0 rounded-[22%] ${className}`}
       style={{ width: size, height: size }}
     />
   );
 }
 
-export default function Brand({ size = 28, href = "/", showText = true, tone = "default", className = "", textClassName = "" }) {
+export default function Brand({
+  size = 28,
+  href = "/",
+  showText = true,
+  tone = "default",
+  className = "",
+  textClassName = "",
+}) {
   const color = tone === "inverse" ? "text-bg" : "text-text";
 
   const inner = (

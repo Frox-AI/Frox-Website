@@ -54,7 +54,7 @@ const GROUP_ORDER = ["Today", "Yesterday", "Previous 7 days", "Older"];
 
 function Avatar({ kind }) {
   if (kind === "assistant")
-    return <Mark size={28} rounded={false} className="!rounded-[26%]" />;
+    return <Mark size={28} />;
   return (
     <span className="w-7 h-7 shrink-0 rounded-full grad-bg grid place-items-center text-[10px] font-bold text-white">
       GU

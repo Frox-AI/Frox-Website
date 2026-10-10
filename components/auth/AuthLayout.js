@@ -70,7 +70,7 @@ export default function AuthLayout({ children, title, subtitle, footer }) {
 
         <div className="relative z-10">
           <Link href="/" className="inline-flex items-center gap-2.5 text-text hover:opacity-80 transition-opacity w-fit">
-            <Mark size={36} rounded={false} className="!rounded-[26%]" />
+            <Mark size={36} />
             <span className="font-semibold text-[17px] tracking-tight">Frox</span>
           </Link>
         </div>

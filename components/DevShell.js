@@ -34,7 +34,7 @@ export default function DevShell({ children }) {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 h-full flex items-center justify-between">
           <div className="flex items-center gap-5">
             <Link href="/developers" className="flex items-center gap-2 font-mono text-[13px] font-semibold tracking-tight text-white">
-              <Mark size={16} rounded={false} className="!rounded-[22%]" />
+              <Mark size={16} />
               frox<span className="text-[#10a37f]">/</span>dev
             </Link>
             <nav className="hidden sm:flex items-center gap-1">
@@ -65,7 +65,23 @@ export default function DevShell({ children }) {
         </div>
       </header>
 
-      <div className="flex-1 pt-12">{children}</div>
+      {/* Dev-platform backdrop: same motion language as the marketing site but
+          tuned to the dark shell, so the section feels related yet distinct. */}
+      <div className="fixed inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
+        <div className="absolute inset-0 grid-bg grid-drift opacity-[0.35]" />
+        <div
+          className="absolute -top-40 left-1/2 -translate-x-1/2 w-[900px] h-[520px] rounded-full blur-[130px] opacity-30"
+          style={{ background: "radial-gradient(closest-side, rgba(16,163,127,.35), transparent 70%)" }}
+        />
+        <div className="aurora w-[380px] h-[380px] opacity-25" style={{ background: "rgba(16,163,127,.20)", top: "18%", left: "6%" }} />
+        <div
+          className="aurora w-[320px] h-[320px] opacity-20"
+          style={{ background: "rgba(124,107,255,.18)", top: "46%", right: "8%", animationDelay: "3.5s" }}
+        />
+        <div className="absolute inset-0 noise opacity-[0.05]" />
+      </div>
+
+      <div className="flex-1 pt-12 relative">{children}</div>
 
       <footer className="border-t border-white/[0.07]">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 py-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">

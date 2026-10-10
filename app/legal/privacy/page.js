@@ -1,3 +1,8 @@
+export const metadata = {
+  title: "Privacy Policy",
+  description: "How Frox collects, uses, and protects your data.",
+};
+
 export default function PrivacyPage() {
   return (
     <div className="min-h-screen bg-bg text-text">

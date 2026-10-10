@@ -1,3 +1,8 @@
+export const metadata = {
+  title: "Terms of Service",
+  description: "The terms that govern your use of Frox.",
+};
+
 export default function TermsPage() {
   return (
     <div className="min-h-screen bg-bg text-text">

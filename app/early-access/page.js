@@ -9,6 +9,11 @@ const PERKS = [
   "Influence over the roadmap, not just visibility into it",
 ];
 
+export const metadata = {
+  title: "Early access",
+  description: "Get early access to new Frox models.",
+};
+
 export default function EarlyAccessPage() {
   return (
     <div className="min-h-screen bg-bg text-text">

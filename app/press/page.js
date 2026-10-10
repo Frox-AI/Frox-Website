@@ -8,6 +8,11 @@ const ASSETS = [
   { name: "Founder headshots", size: "6.1 MB", note: "Approved portraits for editorial use." },
 ];
 
+export const metadata = {
+  title: "Press",
+  description: "Press assets and facts about Frox.",
+};
+
 export default function PressPage() {
   return (
     <div className="min-h-screen bg-bg text-text">

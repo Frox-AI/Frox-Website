@@ -28,6 +28,11 @@ const GROUPS = [
   },
 ];
 
+export const metadata = {
+  title: "Features",
+  description: "What you can do with Frox.",
+};
+
 export default function FeaturesPage() {
   return (
     <div className="min-h-screen bg-bg text-text">

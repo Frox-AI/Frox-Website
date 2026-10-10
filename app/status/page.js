@@ -25,6 +25,11 @@ const STATS = [
   { label: "Open incidents", value: "0" },
 ];
 
+export const metadata = {
+  title: "Status",
+  description: "Live and historical uptime for Frox services.",
+};
+
 export default function StatusPage() {
   return (
     <div className="min-h-screen bg-bg text-text">

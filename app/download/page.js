@@ -72,6 +72,11 @@ const REQUIREMENTS = [
   { spec: "Network", min: "Broadband connection for cloud models", rec: "Stable 10 Mbps+ connection" },
 ];
 
+export const metadata = {
+  title: "Download",
+  description: "Download the Frox desktop and mobile apps.",
+};
+
 export default function DownloadPage() {
   return (
     <main className="min-h-screen bg-bg text-text">

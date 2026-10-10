@@ -29,6 +29,9 @@ const PATHS = {
   download: ["M12 3v12", "m7 10 5 5 5-5", "M5 21h14"],
   monitor: ["M3 4h18v12H3z", "M8 20h8", "M12 16v4"],
   smartphone: ["M7 2h10a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z", "M11 18h2"],
+  image: ["M3 4h18v16H3z", "M8.5 10a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z", "m21 16-5-5L5 20"],
+  cube: ["M12 2 21 8v8l-9 5-9-5V8z", "M3.5 8 12 13l8.5-5", "M12 12v9"],
+  waveform: ["M3 12h2M8 4v16M12 7v10M16 4v16M20 12h1"],
 };
 
 const ICONS = Object.fromEntries(

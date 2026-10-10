@@ -50,6 +50,11 @@ const MODELS = [
   },
 ];
 
+export const metadata = {
+  title: "Models",
+  description: "Open-weight models for every modality.",
+};
+
 export default function ModelsPage() {
   return (
     <div className="min-h-screen bg-bg text-text">

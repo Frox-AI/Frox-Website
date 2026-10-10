@@ -9,6 +9,11 @@ const SPACES = [
   { title: "Events", desc: "Office hours and community calls, recorded for anyone who misses them.", icon: "globe" },
 ];
 
+export const metadata = {
+  title: "Community",
+  description: "Join the Frox community.",
+};
+
 export default function CommunityPage() {
   return (
     <div className="min-h-screen bg-bg text-text">
@@ -18,7 +23,7 @@ export default function CommunityPage() {
         sub="The Frox community is where people show what they built, trade prompts, and compare notes. Be generous, be specific, and assume good intent."
       >
         <a href="https://huggingface.co/FroxStudio" target="_blank" rel="noreferrer" className="btn-primary">Visit us on Hugging Face</a>
-        <Link href="/community/guidelines" className="btn-secondary">Read the guidelines</Link>
+        <Link href="/legal/community" className="btn-secondary">Read the guidelines</Link>
       </PageHero>
 
       <div className="container-x pb-24">

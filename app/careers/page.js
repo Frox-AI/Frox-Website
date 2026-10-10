@@ -8,6 +8,11 @@ const VALUES = [
   { title: "Say what's true", desc: "About the product, the roadmap, and the work. Especially when it's inconvenient." },
 ];
 
+export const metadata = {
+  title: "Careers",
+  description: "Open roles at Frox Studio.",
+};
+
 export default function CareersPage() {
   return (
     <div className="min-h-screen bg-bg text-text">

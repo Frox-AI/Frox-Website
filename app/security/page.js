@@ -9,6 +9,11 @@ const PILLARS = [
   { icon: "flask", title: "Regular audits & pen tests", desc: "Quarterly third-party penetration tests and an active responsible-disclosure program." },
 ];
 
+export const metadata = {
+  title: "Security",
+  description: "How Frox handles security and privacy.",
+};
+
 export default function SecurityPage() {
   return (
     <div className="pt-32 pb-20">

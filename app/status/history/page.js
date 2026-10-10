@@ -30,6 +30,11 @@ const IMPACT_STYLE = {
   Moderate: "text-orange-500",
 };
 
+export const metadata = {
+  title: "Status history",
+  description: "Incident history for Frox services.",
+};
+
 export default function StatusHistoryPage() {
   return (
     <div className="min-h-screen bg-bg text-text">

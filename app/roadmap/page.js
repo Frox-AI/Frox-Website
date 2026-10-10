@@ -38,6 +38,11 @@ const COLUMNS = [
   },
 ];
 
+export const metadata = {
+  title: "Roadmap",
+  description: "What we are building next.",
+};
+
 export default function RoadmapPage() {
   return (
     <div className="min-h-screen bg-bg text-text">

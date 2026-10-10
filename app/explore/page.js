@@ -3,10 +3,10 @@ import PageHero from "@/components/PageHero";
 import Icon from "@/components/Icon";
 
 const TABS = [
-  { label: "Prompts", n: "1,240+", desc: "Community prompts that reliably produce good results, tagged by model." },
-  { label: "Images", n: "8,700+", desc: "Public generations people chose to share, with the prompt still attached." },
-  { label: "3D", n: "410+", desc: "Printable and renderable meshes made with Frox 3D." },
-  { label: "Audio", n: "1,900+", desc: "Voices, sound effects, and short clips from across the platform." },
+  { label: "Prompts", icon: "lightbulb", desc: "Community prompts that reliably produce good results, tagged by model." },
+  { label: "Images", icon: "image", desc: "Public generations people chose to share, with the prompt still attached." },
+  { label: "3D", icon: "cube", desc: "Printable and renderable meshes made with Frox 3D." },
+  { label: "Audio", icon: "waveform", desc: "Voices, sound effects, and short clips from across the platform." },
 ];
 
 const FEATURED = [
@@ -15,6 +15,11 @@ const FEATURED = [
   { title: "Calm narration voice", by: "@helena", tag: "Audio", grad: "from-emerald-500/30 to-teal-500/20" },
   { title: "Refactor recipes", by: "@yuki", tag: "Code", grad: "from-amber-500/30 to-rose-500/20" },
 ];
+
+export const metadata = {
+  title: "Explore",
+  description: "Browse prompts, images, and projects made with Frox.",
+};
 
 export default function ExplorePage() {
   return (
@@ -31,8 +36,10 @@ export default function ExplorePage() {
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-14">
           {TABS.map((t) => (
             <div key={t.label} className="card p-6">
-              <p className="text-2xl font-bold tracking-tight grad-text">{t.n}</p>
-              <p className="font-medium mt-1">{t.label}</p>
+              <span className="w-10 h-10 rounded-xl bg-accent/10 border border-accent/20 grid place-items-center text-accent mb-3">
+                <Icon name={t.icon} size={20} />
+              </span>
+              <p className="font-medium">{t.label}</p>
               <p className="text-[13px] text-textDim mt-2 leading-relaxed text-pretty">{t.desc}</p>
             </div>
           ))}

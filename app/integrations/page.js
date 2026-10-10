@@ -13,6 +13,11 @@ const INTEGRATIONS = [
   { name: "LangChain", desc: "Drop-in model provider for existing chains.", cat: "Framework" },
 ];
 
+export const metadata = {
+  title: "Integrations",
+  description: "Connect Frox to your tools.",
+};
+
 export default function IntegrationsPage() {
   return (
     <div className="min-h-screen bg-bg text-text">

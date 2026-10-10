@@ -8,6 +8,11 @@ const POSTS = [
   { date: "Aug 29, 2026", tag: "Research", title: "Routing between specialists, and what we learned", href: "/blog/router-notes", desc: "A short write-up on when to hand a task from a general model to a specialist." },
 ];
 
+export const metadata = {
+  title: "Newsroom",
+  description: "Product announcements and release notes from Frox Studio.",
+};
+
 export default function NewsPage() {
   return (
     <div className="min-h-screen bg-bg text-text">

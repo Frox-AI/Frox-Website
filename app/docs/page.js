@@ -1,3 +1,8 @@
+export const metadata = {
+  title: "Documentation",
+  description: "Guides and API reference for Frox.",
+};
+
 export default function DocsPage() {
   const navSections = [
     { id: "getting-started", label: "Getting Started" },

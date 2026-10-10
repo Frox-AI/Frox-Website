@@ -30,6 +30,11 @@ const CATEGORIES = [
   },
 ];
 
+export const metadata = {
+  title: "Help Center",
+  description: "Guides and answers for using Frox.",
+};
+
 export default function HelpPage() {
   return (
     <div className="min-h-screen bg-bg text-text">

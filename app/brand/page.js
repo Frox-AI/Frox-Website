@@ -9,6 +9,11 @@ const COLORS = [
   { name: "Slate", hex: "#57575f", usage: "Muted text" },
 ];
 
+export const metadata = {
+  title: "Brand",
+  description: "Frox logos, colors, and usage guidelines.",
+};
+
 export default function BrandPage() {
   return (
     <div className="min-h-screen bg-bg text-text">

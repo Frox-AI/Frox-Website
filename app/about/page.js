@@ -1,3 +1,8 @@
+export const metadata = {
+  title: "About",
+  description: "Who we are and how we work.",
+};
+
 export default function AboutPage() {
   const stats = [
     { label: "Founded", value: "2023" },

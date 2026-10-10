@@ -10,6 +10,11 @@ const TICKETS = [
 
 const TONE = { amber: "text-amber-500", accent: "text-accent", emerald: "text-emerald-600 dark:text-emerald-400" };
 
+export const metadata = {
+  title: "Ticket status",
+  description: "Check the status of your support tickets.",
+};
+
 export default function SupportStatusPage() {
   return (
     <div className="min-h-screen bg-bg text-text">

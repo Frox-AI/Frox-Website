@@ -33,6 +33,11 @@ const ENTRIES = [
   },
 ];
 
+export const metadata = {
+  title: "Changelog",
+  description: "Every change we ship, in order.",
+};
+
 export default function ChangelogPage() {
   return (
     <div className="pt-32 pb-20">

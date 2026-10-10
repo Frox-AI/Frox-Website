@@ -9,6 +9,11 @@ const STEPS = [
   ["Coordinated disclosure", "We'll agree on a disclosure date with you, credit you if you'd like, and publish a note once a fix is out."],
 ];
 
+export const metadata = {
+  title: "Report a vulnerability",
+  description: "Report a security vulnerability to Frox.",
+};
+
 export default function SecurityReportPage() {
   return (
     <div className="min-h-screen bg-bg text-text">

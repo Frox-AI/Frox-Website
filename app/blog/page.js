@@ -4,6 +4,11 @@ import { POSTS } from "@/lib/content";
 
 const CATEGORIES = ["All", "Product", "Research", "Tutorials", "Company", "Release"];
 
+export const metadata = {
+  title: "Blog",
+  description: "Release notes and research from Frox Studio.",
+};
+
 export default function BlogPage() {
   const [featured, ...rest] = POSTS;
 

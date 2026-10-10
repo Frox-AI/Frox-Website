@@ -8,6 +8,11 @@ const CHANNELS = [
   { icon: "terminal", title: "Developer support", desc: "API issues, SDKs, and integration questions.", href: "/docs", cta: "Read docs" },
 ];
 
+export const metadata = {
+  title: "Support",
+  description: "Get help from the Frox team.",
+};
+
 export default function SupportPage() {
   return (
     <div className="min-h-screen bg-bg text-text">

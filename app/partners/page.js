@@ -9,6 +9,11 @@ const TIERS = [
   { name: "Hardware", desc: "Vendors tuning kernels and quantization profiles for our model family." },
 ];
 
+export const metadata = {
+  title: "Partners",
+  description: "Build with Frox as a partner.",
+};
+
 export default function PartnersPage() {
   return (
     <div className="min-h-screen bg-bg text-text">

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
+import Reveal from "@/components/Reveal";
 
 export const metadata = {
   title: "Documentation",
@@ -35,7 +36,7 @@ export default function DocsPage() {
         <div className="flex flex-col lg:flex-row gap-10">
           {/* Sidebar */}
           <aside className="lg:w-64 shrink-0">
-            <nav className="sticky top-32 space-y-1">
+            <nav className="sticky top-32 space-y-1 list-in">
               {navSections.map((section) => (
                 <a
                   key={section.id}
@@ -52,7 +53,7 @@ export default function DocsPage() {
           <div className="flex-1 min-w-0">
             {/* Quickstart */}
             <section id="getting-started" className="mb-16 scroll-mt-32">
-              <h2 className="text-3xl font-bold mb-4">Quickstart</h2>
+              <Reveal as="h2" className="text-3xl font-bold mb-4">Quickstart</Reveal>
               <p className="text-textDim mb-8 leading-relaxed">
                 Get up and running with Frox in minutes. This guide will walk
                 you through installing the SDK and making your first API
@@ -132,7 +133,7 @@ for await (const chunk of stream) {
 
             {/* Authentication */}
             <section id="authentication" className="mb-16 scroll-mt-32">
-              <h2 className="text-3xl font-bold mb-4">Authentication</h2>
+              <Reveal as="h2" className="text-3xl font-bold mb-4">Authentication</Reveal>
               <p className="text-textDim mb-6 leading-relaxed">
                 Frox uses API keys to authenticate requests. You can manage
                 your API keys from the dashboard.
@@ -153,7 +154,7 @@ const frox = new Frox({
 
             {/* Chat API */}
             <section id="chat-api" className="mb-16 scroll-mt-32">
-              <h2 className="text-3xl font-bold mb-4">Chat API</h2>
+              <Reveal as="h2" className="text-3xl font-bold mb-4">Chat API</Reveal>
               <p className="text-textDim mb-6 leading-relaxed">
                 The Chat API allows you to create conversational AI experiences
                 with support for streaming, function calling, and multimodal
@@ -176,7 +177,7 @@ const frox = new Frox({
 
             {/* Image API */}
             <section id="image-api" className="mb-16 scroll-mt-32">
-              <h2 className="text-3xl font-bold mb-4">Image API</h2>
+              <Reveal as="h2" className="text-3xl font-bold mb-4">Image API</Reveal>
               <p className="text-textDim mb-6 leading-relaxed">
                 Generate images from text descriptions with our
                 diffusion models.
@@ -197,7 +198,7 @@ console.log(image.data[0].url);`}</code>
 
             {/* Audio API */}
             <section id="audio-api" className="mb-16 scroll-mt-32">
-              <h2 className="text-3xl font-bold mb-4">Audio API</h2>
+              <Reveal as="h2" className="text-3xl font-bold mb-4">Audio API</Reveal>
               <p className="text-textDim mb-6 leading-relaxed">
                 Convert text to natural-sounding speech and transcribe audio
                 with high accuracy.
@@ -222,7 +223,7 @@ const transcription = await frox.audio.transcriptions.create({
 
             {/* 3D API */}
             <section id="3d-api" className="mb-16 scroll-mt-32">
-              <h2 className="text-3xl font-bold mb-4">3D API</h2>
+              <Reveal as="h2" className="text-3xl font-bold mb-4">3D API</Reveal>
               <p className="text-textDim mb-6 leading-relaxed">
                 Generate 3D models and assets from text descriptions or 2D
                 reference images.
@@ -242,7 +243,7 @@ console.log(model.data[0].url);`}</code>
 
             {/* Code API */}
             <section id="code-api" className="mb-16 scroll-mt-32">
-              <h2 className="text-3xl font-bold mb-4">Code API</h2>
+              <Reveal as="h2" className="text-3xl font-bold mb-4">Code API</Reveal>
               <p className="text-textDim mb-6 leading-relaxed">
                 Generate, explain, and debug code with AI assistance across
                 dozens of programming languages.
@@ -262,7 +263,7 @@ console.log(code.data[0].content);`}</code>
 
             {/* SDKs */}
             <section id="sdks" className="mb-16 scroll-mt-32">
-              <h2 className="text-3xl font-bold mb-4">SDKs</h2>
+              <Reveal as="h2" className="text-3xl font-bold mb-4">SDKs</Reveal>
               <p className="text-textDim mb-6 leading-relaxed">
                 Official SDKs for popular languages and frameworks.
               </p>
@@ -282,7 +283,7 @@ console.log(code.data[0].content);`}</code>
 
             {/* Rate Limits */}
             <section id="rate-limits" className="mb-16 scroll-mt-32">
-              <h2 className="text-3xl font-bold mb-4">Rate Limits</h2>
+              <Reveal as="h2" className="text-3xl font-bold mb-4">Rate Limits</Reveal>
               <p className="text-textDim mb-6 leading-relaxed">
                 Rate limits are applied per API key and vary by plan. All
                 responses include rate limit headers.
@@ -298,7 +299,7 @@ X-RateLimit-Reset: 1696780800`}</code>
 
             {/* Errors */}
             <section id="errors" className="mb-16 scroll-mt-32">
-              <h2 className="text-3xl font-bold mb-4">Errors</h2>
+              <Reveal as="h2" className="text-3xl font-bold mb-4">Errors</Reveal>
               <p className="text-textDim mb-6 leading-relaxed">
                 Frox uses conventional HTTP status codes to indicate the
                 success or failure of API requests.
@@ -318,7 +319,7 @@ X-RateLimit-Reset: 1696780800`}</code>
 
             {/* Webhooks */}
             <section id="webhooks" className="mb-16 scroll-mt-32">
-              <h2 className="text-3xl font-bold mb-4">Webhooks</h2>
+              <Reveal as="h2" className="text-3xl font-bold mb-4">Webhooks</Reveal>
               <p className="text-textDim mb-6 leading-relaxed">
                 Subscribe to events in real-time with webhooks. Configure
                 endpoints from the dashboard.

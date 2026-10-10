@@ -31,7 +31,7 @@ export default function IntegrationsPage() {
       </PageHero>
 
       <div className="container-x pb-24">
-        <RevealGroup className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <RevealGroup className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4 stagger">
           {INTEGRATIONS.map((it) => (
             <div key={it.name} className="card card-hover p-6">
               <span className="text-[11px] uppercase tracking-widest text-textFaint">{it.cat}</span>

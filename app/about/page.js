@@ -228,7 +228,7 @@ export default function AboutPage() {
                   work across time zones, write things down instead of meeting
                   about them, and get together in person a few times a year.
                 </p>
-                <div className="space-y-3">
+                <div className="space-y-3 list-in">
                   <div className="flex items-center gap-3">
                     <div className="w-2 h-2 rounded-full bg-accent" />
                     <span className="text-textDim text-sm">

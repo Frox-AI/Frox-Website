@@ -30,7 +30,7 @@ export default function SecurityPage() {
       </PageHero>
 
       <div className="container-x pb-24 space-y-16">
-        <RevealGroup className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+        <RevealGroup className="grid gap-5 md:grid-cols-2 lg:grid-cols-3 stagger">
           {PILLARS.map((p) => (
             <div key={p.title} className="card card-hover p-6">
               <span className="w-10 h-10 rounded-xl grad-bg grid place-items-center text-white mb-4">

@@ -70,7 +70,7 @@ export default function StatusPage() {
         </div>
 
         <h2 className="text-2xl font-bold tracking-tight mt-16 mb-6">Recent incidents</h2>
-        <div className="space-y-4">
+        <div className="space-y-4 list-in">
           {INCIDENTS.map((i) => (
             <div key={i.title} className="card p-6">
               <div className="flex flex-wrap items-center gap-3 mb-2">

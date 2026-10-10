@@ -1,5 +1,6 @@
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
+import Reveal from "@/components/Reveal";
 
 const POSTS = [
   { date: "Oct 8, 2026", tag: "Release", title: "Frox Voice learns to clone a voice from three seconds", href: "/blog/voice-cloning", desc: "Shorter samples, steadier prosody, and a new consent flow built into every clone." },

@@ -50,7 +50,7 @@ export default function ExplorePage() {
           <h2 className="text-2xl font-bold tracking-tight">Featured</h2>
           <span className="text-sm text-textFaint">Updated weekly</span>
         </div>
-        <RevealGroup className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <RevealGroup className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4 stagger">
           {FEATURED.map((f) => (
             <div key={f.title} className="card card-hover overflow-hidden group cursor-pointer">
               <div className={`h-40 bg-gradient-to-br ${f.grad} grid place-items-center`}>

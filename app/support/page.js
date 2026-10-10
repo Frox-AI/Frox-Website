@@ -27,7 +27,7 @@ export default function SupportPage() {
       </PageHero>
 
       <div className="container-x pb-24">
-        <RevealGroup className="grid gap-5 md:grid-cols-3">
+        <RevealGroup className="grid gap-5 md:grid-cols-3 stagger">
           {CHANNELS.map((c) => (
             <div key={c.title} className="card card-hover p-7 flex flex-col">
               <span className="w-10 h-10 rounded-xl grad-bg grid place-items-center text-white mb-4"><Icon name={c.icon} size={18} /></span>

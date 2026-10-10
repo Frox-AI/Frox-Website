@@ -60,7 +60,7 @@ export default function DiscussionsPage() {
           <h2 className="text-2xl font-bold tracking-tight">Recent</h2>
           <span className="text-sm text-textFaint">{THREADS.length} threads</span>
         </div>
-        <RevealGroup className="space-y-3">
+        <RevealGroup className="space-y-3 list-in">
           {THREADS.map((t) => (
             <div key={t.title} className="card card-hover p-6">
               <div className="flex items-center gap-3 mb-2">

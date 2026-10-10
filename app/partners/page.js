@@ -27,7 +27,7 @@ export default function PartnersPage() {
       </PageHero>
 
       <div className="container-x pb-24">
-        <RevealGroup className="grid gap-5 md:grid-cols-2">
+        <RevealGroup className="grid gap-5 md:grid-cols-2 stagger">
           {TIERS.map((t) => (
             <div key={t.name} className="card card-hover p-7">
               <span className="w-10 h-10 rounded-xl bg-ink/[0.05] border border-ink/10 grid place-items-center text-accent mb-4">

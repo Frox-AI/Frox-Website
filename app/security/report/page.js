@@ -28,7 +28,7 @@ export default function SecurityReportPage() {
       </PageHero>
 
       <div className="container-x pb-24 max-w-2xl">
-        <RevealGroup as="ol" className="space-y-4" step={90}>
+        <RevealGroup as="ol" className="space-y-4 list-in" step={90}>
           {STEPS.map(([title, text], i) => (
             <li key={title} className="card p-6 flex gap-5">
               <span className="w-9 h-9 rounded-full grad-bg grid place-items-center text-white font-bold text-sm shrink-0">{i + 1}</span>

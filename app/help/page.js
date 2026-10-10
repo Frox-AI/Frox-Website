@@ -49,7 +49,7 @@ export default function HelpPage() {
       </PageHero>
 
       <div className="container-x pb-24">
-        <RevealGroup className="grid gap-8 md:grid-cols-3" step={90}>
+        <RevealGroup className="grid gap-8 md:grid-cols-3 stagger" step={90}>
           {CATEGORIES.map((c) => (
             <div key={c.name}>
               <h2 className="text-sm font-semibold uppercase tracking-widest text-textFaint mb-4">{c.name}</h2>

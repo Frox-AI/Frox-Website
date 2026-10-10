@@ -57,7 +57,7 @@ export default function RoadmapPage() {
       </PageHero>
 
       <div className="container-x pb-24">
-        <RevealGroup className="grid gap-6 lg:grid-cols-3">
+        <RevealGroup className="grid gap-6 lg:grid-cols-3 stagger">
           {COLUMNS.map((col) => (
             <div key={col.label} className="card card-hover p-7">
               <div className="flex items-center gap-2.5 mb-1">
@@ -65,7 +65,7 @@ export default function RoadmapPage() {
                 <h2 className="text-lg font-bold tracking-tight">{col.label}</h2>
               </div>
               <p className="text-[13px] text-textFaint mb-6">{col.note}</p>
-              <ul className="space-y-5">
+              <ul className="space-y-5 list-in">
                 {col.items.map((it) => (
                   <li key={it.title} className="flex gap-3">
                     <span className={`mt-0.5 shrink-0 ${it.done ? "text-emerald-500" : "text-textFaint"}`}>

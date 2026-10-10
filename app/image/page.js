@@ -105,7 +105,7 @@ export default function ImagePage() {
             <h2 className="text-2xl font-bold tracking-tight">Example prompts</h2>
             <p className="text-textDim mt-2 text-pretty">Starting points you can copy into the studio and adjust.</p>
           </div>
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 stagger">
             {EXAMPLES.map((e) => (
               <div key={e.prompt} className="card p-5">
                 <span className="text-[11px] uppercase tracking-widest text-accent2">{e.style}</span>
@@ -119,7 +119,7 @@ export default function ImagePage() {
           <div className="mb-8 max-w-xl">
             <h2 className="text-2xl font-bold tracking-tight">Capabilities</h2>
           </div>
-          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 stagger">
             {FEATURES.map((f) => (
               <div key={f.title} className="card p-6">
                 <span className="w-10 h-10 rounded-xl grad-bg grid place-items-center text-white mb-4">

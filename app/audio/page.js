@@ -119,7 +119,7 @@ export default function AudioPage() {
           </div>
 
           {tab === "tts" && (
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 stagger">
               <div className="card p-6">
                 <h3 className="text-lg font-semibold mb-4">Script Input</h3>
                 <textarea
@@ -228,7 +228,7 @@ export default function AudioPage() {
               </div>
 
               {sfxGenerated && (
-                <div className="space-y-3">
+                <div className="space-y-3 list-in">
                   <h3 className="text-lg font-semibold">Generated Effects</h3>
                   {sfxSamples.filter((s) => s.category === sfxCategory || sfxCategory === "Abstract").map((sfx, i) => (
                     <div key={i} className="card p-4 flex items-center justify-between">
@@ -270,7 +270,7 @@ export default function AudioPage() {
           )}
 
           {tab === "music" && (
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 stagger">
               <div className="card p-6">
                 <h3 className="text-lg font-semibold mb-4">Compose Music</h3>
                 <input
@@ -379,7 +379,7 @@ export default function AudioPage() {
             <h2 className="text-2xl font-bold tracking-tight">Voice Library</h2>
             <p className="text-textDim mt-2 text-pretty">Choose from a set of built-in voices, or clone one from a sample</p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 stagger">
             {voices.map((v, i) => (
               <div key={v.name} className="card p-6">
                 <div className="flex items-center gap-4 mb-4">

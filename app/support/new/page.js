@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
 import Icon from "@/components/Icon";
+import Reveal from "@/components/Reveal";
 
 const TOPICS = ["Account", "Billing", "Bug report", "API / SDKs", "Feature request", "Other"];
 

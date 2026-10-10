@@ -3,6 +3,7 @@
 import { useState } from "react";
 import PageHero from "@/components/PageHero";
 import Icon from "@/components/Icon";
+import Reveal from "@/components/Reveal";
 
 export default function WaitlistPage() {
   const [email, setEmail] = useState("");

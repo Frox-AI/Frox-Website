@@ -69,7 +69,7 @@ export default function ModelsPage() {
       </PageHero>
 
       <div className="container-x pb-24">
-        <RevealGroup className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <RevealGroup className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 stagger">
           {MODELS.map((m) => (
             <div key={m.id} className="card card-hover p-7 flex flex-col">
               <div className="flex items-start justify-between gap-3">

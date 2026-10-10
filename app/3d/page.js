@@ -146,7 +146,7 @@ export default function ThreeDPage() {
             <h2 className="text-2xl font-bold tracking-tight">How it works</h2>
             <p className="text-textDim mt-2 text-pretty">From prompt to mesh in four steps.</p>
           </div>
-          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4 stagger">
             {PIPELINE.map((step, i) => (
               <div key={step.title} className="card p-6">
                 <span className="w-10 h-10 rounded-xl grad-bg grid place-items-center text-white mb-4">
@@ -164,7 +164,7 @@ export default function ThreeDPage() {
           <div className="mb-8 max-w-xl">
             <h2 className="text-2xl font-bold tracking-tight">Capabilities</h2>
           </div>
-          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 stagger">
             {FEATURES.map((f) => (
               <div key={f.title} className="card p-6">
                 <span className="w-10 h-10 rounded-xl grad-bg grid place-items-center text-white mb-4">

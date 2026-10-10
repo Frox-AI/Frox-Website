@@ -39,7 +39,7 @@ export default function CareersPage() {
           <h2 className="text-2xl font-bold tracking-tight">Open positions</h2>
           <span className="text-sm text-textFaint">{JOBS.length} roles · all remote</span>
         </div>
-        <div className="space-y-3">
+        <div className="space-y-3 list-in">
           {JOBS.map((j) => (
             <Link key={j.id} href={`/careers/${j.id}`} className="card p-5 flex items-center justify-between gap-4 hover:!border-ink/20">
               <div>

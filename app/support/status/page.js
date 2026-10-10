@@ -1,6 +1,7 @@
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
 import Icon from "@/components/Icon";
+import Reveal from "@/components/Reveal";
 
 const TICKETS = [
   { id: "FRX-1042", subject: "Image upscale stuck at 90%", state: "In progress", updated: "2h ago", tone: "amber" },
